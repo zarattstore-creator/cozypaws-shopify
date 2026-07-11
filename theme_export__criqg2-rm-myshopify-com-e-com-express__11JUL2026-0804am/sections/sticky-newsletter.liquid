@@ -1,0 +1,349 @@
+
+{% assign show_sticky_newsletter = false %}
+
+{% if section.settings.enable_section %}
+    {% if section.settings.show_only_homepage == false or template.name == 'index' %}
+        {% if template.name != 'product' %}
+            {% assign show_sticky_newsletter = true %}
+        {% endif %}
+    {% endif %}
+{% endif %}
+
+{% if show_sticky_newsletter %}
+    <div
+        id="sticky-newsletter-wrapper"
+        class="toast-wrapper {{ section.settings.position }}">
+        <div
+            id="sticky-newsletter"
+            class="toast hide animate__animated"
+            data-autohide="false"
+            data-animate-enter="{{ section.settings.animation_enter }}"
+            data-animate-exit="{{ section.settings.animation_exit }}"
+            data-animate-speed="{{ section.settings.animation_speed }}"
+            data-top-treshold="{{ section.settings.top_treshold }}"
+            data-bottom-treshold="{{ section.settings.bottom_treshold }}"
+            data-show-after-x-days="{{ section.settings.show_after_x_days }}">
+
+            <div class="toast-header py-2">
+                <div class="mr-auto">
+                    <strong class="line-height-normal">
+                        {{ section.settings.title | escape }}
+                    </strong>
+                </div>
+                <button
+                    type="button"
+                    class="sticky-newsletter-handle-close ml-2 mb-1 close"
+                    aria-label="{{ 'general.accessibility.close' | t }}">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="toast-body">
+                {% unless section.settings.description == blank %}
+                    <div
+                        id="sticky-newsletter-description"
+                        class="description rte text-muted">
+                        {{ section.settings.description }}
+                    </div>
+
+                    <!-- Newsletter form -->
+                    {% form 'customer', id: 'sticky_newsletter_form', class: '' %}
+                        <input type="hidden" name="contact[tags]" value="newsletter">
+
+                        <div class="input-group mb-1">
+                            <input
+                                type="email"
+                                name="contact[email]"
+                                size="30"
+                                class="form-control"
+                                value="{% if customer.email != blank %}{{ customer.email }}{% endif %}"
+                                placeholder="{{ 'general.newsletter.label' | t }}"
+                                aria-label="{{ 'general.newsletter.label' | t }}"
+                                autocorrect="off"
+                                autocapitalize="off">
+                            <div class="input-group-append">
+                                <button
+                                    type="submit"
+                                    name="commit"
+                                    class="btn d-flex align-items-center flex-shrink-0 {{ section.settings.btn_color }} {{ section.settings.btn_size }}">
+                                    {% render 'icon-email', size: 21 %}
+                                    <span class="sr-only">
+                                        {{ 'general.newsletter.submit' | t }}
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <button
+                            type="button"
+                            id="sticky-newsletter-close-text"
+                            class="sticky-newsletter-handle-close btn btn-block btn-sm btn-link text-decoration-underline text-secondary">
+                            {{ 'general.newsletter.sticky_close' | t }}
+                        </button>
+
+                    {% endform %}
+
+                {% endunless %}
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+{% schema %}
+{
+    "name": "Sticky newsletter",
+    "settings": [
+        {
+            "type": "paragraph",
+            "content": {
+             "en": "Display a newsletter subscription form, usually offering a coupon code when signing up.",
+             "pt-BR": "Exibir um formulário de assinatura de boletim informativo, geralmente oferecendo um código de cupom ao se inscrever."
+            }
+        },
+        {
+            "type": "header",
+            "content": {
+             "en": "General Settings",
+             "pt-BR": "Configurações gerais"
+            }
+        },
+        {
+            "type": "checkbox",
+            "id": "enable_section",
+            "label": {
+                     "en": "Enable selection",
+                     "pt-BR": "Ativar seção"
+                    },
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "show_only_homepage",
+            "label": {
+                     "en": "Show only on homepage",
+                     "pt-BR": "Mostrar apenas na página inicial"
+                    },
+            "info": {
+                     "en": "We recommend that you only show the home page. On product pages, it will always be hidden",
+                     "pt-BR": "Recomendamos que você mostre apenas a página inicial. Nas páginas dos produtos, estará sempre oculto"
+                    },
+            "default": true
+        },
+        {
+            "type": "select",
+            "id": "position",
+            "label": {
+                     "en": "Position",
+                     "pt-BR": "Posição"
+                    },
+            "default": "bottom-center",
+            "options": [
+                {
+                   "value":"bottom-left",
+                   "label":{
+                     "en": "Bottom left",
+                     "pt-BR": "Inferior esquerdo"
+                   }
+                },
+                {
+                   "value":"bottom-center",
+                   "label":{
+                     "en": "Bottom center",
+                     "pt-BR": "Centro inferior"
+                   }
+                },
+                {
+                   "value":"bottom-right",
+                   "label":{
+                     "en": "Bottom right",
+                     "pt-BR": "Inferior direito"
+                   }
+                }
+            ]
+        },
+        {
+            "type": "text",
+            "id": "title",
+            "label": {
+                     "en": "Title",
+                     "pt-BR": "Título"
+                    },
+            "default": {
+                     "en": "GET 10% DISCOUNT NOW!",
+                     "pt-BR": "OBTENHA 10% DE DESCONTO AGORA!"
+                    }
+        },
+        {
+            "type": "richtext",
+            "id": "description",
+            "label": {
+                     "en": "Description",
+                     "pt-BR": "Descrição"
+                    },
+            "default": {
+                     "en": "<p>Get immediately <strong>10% OFF</strong> on your first purchase when you sign up for our newsletters!</p>",
+                     "pt-BR": "<p>Pegue imediatamente <strong>10% OFF</strong> em sua primeira compra ao se inscrever em nosso newsletter!</p>"
+                    }
+        },
+        {
+            "type": "text",
+            "id": "top_treshold",
+            "label": {
+                     "en": "Upper threshold (px)",
+                     "pt-BR": "Limiar superior (px)"
+                    },
+            "info": {
+                     "en": "It will be shown after scrolling as many pixels from the top.",
+                     "pt-BR": "Será mostrado depois de rolar tantos pixels a partir do topo."
+                    },
+            "default": "1000"
+        },
+        {
+            "type": "text",
+            "id": "bottom_treshold",
+            "label": {
+                     "en": "Lower threshold (px)",
+                     "pt-BR": "Limiar inferior (px)"
+                    },
+            "info": {
+                     "en": "It will hide after reaching that amount of pixels from the bottom",
+                     "pt-BR": "Vai se esconder depois de atingir essa quantidade de pixels da parte inferior"
+                    },
+            "default": "500"
+        },
+        {
+            "type": "range",
+            "id": "show_after_x_days",
+            "label": {
+                     "en": "Show again after x days",
+                     "pt-BR": "Mostrar novamente após x dias"
+                    },
+            "info": {
+                     "en": "If the user closes the popup, it will appear again after that number of days. We recommend that you set 3 days or more.",
+                     "pt-BR": "Se o usuário fechar o pop-up, aparecerá novamente após esse número de dias. Recomendamos que você defina 3 dias ou mais."
+                    },
+            "min": 1,
+            "max": 30,
+            "default": 3
+        },
+        {
+            "type": "select",
+            "id": "btn_color",
+            "label": {
+             "en": "Button color",
+             "pt-BR": "Cor do botão"
+            },
+            "default": "btn-primary",
+            "options": [
+                { "group": "Normal", "value": "btn-light", "label": {"en": "Light","pt-BR": "Claro"} },
+                { "group": "Normal", "value": "btn-dark", "label": {"en": "Dark","pt-BR": "Escuro"} },
+                { "group": "Normal", "value": "btn-primary", "label": {"en": "Primary from theme","pt-BR": "Primária do tema"} },
+                { "group": "Normal", "value": "btn-secondary", "label": {"en": "Secondary from theme","pt-BR": "Secundária do tema"} },
+                { "group": "Normal", "value": "btn-success", "label": {"en": "Success","pt-BR": "Sucesso"} },
+                { "group": "Normal", "value": "btn-danger", "label": {"en": "Danger","pt-BR": "Perigo"} },
+                { "group": "Normal", "value": "btn-warning", "label": {"en": "Warning","pt-BR": "Cuidado"} },
+                { "group": "Normal", "value": "btn-info", "label": {"en": "Info","pt-BR": "Informações"} },
+                { "group": "Outline", "value": "btn-outline-dark", "label": {"en": "Dark outline","pt-BR": "Contorno escuro"}},
+                { "group": "Outline", "value": "btn-outline-primary", "label": {"en": "Primary from theme outline","pt-BR": "Contorno primaria do tema"} },
+                { "group": "Outline", "value": "btn-outline-secondary", "label": {"en": "Secondary from theme outline","pt-BR": "Contorno secundária do tema"} },
+                { "group": "Outline", "value": "btn-outline-success", "label": {"en": "Success outline","pt-BR": "Contorno Sucesso"} },
+                { "group": "Outline", "value": "btn-outline-danger", "label": {"en": "Danger outline","pt-BR": "Contorno Perigo"} },
+                { "group": "Outline", "value": "btn-outline-warning", "label": {"en": "Warning outline","pt-BR": "Contorno Cuidado"} },
+                { "group": "Outline", "value": "btn-outline-info", "label": {"en": "Info outline","pt-BR": "Contorno Informações"}}
+            ]
+        },
+        {
+            "type": "select",
+            "id": "btn_size",
+            "label": {
+             "en": "Button size",
+             "pt-BR": "Tamanho do botão"
+            },
+            "options": [
+                { "value": "btn-sm", "label": {"en": "Small","pt-BR": "Pequeno"} },
+                { "value": "", "label": {"en": "Normal","pt-BR": "Normal"} },
+                { "value": "btn-lg", "label": {"en": "Large","pt-BR": "Grande"} }
+            ]
+        },
+        {
+            "type": "header",
+            "content": {
+               "en": "Animation",
+               "pt-BR": "Animação"
+             }
+        },
+        {
+            "type": "text",
+            "id":  "animation_enter",
+            "label": {
+               "en": "Entry Animation",
+               "pt-BR": "Animação de Entrada"
+             },
+            "info": {
+               "en": "Copy and paste the name of the animation (entry) from the website animate.style. Leave blank to disable and use Bootstrap's default transitions. [Learn more](https:\/\/animate.style)",
+               "pt-BR": "Copie e cole o nome da animação (entrada) do site animate.style. Deixe em branco para desativar e usar as transições padrão do Bootstrap. [Saber mais](https:\/\/animate.style)"
+             },
+            "default": "animate__fadeInUp"
+        },
+        {
+            "type": "text",
+            "id":  "animation_exit",
+            "label": {
+               "en": "Exit Animation",
+               "pt-BR": "Animação de Saída"
+             },
+            "info": {
+               "en": "Copy and paste the name of the animation (exit) from the website animate.style. Leave blank to disable and use Bootstrap's default transitions. [Learn more](https:\/\/animate.style)",
+               "pt-BR": "Copie e cole o nome da animação (saída) do site animate.style. Deixe em branco para desativar e usar as transições padrão do Bootstrap. [Saber mais](https:\/\/animate.style)"
+             },
+            "default": "animate__fadeOutDown"
+        },
+        {
+            "type": "select",
+            "id":  "animation_speed",
+            "label": {
+               "en": "Animation Speed",
+               "pt-BR": "Velocidade da Animação"
+             },
+            "default": "animate__normal",
+            "options": [
+               {
+                  "value":"animate__slower",
+                  "label":{
+                    "en": "Slower",
+                    "pt-BR": "Mais lenta"
+                  }
+               },
+               {
+                  "value":"animate__slow",
+                  "label":{
+                    "en": "Slow",
+                    "pt-BR": "Lenta"
+                  }
+               },
+               {
+                  "value":"animate__normal",
+                  "label":{
+                    "en": "Normal",
+                    "pt-BR": "Normal"
+                  }
+               },
+               {
+                  "value":"animate__fast",
+                  "label":{
+                    "en": "Fast",
+                    "pt-BR": "Rápida"
+                  }
+               },
+               {
+                  "value":"animate__faster",
+                  "label":{
+                    "en": "Faster",
+                    "pt-BR": "Mais rápida"
+                  }
+               }
+            ]
+        }
+    ]
+}
+{% endschema %}

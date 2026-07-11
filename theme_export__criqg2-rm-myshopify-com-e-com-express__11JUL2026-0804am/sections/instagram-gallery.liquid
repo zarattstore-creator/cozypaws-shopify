@@ -1,0 +1,456 @@
+{% assign pt =  section.settings.padding_top | prepend: 'pt-' %}
+{% assign pb =  section.settings.padding_bottom | prepend: 'pb-' %}
+{% assign mt =  section.settings.margin_top | prepend: 'mt-' %}
+{% assign mb =  section.settings.margin_bottom | prepend: 'mb-' %}
+
+{% assign row_      =  section.settings.row_mobile | prepend: 'row-cols-' %}
+{% assign row_md    =  section.settings.row_tablet | prepend: 'row-cols-md-' %}
+{% assign row_lg    =  section.settings.row_desktop | prepend: 'row-cols-lg-' %}
+
+<section
+    id="instagram-gallery-{{ section.id }}"
+    class="instagram-gallery text-center {% if section.settings.bg_light %}bg-light{% endif %} {{ pt }} {{ pb }} {{ mt }} {{ mb }}">
+    <div class="{% if section.settings.container %}container{% else %}container-fluid{% endif %}">
+
+        <!-- Title -->
+        <h2 class="title mb-1 {{ section.settings.title_size }} {{ section.settings.title_alignment }}">
+            {{ section.settings.title }}
+        </h2>
+
+        <!-- Description -->
+        {% if section.settings.description != blank %}
+            <div class="description rte  text-muted mb-4 {{ section.settings.title_alignment }}">
+                {{ section.settings.description }}
+            </div>
+        {% endif %}
+
+        <!-- Follow button -->
+        {% if section.settings.follow_btn_url != blank %}
+            <a
+                class="btn mb-6 {{ section.settings.follow_btn_color }} {{ section.settings.follow_btn_size }}"
+                href="{{ section.settings.follow_btn_url }}"
+                target="_blank">
+                {{ section.settings.follow_btn_text }}
+            </a>
+        {% endif %}
+
+        <!-- Instagram gallery list -->
+        <ul class="instagram-gallery-list list-unstyled mx-n2 mb-0 row {{ row_ }} {{ row_md }} {{ row_lg }}">
+            {% for block in section.blocks %}
+                {% assign img_size = section.settings.img_width | append: 'x' | append: section.settings.img_height %}
+                <li
+                    class="instagram-gallery-list-item px-2 py-2 text-center {% unless section.settings.animate_class == blank %}animate__animated animate__fast{% endunless %} {{ forloop.index | prepend: 'enter-view-step-' }}"
+                    data-animate="{{ section.settings.animate_class }}">
+                    {% if section.settings.show_modal %}
+                        <a
+                            href="#instagram-gallery-modal"
+                            data-toggle="modal"
+                            role="button"
+                            data-url="{{ block.settings.url }}"
+                            data-description="{{ block.settings.description | escape }}"
+                            data-img-src="{{ block.settings.image | img_url: img_size, crop: 'center' }}"
+                            data-img-width="{{ section.settings.img_width }}"
+                            data-img-height="{{ section.settings.img_height }}"
+                            data-text-post-details="{{ 'general.instagram.post_details' | t }}"
+                            data-text-view-post="{{ 'general.instagram.view_post_instagram' | t }}">
+                    {% else %}
+                        <a href="{{ block.settings.url }}" target="_blank">
+                    {% endif %}
+                        <img
+                            class="instagram-gallery-list-item-img img-fluid {% if section.settings.img_thumbnail %}img-thumbnail{% else %}rounded{% endif %}"
+                            data-src="{{ block.settings.image | img_url: img_size, crop: 'center' }}"
+                            alt="{{ block.settings.image.alt | escape }}"
+                            width="{{ section.settings.img_width }}"
+                            height="{{ section.settings.img_height }}"
+                            loading="lazy">
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+
+    </div>
+</section>
+
+{% if section.settings.show_modal %}
+    <div
+        class="modal fade"
+        id="instagram-gallery-modal"
+        tabindex="-1"
+        aria-labelledby="instagram-gallery-modal-label"
+        aria-hidden="true">
+        <div
+            class="modal-dialog modal-dialog-centered modal-dialog-scrollable animate__animated"
+            data-animate-enter="{{ settings.modal_animation_enter }}"
+            data-animate-exit="{{ settings.modal_animation_exit }}"
+            data-animate-speed="{{ settings.modal_animation_speed }}">
+            <div class="modal-content">
+                <div class="modal-header py-3">
+                    <h6 class="modal-title" id="instagram-gallery-modal-label">
+                        <!-- Auto injected via JS -->
+                    </h6>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="{{ 'general.close' | t }}">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Auto injected via JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+{% schema %}
+{
+    "name": {
+     "en": "Instagram Gallery",
+     "pt-BR": "Galeria do Instagram"
+    },
+    "settings": [
+        {
+            "type": "header",
+            "content": {
+             "en": "General Settings",
+             "pt-BR": "Configurações gerais"
+            }
+        },
+        {
+            "type": "text",
+            "id": "title",
+            "label": {
+             "en": "Title",
+             "pt-BR": "Título"
+            },
+            "default": {
+             "en": "Store Instagram",
+             "pt-BR": "Instagram da Loja"
+            }
+        },
+        {
+            "type": "richtext",
+            "id": "description",
+            "label": {
+             "en": "Description",
+             "pt-BR": "Descrição"
+            },
+            "default": {
+             "en": "<p>Write something here.</p>",
+             "pt-BR": "<p>Escreva alguma coisa aqui.</p>"
+            }
+        },
+        {
+            "type": "select",
+            "id": "title_size",
+            "label": {
+             "en": "Title Size",
+             "pt-BR": "Tamanho do título"
+            },
+            "default": "h4",
+            "options": [
+                {  "value": "h1", "label": "H1" },
+                {  "value": "h2", "label": "H2" },
+                {  "value": "h3", "label": "H3" },
+                {  "value": "h4", "label": "H4" },
+                {  "value": "h5", "label": "H5" },
+                {  "value": "h6", "label": "H6" }
+            ]
+        },
+        {
+            "type": "select",
+            "id": "title_alignment",
+            "label": {
+             "en": "Title Alignment",
+             "pt-BR": "Alinhamento do título"
+            },
+            "default": "text-center",
+            "options": [
+                { "value": "text-left", "label": {"en": "Left","pt-BR": "Esquerda"} },
+                { "value": "text-center", "label": {"en": "Center","pt-BR": "Centro"} },
+                { "value": "text-right", "label": {"en": "Right","pt-BR": "Direita"} }
+            ]
+        },
+        {
+            "type": "checkbox",
+            "id": "container",
+            "label": {
+             "en": "Wrap container",
+             "pt-BR": "Enrolar container"
+            },
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "bg_light",
+            "label": {
+             "en": "Light Background",
+             "pt-BR": "Fundo claro"
+            },
+            "default": true
+        },
+        {
+            "type": "url",
+            "id": "follow_btn_url",
+            "label": {
+             "en": "Follow button link",
+             "pt-BR": "Link do botão seguir"
+            }
+        },
+        {
+            "type": "text",
+            "id": "follow_btn_text",
+            "label": {
+             "en": "Follow Button Text",
+             "pt-BR": "Texto do botão seguir"
+            },
+            "default": {
+             "en": "Follow",
+             "pt-BR": "Seguir"
+            }
+        },
+        {
+            "type": "select",
+            "id": "follow_btn_color",
+            "label": {
+             "en": "Follow button color",
+             "pt-BR": "Cor do botão seguir"
+            },
+            "default": "btn-outline-primary",
+            "options": [
+                { "group": "Normal", "value": "btn-link", "label": {"en": "Link","pt-BR": "Link"} },
+                { "group": "Normal", "value": "btn-light", "label": {"en": "Light","pt-BR": "Claro"} },
+                { "group": "Normal", "value": "btn-dark", "label": {"en": "Dark","pt-BR": "Escuro"} },
+                { "group": "Normal", "value": "btn-primary", "label": {"en": "Primary from theme","pt-BR": "Primária do tema"} },
+                { "group": "Normal", "value": "btn-secondary", "label": {"en": "Secondary from theme","pt-BR": "Secundária do tema"} },
+                { "group": "Normal", "value": "btn-success", "label": {"en": "Success","pt-BR": "Sucesso"} },
+                { "group": "Normal", "value": "btn-danger", "label": {"en": "Danger","pt-BR": "Perigo"} },
+                { "group": "Normal", "value": "btn-warning", "label": {"en": "Warning","pt-BR": "Cuidado"} },
+                { "group": "Normal", "value": "btn-info", "label": {"en": "Info","pt-BR": "Informações"} },
+                { "group": "Outline", "value": "btn-outline-dark", "label": {"en": "Dark outline","pt-BR": "Contorno escuro"}},
+                { "group": "Outline", "value": "btn-outline-primary", "label": {"en": "Primary from theme outline","pt-BR": "Contorno primaria do tema"} },
+                { "group": "Outline", "value": "btn-outline-secondary", "label": {"en": "Secondary from theme outline","pt-BR": "Contorno secundária do tema"} },
+                { "group": "Outline", "value": "btn-outline-success", "label": {"en": "Success outline","pt-BR": "Contorno Sucesso"} },
+                { "group": "Outline", "value": "btn-outline-danger", "label": {"en": "Danger outline","pt-BR": "Contorno Perigo"} },
+                { "group": "Outline", "value": "btn-outline-warning", "label": {"en": "Warning outline","pt-BR": "Contorno Cuidado"} },
+                { "group": "Outline", "value": "btn-outline-info", "label": {"en": "Info outline","pt-BR": "Contorno Informações"}}
+            ]
+        },
+        {
+            "type": "select",
+            "id": "follow_btn_size",
+            "label": {
+               "en": "Button size",
+               "pt-BR": "Tamanho do botão"
+             },
+             "options":[
+                {
+                   "value":"btn-sm",
+                   "label":{
+                     "en": "Small",
+                     "pt-BR": "Pequeno"
+                   }
+                },
+                {
+                   "value":"",
+                   "label":{
+                     "en": "Normal",
+                     "pt-BR": "Normal"
+                   }
+                },
+                {
+                   "value":"btn-lg",
+                   "label":{
+                     "en": "Large",
+                     "pt-BR": "Grande"
+                   }
+                }
+             ]
+        },
+        {
+            "type": "header",
+            "content": {
+             "en": "Post settings",
+             "pt-BR": "Configurações do post"
+            }
+        },
+        {
+            "type": "text",
+            "id": "img_width",
+            "label": {
+               "en": "Image width (px)",
+               "pt-BR": "Largura da imagem (px)"
+             },
+            "default": "480"
+        },
+        {
+            "type": "text",
+            "id": "img_height",
+            "label": {
+               "en": "Image height (px)",
+               "pt-BR": "Altura da imagem (px)"
+             },
+            "default": "480"
+        },
+        {
+            "type": "checkbox",
+            "id": "img_thumbnail",
+            "label": {
+               "en": "Image border",
+               "pt-BR": "Borda da imagem"
+             },
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "show_modal",
+            "label": {
+             "en": "Open posts in modal",
+             "pt-BR": "Abrir posts no modal"
+            },
+            "default": true
+        },
+        {
+            "type": "header",
+            "content": {
+             "en": "Fit items per line",
+             "pt-BR": "Ajustar itens por linha"
+            }
+        },
+        {
+            "type": "range",
+            "id": "row_mobile",
+            "label": {
+             "en": "Collections by Line / Mobile",
+             "pt-BR": "Coleções por linha / Celular"
+            },
+            "min": 1,
+            "max": 3,
+            "step": 1,
+            "default": 2
+        },
+        {
+            "type": "range",
+            "id": "row_tablet",
+            "label": {
+             "en": "Collections by Line / Tablet",
+             "pt-BR": "Coleções por linha / Tablet"
+            },
+            "min": 1,
+            "max": 4,
+            "step": 1,
+            "default": 3
+        },
+        {
+            "type": "range",
+            "id": "row_desktop",
+            "label": {
+             "en": "Collections by Line / Desktop",
+             "pt-BR": "Coleções por linha / Desktop"
+            },
+            "min": 1,
+            "max": 6,
+            "step": 1,
+            "default": 6
+        },
+        {
+            "type": "header",
+            "content": {
+             "en": "Spacing",
+             "pt-BR": "Espaçamento"
+            },
+            "info": {
+             "en": "Based on Bootstrap Spacing Utility Classes [Learn More](https://getbootstrap.com/docs/4.5/utilities/spacing/)",
+             "pt-BR": "Com base nas classes do utilitário de espaçamento Bootstrap [Saiba mais](https://getbootstrap.com/docs/4.5/utilities/spacing/)"
+            }
+        },
+        {
+            "type": "range",
+            "id": "padding_top",
+            "label": {
+             "en": "Padding Top",
+             "pt-BR": "Espaçamento superior"
+            },
+            "min": 0,
+            "max": 12,
+            "step": 1,
+            "default": 8
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom",
+            "label": {
+             "en": "Padding bottom",
+             "pt-BR": "Espaçamento inferior"
+            },
+            "min": 0,
+            "max": 12,
+            "step": 1,
+            "default": 8
+        },
+        {
+            "type": "range",
+            "id": "margin_top",
+            "label": {
+             "en": "Margin top",
+             "pt-BR": "Margem superior"
+            },
+            "min": 0,
+            "max": 12,
+            "step": 1,
+            "default": 0
+        },
+        {
+            "type": "range",
+            "id": "margin_bottom",
+            "label": {
+             "en": "Margin bottom",
+             "pt-BR": "Margem inferior"
+            },
+            "min": 0,
+            "max": 12,
+            "step": 1,
+            "default": 9
+        }
+    ],
+    "blocks": [
+        {
+            "type": "post",
+            "name": {
+             "en": "Post",
+             "pt-BR": "Post"
+            },
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": {
+                     "en": "Image",
+                     "pt-BR": "Imagem"
+                    }
+                },
+                {
+                    "type": "richtext",
+                    "id": "description",
+                    "label": {
+                     "en": "Description",
+                     "pt-BR": "Descrição"
+                    }
+                },
+                {
+                    "type": "url",
+                    "id": "url",
+                    "label": {
+                     "en": "Post URL",
+                     "pt-BR": "URL do post"
+                    }
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Galeria do Instagram",
+            "category": "home"
+        }
+    ]
+}
+{% endschema %}

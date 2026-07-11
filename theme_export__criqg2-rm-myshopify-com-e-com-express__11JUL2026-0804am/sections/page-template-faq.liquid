@@ -1,0 +1,186 @@
+<article>
+
+    <!-- Header -->
+    <header
+        id="page-header"
+        class="page-header text-center mb-7">
+        <div class="container">
+
+            <h3 class="">
+                {{ page.title }}
+            </h3>
+
+            {% unless section.settings.description == blank %}
+                <div class="rte lead text-muted">
+                    {{ section.settings.description }}
+                </div>
+            {% endunless %}
+
+        </div>
+    </header>
+
+    <!-- Page content -->
+    <div class="about-page-content mb-7">
+        <div class="container" style="{% unless section.settings.page_max_width == blank %}max-width: {{ section.settings.page_max_width }}px;{% endunless %}">
+            {{ page.content }}
+        </div>
+    </div>
+
+    <!-- F.A.Q Blocks -->
+    <div class="container" style="{% unless section.settings.page_max_width == blank %}max-width: {{ section.settings.page_max_width }}px;{% endunless %}">
+
+        <div id="accordion-{{ section.id }}" class="accordion">
+            {% for block in section.blocks %}
+                <div class="card">
+                    <div class="card-header" id="heading-{{ block.id }}">
+                        <h3 class="mb-0">
+                            <button
+                                class="btn btn-link text-dark btn-block text-left text-decoration-none"
+                                type="button"
+                                data-toggle="collapse"
+                                data-target="#collapse-{{ block.id }}"
+                                aria-expanded="{% if forloop.index0 == 0 %}true{% else %}false{% endif %}"
+                                aria-controls="collapse-{{ block.id }}">
+                                {{ block.settings.title | escape }}
+                            </button>
+                        </h3>
+                    </div>
+
+                    <div
+                        id="collapse-{{ block.id }}"
+                        class="collapse {% if forloop.index0 == 0 %}show{% endif %}"
+                        aria-labelledby="heading-{{ block.id }}"
+                        data-parent="#accordion-{{ section.id }}">
+                        <div class="card-body">
+                            {{ block.settings.description }}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+</article>
+
+{% schema %}
+{
+    "name": {
+      "en": "F.A.Q Page",
+      "pt-BR": "Perguntas frequentes"
+    },
+    "settings": [
+        {
+            "type": "header",
+            "content": {
+             "en": "General Settings",
+             "pt-BR": "Configurações Gerais"
+            }
+        },
+        {
+            "type": "richtext",
+            "id": "description",
+            "label": {
+             "en": "Description",
+             "pt-BR": "Descrição"
+            },
+            "default": {
+             "en": "<p>Frequently Asked Questions for Our Store</p>",
+             "pt-BR": "<p>Perguntas frequentes para nossa loja</p>"
+            },
+            "info": {
+             "en": "Leave blank to disable",
+             "pt-BR": "Deixe em branco para desativar"
+            }
+        },
+        {
+            "type": "text",
+            "id": "page_max_width",
+            "label": {
+             "en": "Maximum page width (px)",
+             "pt-BR": "Largura máxima da página (px)"
+            },
+            "info": {
+             "en": "Leave blank to disable",
+             "pt-BR": "Deixe em branco para desativar"
+            },
+            "default": "767"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "faq",
+            "name": {
+             "en": "F.A.Q",
+             "pt-BR": "Perguntas frequentes"
+            },
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": {
+                     "en": "Title",
+                     "pt-BR": "Título"
+                    }
+                },
+                {
+                    "type": "richtext",
+                    "id": "description",
+                    "label": {
+                     "en": "Description",
+                     "pt-BR": "Descrição"
+                    }
+                }
+            ]
+        }
+    ],
+    "default": {
+        "settings": {
+        },
+        "blocks": [
+            {
+                "type": "faq",
+                "settings": {
+                    "title": "Where do you ship?",
+                    "description": "<p>We ship worldwide... Provide your shipping information here, including times, prices, options, etc.</p>"
+                }
+            },
+            {
+                "type": "faq",
+                "settings": {
+                    "title": "How long will it take to receive my order",
+                    "description": "<p>Our shipping is free worldwide with no additional surprises. Our deadline is 5 to 30 business days to arrive. Never worry about paying shipping again!</p>"
+                }
+            },
+            {
+                "type": "faq",
+                "settings": {
+                    "title": "What payment methods do you accept?",
+                    "description": "<p>We accept Visa, MasterCard and American Express, but feel free to contact us for other payment options.</p>"
+                }
+            },
+            {
+                "type": "faq",
+                "settings": {
+                    "title": "Do all orders come with a tracking number?",
+                    "description": "<p>Yes. We value transparency and that's why all products are shipped with internationally valid tracking codes.</p>"
+                }
+            },
+            {
+                "type": "faq",
+                "settings": {
+                    "title": "Can I order as a gift for someone else?",
+                    "description": "<p>When ordering as a gift to someone, be sure to enter your email address to receive all the summary information, but enter the recipient's name and shipping information. We will keep all pricing and recipes out of the package.</p>"
+                }
+            },
+            {
+                "type": "faq",
+                "settings": {
+                    "title": "How can I get my order refunded?",
+                    "description": "<p>If for any reason you are not completely satisfied with your purchase, within 7 days of receiving your order, we will refund your purchase no questions asked.</p>"
+                }
+            }
+        ]
+    }
+}
+{% endschema %}

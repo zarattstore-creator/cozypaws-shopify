@@ -1,0 +1,650 @@
+{% assign pt =  section.settings.padding_top | prepend: 'pt-' %}
+{% assign pb =  section.settings.padding_bottom | prepend: 'pb-' %}
+{% assign mt =  section.settings.margin_top | prepend: 'mt-' %}
+{% assign mb =  section.settings.margin_bottom | prepend: 'mb-' %}
+
+<section
+    id="featured-collection-{{ section.id }}"
+    class="featured-collection {% if section.settings.bg_light %}bg-light{% endif %} {{ pt }} {{ pb }} {{ mt }} {{ mb }}">
+    <div class="{% if section.settings.container %}container{% else %}container-fluid{% endif %}">
+
+        <!-- Title -->
+        <h2 class="title mb-1 {{ section.settings.title_alignment }} {{ section.settings.title_size }}">
+            {{ section.settings.title }}
+        </h2>
+
+        <!-- Description -->
+        {% if section.settings.description != blank %}
+            <div class="description rte  text-muted mb-6 {{ section.settings.title_alignment }}">
+                {{ section.settings.description }}
+            </div>
+        {% endif %}
+
+        <!-- Tabs -->
+        <ul
+            class="nav nav-pills mb-6 pb-1 {{ section.settings.tabs_alignment }} {% if section.blocks.size < 2 %}d-none{% endif %}"
+            role="tablist">
+            {% for block in section.blocks %}
+                <li class="nav-item" role="presentation">
+                    <a
+                        class="nav-link {% if forloop.first == true %}active{% endif %}"
+                        id="featured-collection-tab-{{ block.id }}"
+                        data-toggle="tab"
+                        href="#featured-collection-{{ block.id }}"
+                        role="tab"
+                        aria-controls="featured-collection-{{ block.id }}"
+                        aria-selected="true">
+                        {{ block.settings.tab_title | default: collections[block.settings.collection].title | escape }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <div id="featured-collecton-tab-content" class="tab-content" >
+            {% for block in section.blocks %}
+                <div
+                    class="tab-pane fade {% if forloop.first == true %}show active{% endif %}"
+                    id="featured-collection-{{ block.id }}"
+                    role="tabpanel"
+                    aria-labelledby="featured-collection-tab-{{ block.id }}">
+
+                    {% paginate collections[block.settings.collection].products by section.settings.limit %}
+                        <div
+                            id="splide-{{ block.id }}"
+                            class="splide"
+                            data-splide='{
+                                "type": "slide",
+                                "rewind": {{ section.settings.carousel_rewind }},
+                                "perPage": {{ section.settings.breakpoint_xxl }},
+                                "easing": "{{ section.settings.carousel_easing }}",
+                                "speed": {{ section.settings.carousel_speed }},
+                                "arrows": {{ section.settings.carousel_arrows }},
+                                "pagination": {{ section.settings.carousel_pagination }},
+                                "autoplay": {{ section.settings.carousel_autoplay }},
+                                "interval": {{ section.settings.carousel_interval | times: 1000 }},
+                                "keyboar": "focused",
+                                "breakpoints": {
+                                    "576": {
+                                        "perPage": {{ section.settings.breakpoint_xm }}
+                                    },
+                                    "768": {
+                                        "perPage": {{ section.settings.breakpoint_sm }}
+                                    },
+                                    "992": {
+                                        "perPage": {{ section.settings.breakpoint_md }}
+                                    },
+                                    "1200": {
+                                        "perPage": {{ section.settings.breakpoint_lg }}
+                                    },
+                                    "1400": {
+                                        "perPage": {{ section.settings.breakpoint_xl }}
+                                    }
+                                },
+                                "i18n": {
+                                    "prev":	"{{ 'general.splide.prev' | t }}",
+                                    "next":	"{{ 'general.splide.next' | t }}",
+                                    "first": "{{ 'general.splide.first' | t }}",
+                                    "last":	"{{ 'general.splide.last' | t }}",
+                                    "slideX": "{{ 'general.splide.slideX' | t }} %s",
+                                    "pageX": "{{ 'general.splide.pageX' | t }} %s",
+                                    "play":	"{{ 'general.splide.play' | t }}",
+                                    "pause": "{{ 'general.splide.pause' | t }}"
+                                }
+                            }'>
+
+
+                            {% if section.settings.no_show_rating_name %}
+                                <style>
+                                    .trw-text{
+                                        display: none !important;
+                                    }
+                                </style>
+                            {% endif %}
+
+                            <div class="splide__track mb-2">
+                                <ul class="product-list animated-list splide__list list-unstyled my-n4 mx-n2">
+
+                                    {% for product in collections[block.settings.collection].products %}
+                                        {% render 'product-list-item' with product as product, index: forloop.index %}
+                                    {% else %}
+
+                                        <!-- Products placeholder -->
+                                        {% for i in (1..section.settings.limit) %}
+                                            <li class="splide__slide product px-2 py-2 text-center">
+                                                <a href="#" class="product-link d-block text-decoration-none pb-2">
+                                                    <div class="position-relative {% if section.settings.img_thumbnail %}img-thumbnail{% else %}rounded{% endif %} mb-3">
+                                                        {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+                                                        {{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg product-image bg-light img-fluid' }}
+                                                    </div>
+                                                    <h3 class="product-title h6 mb-1">
+                                                        {{ 'general.onboarding.product_title' | t }}
+                                                    </h3>
+                                                    <p class="product-price-container">
+                                                        <span class="product-price">{{ 4000 | money }}</span>
+                                                    </p>
+                                                </a>
+                                            </li>
+                                        {% endfor %}
+                                    {% endfor %}
+                                </ul>
+                            </div>
+
+                        </div>
+                    {% endpaginate %}
+
+                </div>
+            {% endfor %}
+          </div>
+
+    </div>
+</section>
+
+
+{% schema %}
+{
+    "name": {
+     "en": "Featured Collection",
+     "pt-BR": "Coleção em destaque"
+    },
+    "settings": [
+        {
+            "type": "header",
+            "content": {
+             "en": "General Settings",
+             "pt-BR": "Configurações Gerais"
+            }
+        },
+        {
+            "type": "text",
+            "id": "title",
+            "label": {
+             "en": "Title",
+             "pt-BR": "Título"
+            },
+            "default": {
+             "en": "Featured Collection",
+             "pt-BR": "Coleção em destaque"
+            }
+        },
+        {
+            "type": "richtext",
+            "id": "description",
+            "label": {
+             "en": "Description",
+             "pt-BR": "Descrição"
+            },
+            "default": {
+             "en": "<p>Write something attractive for this section.</p>",
+             "pt-BR": "<p>Escreva algo atraente para esta seção.</p>"
+            }
+        },
+        {
+            "type": "checkbox",
+            "id": "bg_light",
+            "label": {
+             "en": "Light background",
+             "pt-BR": "Fundo claro"
+            },
+            "default": false
+        },
+        {
+            "type": "select",
+            "id": "title_alignment",
+            "label": {
+             "en": "Title alignment",
+             "pt-BR": "Alinhamento do título"
+            },
+            "options": [
+                { "value": "text-left", "label": {"en": "Left","pt-BR": "Esquerda"} },
+                { "value": "text-center", "label": {"en": "Center","pt-BR": "Centro"} },
+                { "value": "text-right", "label": {"en": "Right","pt-BR": "Direita"} }
+            ],
+            "default": "text-center"
+        },
+        {
+            "type": "select",
+            "id": "title_size",
+            "label": {
+             "en": "Title Size",
+             "pt-BR": "Tamanho do Título"
+            },
+            "default": "h2",
+            "options": [
+                {  "value": "h1", "label": "H1" },
+                {  "value": "h2", "label": "H2" },
+                {  "value": "h3", "label": "H3" },
+                {  "value": "h4", "label": "H4" },
+                {  "value": "h5", "label": "H5" },
+                {  "value": "h6", "label": "H6" }
+            ]
+        },
+        {
+            "type": "select",
+            "id": "tabs_alignment",
+            "label": {
+             "en": "Guide Alignment",
+             "pt-BR": "Alinhamento das guias"
+            },
+            "options": [
+                { "value": "justify-content-left", "label": {"en": "Left","pt-BR": "Esquerda"} },
+                { "value": "justify-content-center", "label": {"en": "Center","pt-BR": "Centro"} },
+                { "value": "justify-content-end", "label": {"en": "Right","pt-BR": "Direita"} }
+            ],
+            "default": "justify-content-center"
+        },
+        {
+            "type": "checkbox",
+            "id": "container",
+            "label": {
+             "en": "Container",
+             "pt-BR": "Container"
+            },
+            "default": true
+        },
+        {
+            "type": "text",
+            "id": "limit",
+            "label": {
+             "en": "Product count",
+             "pt-BR": "Contagem de produtos"
+            },
+            "default": "15"
+        },
+        {
+            "type": "header",
+            "content": {
+             "en": "Carousel settings",
+             "pt-BR": "Configurações de carrossel"
+            }
+        },
+        {
+            "type": "checkbox",
+            "id": "carousel_arrows",
+            "label": {
+             "en": "Show arrows",
+             "pt-BR": "Mostrar flechas"
+            },
+            "info":  {
+             "en": "Previous / Next Icons",
+             "pt-BR": "Ícones anterior / seguinte"
+            },
+            "default": false
+        },
+        {
+            "type": "checkbox",
+            "id": "carousel_pagination",
+            "label": {
+             "en": "Show pagination",
+             "pt-BR": "Mostrar paginação"
+            },
+            "info": {
+             "en": "Small dots at the bottom",
+             "pt-BR": "Pequenos pontos na parte inferior"
+            },
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "carousel_rewind",
+            "label": {
+             "en": "Carousel rewind",
+             "pt-BR": "Retroceder"
+            },
+            "info": {
+             "en": "Move to first slide when done",
+             "pt-BR": "Mova para o primeiro slide quando terminar"
+            },
+            "default": true
+        },
+        {
+            "type": "header",
+            "content": {
+             "en": "Carousel Autoplay",
+             "pt-BR": "Autoplay do carrossel"
+            }
+        },
+        {
+            "type": "checkbox",
+            "id": "carousel_autoplay",
+            "label": {
+             "en": "Autoplay",
+             "pt-BR": "Autoplay"
+            },
+            "default": false
+        },
+        {
+            "type": "range",
+            "id": "carousel_interval",
+            "label": {
+             "en": "Carousel interval",
+             "pt-BR": "Tempo do Autoplay"
+            },
+            "default": 6,
+            "min": 0,
+            "max": 20,
+            "step": 1,
+            "unit": "sec"
+        },
+        {
+            "type": "header",
+            "content": {
+             "en": "Carousel transition",
+             "pt-BR": "Transição Carrossel"
+            }
+        },
+        {
+            "type": "text",
+            "id": "carousel_easing",
+            "label": {
+             "en": "Transition effect",
+             "pt-BR": "Efeito de transição"
+            },
+            "info": {
+             "en": "[Learn more](https://cubic-bezier.com/#.42,.65,.27,.99)",
+             "pt-BR": "[Saber mais](https://cubic-bezier.com/#.42,.65,.27,.99)"
+            },
+            "default": "cubic-bezier(.42,.65,.27,.99)"
+        },
+        {
+            "type": "text",
+            "id": "carousel_speed",
+            "label": {
+             "en": "Transition speed",
+             "pt-BR": "Velocidade de transição"
+            },
+            "default": "400"
+        },
+        {
+            "type": "header",
+            "content": {
+             "en": "Product settings",
+             "pt-BR": "Configurações do produto"
+            }
+        },
+        {
+            "type": "text",
+            "id": "img_width",
+            "label": {
+               "en": "Image width (px)",
+               "pt-BR": "Largura da imagem (px)"
+             },
+            "default": "480"
+        },
+        {
+            "type": "text",
+            "id": "img_height",
+            "label": {
+               "en": "Image height (px)",
+               "pt-BR": "Altura da imagem (px)"
+             },
+            "default": "480"
+        },
+        {
+            "type": "checkbox",
+            "id": "img_thumbnail",
+            "label": {
+               "en": "Image border",
+               "pt-BR": "Borda da imagem"
+             },
+            "default": true
+        },
+        {
+            "type": "select",
+            "id": "product_title_heading_size",
+            "label": {
+             "en": "Title size",
+             "pt-BR": "Tamanho do título"
+            },
+            "default": "h6",
+            "options": [
+                { "value": "h1", "label": "H1" },
+                { "value": "h2", "label": "H2" },
+                { "value": "h3", "label": "H3" },
+                { "value": "h4", "label": "H4" },
+                { "value": "h5", "label": "H5" },
+                { "value": "h6", "label": "H6" }
+            ]
+        },
+        {
+            "type": "checkbox",
+            "id": "show_rating",
+            "label": {
+             "en": "Show rating",
+             "pt-BR": "Mostrar avaliação"
+            },
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "no_show_rating_name",
+            "label": {
+             "en": "Disable 'Ratings' name in Ryviu app",
+             "pt-BR": "Desativar nome 'Avaliações' no app Ryviu"
+            },
+            "info": {
+             "en": "Warning: This option may cause an error on small screens when unchecked!",
+             "pt-BR": "Alerta: Essa opção pode causar erro em telas pequenas quando desmarcada!"
+            },
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "show_price",
+            "label": {
+             "en": "Show price",
+             "pt-BR": "Mostrar preço"
+            },
+            "default": true
+        },
+        {
+            "type": "header",
+            "content": {
+             "en": "Breakpoints",
+             "pt-BR": "Breakpoints"
+            },
+            "info": {
+             "en": "Adjust products per slide based on different screen resolutions",
+             "pt-BR": "Ajuste por slide com base em soluções diferentes de produtos de tela"
+            }
+        },
+        {
+            "type": "range",
+            "id": "breakpoint_xm",
+            "label": {
+             "en": "Products per slide /xm",
+             "pt-BR": "Produtos por slide /xm"
+            },
+            "info": {
+             "en": "Screen width: <=576px",
+             "pt-BR": "Largura da tela: <=576px"
+            },
+            "min": 1,
+            "max": 3,
+            "step": 1,
+            "default": 2
+        },
+        {
+            "type": "range",
+            "id": "breakpoint_sm",
+            "label": {
+             "en": "Products per slide /sm",
+             "pt-BR": "Produtos por slide /sm"
+            },
+            "info": {
+             "en": "Screen width: <=768px",
+             "pt-BR": "Largura da tela: <=768px"
+            },
+            "min": 1,
+            "max": 3,
+            "step": 1,
+            "default": 2
+        },
+        {
+            "type": "range",
+            "id": "breakpoint_md",
+            "label": {
+             "en": "Products per slide /md",
+             "pt-BR": "Produtos por slide /md"
+            },
+            "info": {
+             "en": "Screen width: <=992px",
+             "pt-BR": "Largura da tela: <=992px"
+            },
+            "min": 1,
+            "max": 4,
+            "step": 1,
+            "default": 3
+        },
+        {
+            "type": "range",
+            "id": "breakpoint_lg",
+            "label": {
+             "en": "Products per slide /lg",
+             "pt-BR": "Produtos por slide /lg"
+            },
+            "info": {
+             "en": "Screen width: <=1200px",
+             "pt-BR": "Largura da tela: <=1200px"
+            },
+            "min": 1,
+            "max": 6,
+            "step": 1,
+            "default": 3
+        },
+        {
+            "type": "range",
+            "id": "breakpoint_xl",
+            "label": {
+             "en": "Products per slide /xl",
+             "pt-BR": "Produtos por slide /xl"
+            },
+            "info": {
+             "en": "Screen width: <=1400px",
+             "pt-BR": "Largura da tela: <=1400px"
+            },
+            "min": 1,
+            "max": 6,
+            "step": 1,
+            "default": 4
+        },
+        {
+            "type": "range",
+            "id": "breakpoint_xxl",
+            "label": {
+             "en": "Products per slide /xxl",
+             "pt-BR": "Produtos por slide /xxl"
+            },
+            "info": {
+             "en": "Screen width: >1400px",
+             "pt-BR": "Largura da tela: >1400px"
+            },
+            "min": 1,
+            "max": 8,
+            "step": 1,
+            "default": 5
+        },
+        {
+            "type": "header",
+            "content": {
+             "en": "Spacing",
+             "pt-BR": "Espaçamento"
+            },
+            "info": {
+             "en": "Based on Bootstrap Spacing Utility Classes [Learn More](https://getbootstrap.com/docs/4.5/utilities/spacing/)",
+             "pt-BR": "Com base nas classes do utilitário de espaçamento Bootstrap [Saiba mais](https://getbootstrap.com/docs/4.5/utilities/spacing/)"
+            }
+        },
+        {
+            "type": "range",
+            "id": "padding_top",
+            "label": {
+             "en": "Padding top",
+             "pt-BR": "Espaçamento superior"
+            },
+            "min": 0,
+            "max": 15,
+            "step": 1,
+            "default": 0
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom",
+            "label": {
+             "en": "Padding bottom",
+             "pt-BR": "Espaçamento inferior"
+            },
+            "min": 0,
+            "max": 15,
+            "step": 1,
+            "default": 0
+        },
+        {
+            "type": "range",
+            "id": "margin_top",
+            "label": {
+             "en": "Margin top",
+             "pt-BR": "Margem superior"
+            },
+            "min": 0,
+            "max": 15,
+            "step": 1,
+            "default": 0
+        },
+        {
+            "type": "range",
+            "id": "margin_bottom",
+            "label": {
+             "en": "Margin bottom",
+             "pt-BR": "Margem inferior"
+            },
+            "min": 0,
+            "max": 15,
+            "step": 1,
+            "default": 9
+        }
+    ],
+    "blocks": [
+        {
+            "type": "collection",
+            "name": {
+             "en": "Collection",
+             "pt-BR": "Coleção"
+            },
+            "settings": [
+                {
+                    "type": "paragraph",
+                    "content": {
+                     "en": "Note: Publish more than 1 collection block to show tabs",
+                     "pt-BR": "Nota: Publique mais de 1 bloco de coleção para mostrar as guias"
+                    }
+                },
+                {
+                    "type": "collection",
+                    "id": "collection",
+                    "label": {
+                     "en": "Collection",
+                     "pt-BR": "Coleção"
+                    }
+                },
+                {
+                    "type": "text",
+                    "id": "tab_title",
+                    "label": {
+                     "en": "Tab title",
+                     "pt-BR": "Título da aba"
+                    }
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": {
+             "en": "Featured Collection",
+             "pt-BR": "Coleção em destaque"
+            },
+            "category": "products"
+        }
+    ]
+}
+{% endschema %}

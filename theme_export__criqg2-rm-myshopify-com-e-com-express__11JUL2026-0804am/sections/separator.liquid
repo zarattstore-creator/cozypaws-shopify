@@ -1,0 +1,70 @@
+<div class="{% if section.settings.container %} container {% else %} container-fluid {% endif %}">
+    <hr class="mt-{{ section.settings.margin_top }} mb-{{ section.settings.margin_bottom }}">
+</div>
+  
+{% schema %}
+{
+    "name": {
+     "en": "Separator",
+     "pt-BR": "Separador"
+    },
+    "settings": [
+        {
+            "type": "checkbox",
+            "id": "container",
+            "label": {
+             "en": "Wrap container",
+             "pt-BR": "Enrolar container"
+            },
+            "default": true
+        },
+        {
+            "type": "header",
+            "content": {
+             "en": "Spacing",
+             "pt-BR": "Espaçamento"
+            },
+            "info": {
+             "en": "Based on Bootstrap Spacing Utility Classes [Learn More](https://getbootstrap.com/docs/4.5/utilities/spacing/)",
+             "pt-BR": "Com base nas classes do utilitário de espaçamento Bootstrap [Saiba mais](https://getbootstrap.com/docs/4.5/utilities/spacing/)"
+            }
+        },
+        {
+            "type": "range",
+            "id": "margin_top",
+            "label": {
+             "en": "Margin top",
+             "pt-BR": "Margem superior"
+            },
+            "min": 0,
+            "max": 15,
+            "step": 1,
+            "default": 9
+        },
+        {
+            "type": "range",
+            "id": "margin_bottom",
+            "label": {
+             "en": "Margin bottom",
+             "pt-BR": "Margem inferior"
+            },
+            "min": 0,
+            "max": 15,
+            "step": 1,
+            "default": 9
+        }
+    ],
+    "presets": [
+      {
+        "name": {
+         "en": "Separator",
+         "pt-BR": "Separador"
+        },
+          "category": {
+             "en": "image",
+             "pt-BR": "imagem"
+            }
+      }
+    ]
+  }
+  {% endschema %}
