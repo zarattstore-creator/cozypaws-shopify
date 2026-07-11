@@ -1,4 +1,293 @@
-/*
-    Add here your own SCSS/CSS code to override theme styles
-*/
+/* ========================================
+   CozyPaws — Custom Styles
+   Palette: Pet Essentials Brand
+   ======================================== */
 
+/* === CSS Variables === */
+:root {
+  --cozy-green: #247F72;
+  --cozy-green-dark: #185C54;
+  --cozy-orange: #F28A24;
+  --cozy-bg: #FAF8F4;
+  --cozy-white: #FFFFFF;
+  --cozy-text: #24322F;
+  --cozy-text-secondary: #66736F;
+  --cozy-border: #E5E8E5;
+  --cozy-radius: 8px;
+  --cozy-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  --cozy-shadow-hover: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+/* === Override Bootstrap theme colors === */
+.bg-primary { background-color: var(--cozy-green) !important; }
+.bg-secondary { background-color: var(--cozy-green-dark) !important; }
+.bg-custom-gradient { background: linear-gradient(135deg, var(--cozy-green) 0%, var(--cozy-green-dark) 100%) !important; }
+.btn-primary {
+  background-color: var(--cozy-green) !important;
+  border-color: var(--cozy-green) !important;
+  color: var(--cozy-white) !important;
+}
+.btn-primary:hover {
+  background-color: var(--cozy-green-dark) !important;
+  border-color: var(--cozy-green-dark) !important;
+}
+.btn-outline-primary {
+  color: var(--cozy-green) !important;
+  border-color: var(--cozy-green) !important;
+}
+.btn-outline-primary:hover {
+  background-color: var(--cozy-green) !important;
+  color: var(--cozy-white) !important;
+}
+.text-primary { color: var(--cozy-green) !important; }
+.text-muted { color: var(--cozy-text-secondary) !important; }
+
+/* === General === */
+body {
+  color: var(--cozy-text);
+  background-color: var(--cozy-white);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+a { color: var(--cozy-green); }
+a:hover { color: var(--cozy-green-dark); }
+
+/* === Buttons === */
+.btn {
+  border-radius: var(--cozy-radius);
+  font-weight: 600;
+  padding: 0.5rem 1.5rem;
+  transition: all 0.2s ease;
+}
+.btn-lg {
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+}
+
+/* === Cards === */
+.card, .product-card {
+  border: 1px solid var(--cozy-border);
+  border-radius: var(--cozy-radius);
+  overflow: hidden;
+  transition: box-shadow 0.2s ease;
+  box-shadow: var(--cozy-shadow);
+}
+.card:hover, .product-card:hover {
+  box-shadow: var(--cozy-shadow-hover);
+}
+
+/* === Topbar === */
+#topbar {
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+}
+
+/* === Navbar === */
+#navbar .navbar-brand img {
+  max-height: 50px;
+  width: auto;
+}
+#navbar .nav-link {
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.5rem 1rem !important;
+  transition: color 0.2s ease;
+}
+#navbar .nav-link:hover {
+  color: var(--cozy-green) !important;
+}
+
+/* === Hero Section === */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+}
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.35);
+  z-index: 1;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 4rem 0;
+}
+.hero-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+.hero-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  color: rgba(255,255,255,0.9);
+  max-width: 600px;
+}
+.hero-actions .btn {
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+@media (max-width: 767px) {
+  .hero-heading { font-size: 1.75rem; }
+  .hero-text { font-size: 1rem; }
+  .hero-content { padding: 2.5rem 0; }
+}
+
+/* === Benefit Bar === */
+.benefit-bar {
+  border-top: 1px solid var(--cozy-border);
+  border-bottom: 1px solid var(--cozy-border);
+}
+.benefit-item {
+  text-align: center;
+  padding: 1.5rem 1rem;
+}
+.benefit-item .benefit-icon {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+  color: var(--cozy-green);
+}
+.benefit-item h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+.benefit-item p {
+  font-size: 0.85rem;
+  color: var(--cozy-text-secondary);
+  margin: 0;
+}
+
+/* === Brand Section === */
+.brand-section {
+  background-color: var(--cozy-bg);
+  padding: 4rem 0;
+}
+.brand-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.brand-section p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--cozy-text-secondary);
+  max-width: 650px;
+  margin: 0 auto 1.5rem;
+}
+
+/* === Newsletter === */
+.newsletter-section {
+  background-color: var(--cozy-green);
+  padding: 3rem 0;
+  color: #fff;
+}
+.newsletter-section h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.newsletter-section p {
+  opacity: 0.9;
+  margin-bottom: 1.5rem;
+}
+.newsletter-section .form-control {
+  border-radius: var(--cozy-radius) 0 0 var(--cozy-radius);
+  border: none;
+  padding: 0.75rem 1rem;
+}
+.newsletter-section .btn {
+  border-radius: 0 var(--cozy-radius) var(--cozy-radius) 0;
+  background-color: var(--cozy-orange);
+  border-color: var(--cozy-orange);
+  color: #fff;
+  font-weight: 600;
+}
+.newsletter-section .btn:hover {
+  background-color: #e07b1a;
+  border-color: #e07b1a;
+}
+
+/* === Footer === */
+#footer {
+  background-color: var(--cozy-bg);
+  border-top: 1px solid var(--cozy-border);
+}
+#footer h5 {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  color: var(--cozy-text);
+}
+#footer a {
+  color: var(--cozy-text-secondary);
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+#footer a:hover {
+  color: var(--cozy-green);
+}
+#footer .footer-bottom {
+  border-top: 1px solid var(--cozy-border);
+  padding-top: 1rem;
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  color: var(--cozy-text-secondary);
+}
+
+/* === Product Card === */
+.product-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+.product-card .card-body {
+  padding: 1rem;
+}
+.product-card .card-title {
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.product-card .price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--cozy-green-dark);
+}
+.product-card .compare-at-price {
+  font-size: 0.9rem;
+  color: var(--cozy-text-secondary);
+  text-decoration: line-through;
+  margin-left: 0.5rem;
+}
+
+/* === Carousel Overlay === */
+.carousel-item { position: relative; }
+.carousel-item img { position: relative; z-index: 0; }
+.carousel-overlay { z-index: 1; pointer-events: none; }
+.carousel-caption {
+  z-index: 2;
+  padding: 1rem;
+}
+
+/* === Responsive === */
+@media (max-width: 991px) {
+  .brand-section { padding: 2.5rem 0; }
+  .brand-section h2 { font-size: 1.5rem; }
+}
+@media (max-width: 575px) {
+  .benefit-item { padding: 1rem 0.5rem; }
+  .hero-heading { font-size: 1.5rem; }
+}
