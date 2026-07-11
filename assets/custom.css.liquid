@@ -241,6 +241,34 @@ a:hover { color: var(--cozy-green-dark); }
   color: var(--cozy-text-secondary);
 }
 
+/* === Benefit Bar (infobar section) === */
+#infobar {
+  border-top: 1px solid var(--cozy-border);
+  border-bottom: 1px solid var(--cozy-border);
+}
+#infobar .infobar-item {
+  text-align: center;
+  padding: 1.5rem 1rem !important;
+  justify-content: center !important;
+}
+#infobar .infobar-item svg {
+  color: var(--cozy-green) !important;
+  width: 2rem;
+  height: 2rem;
+}
+#infobar .infobar-item h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+#infobar .infobar-item .rte {
+  font-size: 0.85rem;
+  color: var(--cozy-text-secondary);
+}
+@media (max-width: 767px) {
+  #infobar .infobar-item { padding: 1rem 0.5rem !important; }
+}
+
 /* === Product Card === */
 .product-card img {
   width: 100%;
