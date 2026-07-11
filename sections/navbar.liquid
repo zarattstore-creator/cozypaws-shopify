@@ -180,7 +180,17 @@
 
             <!-- Menu -->
             <ul id="navbar-menu" class="navbar-nav slide-out pt-2 pt-xl-0 {{ section.settings.menu_position }}">
-                {% for link in linklists[section.settings.menu].links %}
+                {% assign menu_links = linklists[section.settings.menu].links %}
+                {% if menu_links.size == 0 %}
+                    {% comment %}Fallback: no navigation menu configured{% endcomment %}
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/collections/all">Shop</a></li>
+                    {% if collections['dogs'] != blank %}<li class="nav-item"><a class="nav-link" href="/collections/dogs">Dogs</a></li>{% endif %}
+                    {% if collections['cats'] != blank %}<li class="nav-item"><a class="nav-link" href="/collections/cats">Cats</a></li>{% endif %}
+                    <li class="nav-item"><a class="nav-link" href="/collections/best-sellers">Best Sellers</a></li>
+                    {% if pages['contact'] != blank %}<li class="nav-item"><a class="nav-link" href="/pages/contact">Contact</a></li>{% endif %}
+                {% else %}
+                {% for link in menu_links %}
                     {% if link.links == blank %}
                         <li class="nav-item {% if link.active %}active{% endif %}">
                             <a
@@ -280,6 +290,7 @@
                         </li>
                     {% endif %}
                 {% endfor %}
+                {% endif %}
 
                 <!-- Mobile custom elements -->
                 <hr class="d-xl-none">

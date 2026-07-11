@@ -93,7 +93,7 @@
           "cor_box": "form-transparent",
           "container": true,
           "logo": "shopify://shop_images/2026-07-03_21.43.55.jpg",
-          "logo_height": "220",
+          "logo_height": "125",
           "menu": "main-menu",
           "menu_position": "mx-auto",
           "menu_dropdown_animation": "animate__pulse",
@@ -1110,7 +1110,6 @@
     "content_for_index": [
       "160933884071eee85d",
       "infobar",
-      "1629938086ae988321",
       "1609370220a8149c9d",
       "1658933565428334b7",
       "1610178560d1807d19"
