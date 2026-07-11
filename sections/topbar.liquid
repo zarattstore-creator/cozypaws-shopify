@@ -1,52 +1,15 @@
-{% assign show_announcement = false %}
-
-{% if section.settings.announcement_homepage == false or template.name == 'index' %}
-    {% assign show_announcement = true %}
-{% endif %}
-
-{% if section.settings.topbar_display and show_announcement %}
-    {% if section.settings.topbar_dis%}
-        <div style="color:{{ section.settings.toplink}}!important ;background: var(--color-light);"  id="topbar" class="py-1">
+{% if section.settings.topbar_display %}
+    {% if template.name == 'index' or section.settings.show_on_all_pages %}
+        <div id="topbar" class="py-2" style="background-color: {{ section.settings.bg_color }}; color: {{ section.settings.text_color }};">
             <div class="{% if section.settings.container %}container{% else %}container-fluid{% endif %}">
-                <div class="row justify-content-between align-items-center">
-
-
-                    <!-- Announcement -->
-                    {% if show_announcement %}
-                        <div
-                            id="announcement"
-                            class="col-12 rte text-center small w-100 {% if section.settings.announcement_animate and template.name == 'index' %}animate__animated {{ section.settings.announcement_animate_name }}{% endif %}">
-                            {% capture coundown %}
-                                <span style=" font-size: 16px; background: var(--color-dark); border-radius: 10px; padding-left: 6px; padding-right: 6px; font-weight: bold" id="timecont"></span>
-                                <script>
-                                    // Update the count down every 1 second
-                                    const timecont = setInterval(function () {
-                                        document.getElementById("timecont").innerHTML = moment.utc(moment().endOf('day').diff()).format('HH:mm:ss');
-                                    }, 1000);
-                                </script>
-                            {% endcapture %}
-                            {{ section.settings.announcement_content | replace: '[timecont]', coundown }}
-                        </div>
-
-                    {% endif %}
+                <div class="row justify-content-center">
+                    <div class="col-12 text-center small">
+                        {{ section.settings.announcement_text }}
+                    </div>
                 </div>
             </div>
         </div>
     {% endif %}
-
-    <!-- Ativar imagem -->
-     {% if section.settings.anuncio_img and section.settings.imgdesk and section.settings.imgmb %}
-        <section class="d-flex justify-content-center" style="background: {{ section.settings.img_fundo}};">
-            <!-- Imagem desktop -->
-             <a  class="d-none d-sm-none d-md-block d-lg-block" {% if section.settings.url_i %} href="{{ section.settings.url_i}} {% endif %}">
-                    <img src="{{ section.settings.imgdesk | img_url: '1110x44' }}" class="img-responsive" >
-             </a>
-            <!-- Imagem mobile -->
-             <a  class="d-md-none" {% if section.settings.url_i %} href="{{ section.settings.url_i }}" {% endif %}>
-                <img src="{{ section.settings.imgmb| img_url: '760x44' }}" class="img-responsive">
-            </a>
-        </section>
-     {% endif %}
 {% endif %}
 {% schema %}
 {
@@ -57,14 +20,26 @@
       "type": "checkbox",
       "id": "topbar_display",
       "label": "Show top bar",
-      "info": "Note: If you disable this setting, it will completely hide the top bar, regardless of any other settings you have below.",
       "default": true
     },
     {
       "type": "checkbox",
-      "id": "announcement_homepage",
-      "label": "Show only on homepage",
-      "default": false
+      "id": "show_on_all_pages",
+      "label": "Show on all pages",
+      "info": "If disabled, shows only on homepage.",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#185C54"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#FFFFFF"
     },
     {
       "type": "checkbox",
@@ -73,131 +48,14 @@
       "default": true
     },
     {
-      "type": "color",
-      "id": "topbg",
-      "label": "Background color",
-      "default": "#000"
-    },
-    {
-      "type": "color",
-      "id": "toplink",
-      "label": "Text color",
-      "default": "#fff"
-    },
-    {
       "type": "header",
       "content": "Announcement"
     },
     {
-      "type": "checkbox",
-      "id": "topbar_dis",
-      "label": "Show announcement",
-      "default": true
-    },
-    {
-      "type": "textarea",
-      "id": "announcement_content",
-      "label": "Texto",
-      "info": "To add a countdown (can be set below), add [timecont] anywhere in your text.",
-      "default": "Use <strong>VIP2021</strong> to get a 20% discount. The offer expires in: [timecont]"
-    },
-    {
-      "type": "checkbox",
-      "id": "announcement_animate",
-      "label": "Announcement animate",
-      "default": true
-    },
-    {
-      "type": "select",
-      "id": "announcement_animate_name",
-      "label": "Animation style",
-      "info": "[Learn more](https://animate.style/)",
-      "default": "animate__flash",
-      "options": [
-        {
-          "value": "animate__bounce",
-          "label": "Bounce"
-        },
-        {
-          "value": "animate__flash",
-          "label": "Flash"
-        },
-        {
-          "value": "animate__pulse",
-          "label": "Pulse"
-        },
-        {
-          "value": "animate__rubberBand",
-          "label": "rubberBand"
-        },
-        {
-          "value": "animate__shakeX",
-          "label": "ShakeX"
-        },
-        {
-          "value": "animate__shakeY",
-          "label": "ShakeY"
-        },
-        {
-          "value": "animate__headShake",
-          "label": "headShake"
-        },
-        {
-          "value": "animate__swing",
-          "label": "Swing"
-        },
-        {
-          "value": "animate__tada",
-          "label": "Tada"
-        },
-        {
-          "value": "animate__wobble",
-          "label": "Wobble"
-        },
-        {
-          "value": "animate__jello",
-          "label": "Jello"
-        },
-        {
-          "value": "animate__heartBeat",
-          "label": "heartBeat"
-        }
-      ]
-    },
-    {
-      "type": "header",
-      "content": "Image ad"
-    },
-    {
-      "type": "checkbox",
-      "id": "anuncio_img",
-      "label": "Image ad",
-      "default": true,
-      "info": "Select the two images to show."
-    },
-    {
-      "type": "color",
-      "id": "img_fundo",
-      "label": "Background color",
-      "default": "#000"
-    },
-    {
-      "type": "image_picker",
-      "id": "imgdesk",
-      "info": "Suggestion (1110x44).",
-      "label": "Desktop Image"
-    },
-    {
-      "type": "image_picker",
-      "id": "imgmb",
-      "info": "Suggestion (460x44).",
-      "label": "Imagem Mobile"
-    },
-    {
-      "type": "url",
-      "id": "url_i",
-      "info": "Leave blank to disable",
-      "label": "Ad link"
+      "type": "text",
+      "id": "announcement_text",
+      "label": "Announcement text",
+      "default": "Free U.S. shipping on qualifying orders"
     }
   ]
 }
