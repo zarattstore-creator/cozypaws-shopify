@@ -398,358 +398,362 @@
 
 {% schema %}
 {
-    "name": {
-             "en": "Navigation bar",
-             "pt-BR": "Barra de navegação"
-            },
-    "class": "sticky-top",
-    "settings": [
+  "name": "Navigation bar",
+  "class": "sticky-top",
+  "settings": [
+    {
+      "type": "header",
+      "content": "General settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "menu_flut",
+      "label": "Activate floating menu",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "bg",
+      "label": "Menu background",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "menulink",
+      "label": "Menu Link",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "bglink",
+      "label": "Menu Hover",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "peslink",
+      "label": "Menu Icons",
+      "default": "#000"
+    },
+    {
+      "type": "select",
+      "id": "shadow",
+      "label": "Shadow",
+      "default": "shadow-sm",
+      "options": [
         {
-            "type": "header",
-            "content": {
-             "en": "General settings",
-             "pt-BR": "Configurações gerais"
-            }
+          "value": "shadow-none",
+          "label": "No Shadow"
         },
         {
-            "type": "checkbox",
-            "id": "menu_flut",
-            "label": {
-             "en": "Activate floating menu",
-             "pt-BR": "Ativar menu flutuante"
-            },
-            "default": true
+          "value": "shadow-sm",
+          "label": "Shadow sm"
         },
         {
-            "type": "color",
-            "id": "bg",
-            "label": {
-             "en": "Menu background",
-             "pt-BR": "Fundo do menu"
-            },
-            "default": "#fff"
-         },
-         {
-            "type": "color",
-            "id": "menulink",
-            "label": {
-             "en": "Menu Link",
-             "pt-BR": "Link do Menu"
-            },
-            "default": "#000"
-         },
-         {
-            "type": "color",
-            "id": "bglink",
-            "label": {
-             "en": "Menu Hover",
-             "pt-BR": "Hover do Menu"
-            },
-            "default": "#000"
-         },
-         {
-            "type": "color",
-            "id": "peslink",
-            "label": {
-             "en": "Menu Icons",
-             "pt-BR": "Ícones Menu"
-            },
-            "default": "#000"
-         },
-        {
-            "type": "select",
-            "id": "shadow",
-            "label": {
-             "en": "Shadow",
-             "pt-BR": "Sombra"
-            },
-            "default": "shadow-sm",
-            "options": [
-                { "value": "shadow-none", "label": {"en": "No Shadow", "pt-BR": "Sem sombra"} },
-                { "value": "shadow-sm", "label": {"en": "Shadow sm","pt-BR": "Sombra pequena"} },
-                { "value": "shadow", "label": {"en": "Shadow","pt-BR": "Sombra"} },
-                { "value": "shadow-lg", "label": {"en": "Shadow lg", "pt-BR": "Sombra grande"} }
-            ]
+          "value": "shadow",
+          "label": "Shadow"
         },
         {
-            "type": "select",
-            "id": "cor_box",
-            "label": {
-             "en": "Bar type",
-             "pt-BR": "Tipo da barra"
-            },
-            "default": "form-transparent",
-            "options": [
-                {  "value": "form-transparent", "label": {"en": "Transparent", "pt-BR": "Transparente"} },
-                {  "value": "form-opac", "label": {"en": "Opaque", "pt-BR": "Opaco"} },
-                {  "value": "form-branco", "label": {"en": "White", "pt-BR": "Branco"} }
-
-            ]
-        },
-        {
-            "type": "checkbox",
-            "id": "container",
-            "label": {
-             "en": "Wrap container",
-             "pt-BR": "Enrolar container"
-            },
-            "default": true
-        },
-        {
-            "type": "header",
-            "content": {
-             "en": "Logo",
-             "pt-BR": "Logo"
-            }
-        },
-        {
-            "type": "image_picker",
-            "id": "logo",
-            "label": {
-             "en": "Logo",
-             "pt-BR": "Logo"
-            }
-        },
-        {
-            "type": "text",
-            "id": "logo_height",
-            "label": {
-             "en": "Logo height (px)",
-             "pt-BR": "Altura do logotipo (px)"
-            },
-            "default": "120"
-        },
-        {
-            "type": "header",
-            "content": {
-             "en": "Menu",
-             "pt-BR": "Menu"
-            }
-        },
-        {
-            "type": "link_list",
-            "id": "menu",
-            "label": {
-             "en": "Menu",
-             "pt-BR": "Menu"
-            },
-            "default": "main-menu"
-        },
-        {
-            "type": "select",
-            "id": "menu_position",
-            "label": {
-             "en": "Menu position",
-             "pt-BR": "Posição do menu"
-            },
-            "default": "mx-auto",
-            "options": [
-                { "value": "mr-auto", "label": {"en": "Left", "pt-BR": "Esquerda"} },
-                { "value": "mx-auto", "label": {"en": "Center", "pt-BR": "Centralizado"} },
-                { "value": "ml-auto", "label": {"en": "Right", "pt-BR": "Direita"} }
-            ]
-        },
-        {
-            "type": "text",
-            "id":  "menu_dropdown_animation",
-            "label": {
-             "en": "Dropdown animation effect",
-             "pt-BR": "Efeito de animação dropdown"
-            },
-            "default": "animate__jackInTheBox",
-            "info": {
-             "en": "Copy the animation effect from the Animate.css library [Learn More](https://animate.style). Note: Leave blank to disable.",
-             "pt-BR": "Copie o efeito de animação da biblioteca Animate.css [Saiba mais](https://animate.style). Nota: Deixe em branco para desativar."
-            }
-        },
-        {
-            "type": "select",
-            "id":  "menu_dropdown_animation_speed",
-            "label": {
-              "en": "Dropdown animation speed",
-              "pt-BR": "Velocidade do dropdown"
-            },
-            "default": "animate__fast",
-            "options": [
-                { "value": "animate__slower", "label": {"en": "Slower","pt-BR": "Mais lento"} },
-                { "value": "animate__slow", "label": {"en": "Slow","pt-BR": "Lento"} },
-                { "value": "animate__normal", "label": {"en": "Normal","pt-BR": "Normal"} },
-                { "value": "animate__fast", "label": {"en": "Fast","pt-BR": "Rápido"} },
-                { "value": "animate__faster",  "label": {"en": "Faster","pt-BR": "Mais rápido"} }
-            ]
-        },
-        {
-            "type": "header",
-            "content": {
-             "en": "Store contact",
-             "pt-BR": "Contato da loja"
-            },
-            "info": {
-             "en": "This option will only be visible on mobile devices.",
-             "pt-BR": "Essa opção será visivel apenas em dispositivos moveis"
-            }
-        },
-        {
-            "type": "text",
-            "id": "fone",
-            "label": {
-             "en": "Phone number",
-             "pt-BR": "Telefone"
-            },
-            "default": {
-             "en": "(123) 456-7890",
-             "pt-BR": "(11) 9 0000-0000"
-            }
-
-        },
-        {
-            "type": "text",
-            "id": "email",
-            "label": {
-             "en": "Support Email",
-             "pt-BR": "Email de suporte"
-            },
-            "default": {
-             "en": "contact@email.com",
-             "pt-BR": "contato@email.com"
-            }
-        },
-        {
-            "type": "header",
-            "content": {
-             "en": "Wish List Icon",
-             "pt-BR": "Ícone de lista de desejos"
-            }
-        },
-        {
-            "type": "color",
-            "id": "wishlist_icon_bubble_color",
-            "label": {
-             "en": "Bubble color",
-             "pt-BR": "Cor da bolha"
-            },
-            "info": {
-             "en": "Visible only when wishlist has products.",
-             "pt-BR": "Visível apenas quando a lista de desejos tem produtos."
-            },
-            "default": "#FFFF00"
-        },
-        {
-            "type": "select",
-            "id": "wishlist_icon_animate_class",
-            "label": {
-             "en": "Animation",
-             "pt-BR": "Animação"
-            },
-            "info": {
-             "en": "[Learn more](https://animate.style/)",
-             "pt-BR": "[Saber mais](https://animate.style/)"
-            },
-            "default": "animate__heartBeat",
-            "options": [
-                { "value": "", "label": "No Animation" },
-                { "value": "animate__bounce", "label": "Bounce" },
-                { "value": "animate__flash", "label": "Flash" },
-                { "value": "animate__pulse", "label": "Pulse" },
-                { "value": "animate__rubberBand", "label": "rubberBand" },
-                { "value": "animate__shakeX", "label": "ShakeX" },
-                { "value": "animate__shakeY", "label": "ShakeY" },
-                { "value": "animate__headShake", "label": "headShake" },
-                { "value": "animate__swing", "label": "Swing" },
-                { "value": "animate__tada", "label": "Tada" },
-                { "value": "animate__wobble", "label": "Wobble" },
-                { "value": "animate__jello", "label": "Jello" },
-                { "value": "animate__heartBeat", "label": "heartBeat" }
-            ]
-        },
-        {
-            "type": "header",
-            "content": {
-             "en": "Cart icon",
-             "pt-BR": "Ícone do carrinho"
-            }
-        },
-        {
-            "type": "checkbox",
-            "id": "show_icon_cart",
-            "label": {
-             "en": "Show icon",
-             "pt-BR": "Mostrar ícone"
-            },
-            "default": true
-        },
-        {
-            "type": "select",
-            "id": "cart_icon_icon",
-            "label": {
-             "en": "Cart icon",
-             "pt-BR": "Ícone do carrinho"
-            },
-            "default": "cart",
-            "options": [
-                {
-                    "value": "cart",
-                    "label": {
-                     "en": "Cart",
-                     "pt-BR": "Carrinho"
-                    }
-                },
-                {
-                    "value": "bag",
-                    "label": {
-                     "en": "Bag",
-                     "pt-BR": "Sacola"
-                    }
-                }
-            ]
-        },
-        {
-            "type": "color",
-            "id": "cart_icon_badge_color_empty",
-            "label": {
-             "en": "Badge color (empty)",
-             "pt-BR": "Cor do emblema (vazio)"
-            },
-            "default": "#6c757d"
-        },
-        {
-            "type": "color",
-            "id": "cart_icon_badge_color_has_items",
-            "label": {
-             "en": "Badge color (has items)",
-             "pt-BR": "Cor do emblema (contém itens)"
-            },
-            "default": "#FFFF00"
-        },
-        {
-            "type": "select",
-            "id": "cart_icon_animate_class",
-            "label": {
-             "en": "Cart icon animation",
-             "pt-BR": "Animação do ícone do carrinho"
-            },
-            "info": {
-             "en": "Only visible when cart has items. [Learn More](https://animate.style/)",
-             "pt-BR": "Visível apenas quando o carrinho tem itens. [Saber mais](https://animate.style/)"
-            },
-            "default": "animate__heartBeat",
-            "options": [
-                { "value": "", "label": "No Animation" },
-                { "value": "animate__bounce", "label": "Bounce" },
-                { "value": "animate__flash", "label": "Flash" },
-                { "value": "animate__pulse", "label": "Pulse" },
-                { "value": "animate__rubberBand", "label": "rubberBand" },
-                { "value": "animate__shakeX", "label": "ShakeX" },
-                { "value": "animate__shakeY", "label": "ShakeY" },
-                { "value": "animate__headShake", "label": "headShake" },
-                { "value": "animate__swing", "label": "Swing" },
-                { "value": "animate__tada", "label": "Tada" },
-                { "value": "animate__wobble", "label": "Wobble" },
-                { "value": "animate__jello", "label": "Jello" },
-                { "value": "animate__heartBeat", "label": "heartBeat" }
-            ]
+          "value": "shadow-lg",
+          "label": "Shadow lg"
         }
-    ]
+      ]
+    },
+    {
+      "type": "select",
+      "id": "cor_box",
+      "label": "Bar type",
+      "default": "form-transparent",
+      "options": [
+        {
+          "value": "form-transparent",
+          "label": "Transparent"
+        },
+        {
+          "value": "form-opac",
+          "label": "Opaque"
+        },
+        {
+          "value": "form-branco",
+          "label": "White"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "container",
+      "label": "Wrap container",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Logo"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "text",
+      "id": "logo_height",
+      "label": "Logo height (px)",
+      "default": "120"
+    },
+    {
+      "type": "header",
+      "content": "Menu"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "default": "main-menu"
+    },
+    {
+      "type": "select",
+      "id": "menu_position",
+      "label": "Menu position",
+      "default": "mx-auto",
+      "options": [
+        {
+          "value": "mr-auto",
+          "label": "Left"
+        },
+        {
+          "value": "mx-auto",
+          "label": "Center"
+        },
+        {
+          "value": "ml-auto",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "menu_dropdown_animation",
+      "label": "Dropdown animation effect",
+      "default": "animate__jackInTheBox",
+      "info": "Copy the animation effect from the Animate.css library [Learn More](https://animate.style). Note: Leave blank to disable."
+    },
+    {
+      "type": "select",
+      "id": "menu_dropdown_animation_speed",
+      "label": "Dropdown animation speed",
+      "default": "animate__fast",
+      "options": [
+        {
+          "value": "animate__slower",
+          "label": "Slower"
+        },
+        {
+          "value": "animate__slow",
+          "label": "Slow"
+        },
+        {
+          "value": "animate__normal",
+          "label": "Normal"
+        },
+        {
+          "value": "animate__fast",
+          "label": "Fast"
+        },
+        {
+          "value": "animate__faster",
+          "label": "Faster"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Store contact",
+      "info": "This option will only be visible on mobile devices."
+    },
+    {
+      "type": "text",
+      "id": "fone",
+      "label": "Phone number",
+      "default": "(123) 456-7890"
+    },
+    {
+      "type": "text",
+      "id": "email",
+      "label": "Support Email",
+      "default": "contact@email.com"
+    },
+    {
+      "type": "header",
+      "content": "Wish List Icon"
+    },
+    {
+      "type": "color",
+      "id": "wishlist_icon_bubble_color",
+      "label": "Bubble color",
+      "info": "Visible only when wishlist has products.",
+      "default": "#FFFF00"
+    },
+    {
+      "type": "select",
+      "id": "wishlist_icon_animate_class",
+      "label": "Animation",
+      "info": "[Learn more](https://animate.style/)",
+      "default": "animate__heartBeat",
+      "options": [
+        {
+          "value": "",
+          "label": "No Animation"
+        },
+        {
+          "value": "animate__bounce",
+          "label": "Bounce"
+        },
+        {
+          "value": "animate__flash",
+          "label": "Flash"
+        },
+        {
+          "value": "animate__pulse",
+          "label": "Pulse"
+        },
+        {
+          "value": "animate__rubberBand",
+          "label": "rubberBand"
+        },
+        {
+          "value": "animate__shakeX",
+          "label": "ShakeX"
+        },
+        {
+          "value": "animate__shakeY",
+          "label": "ShakeY"
+        },
+        {
+          "value": "animate__headShake",
+          "label": "headShake"
+        },
+        {
+          "value": "animate__swing",
+          "label": "Swing"
+        },
+        {
+          "value": "animate__tada",
+          "label": "Tada"
+        },
+        {
+          "value": "animate__wobble",
+          "label": "Wobble"
+        },
+        {
+          "value": "animate__jello",
+          "label": "Jello"
+        },
+        {
+          "value": "animate__heartBeat",
+          "label": "heartBeat"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Cart icon"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_icon_cart",
+      "label": "Show icon",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "cart_icon_icon",
+      "label": "Cart icon",
+      "default": "cart",
+      "options": [
+        {
+          "value": "cart",
+          "label": "Cart"
+        },
+        {
+          "value": "bag",
+          "label": "Bag"
+        }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "cart_icon_badge_color_empty",
+      "label": "Badge color (empty)",
+      "default": "#6c757d"
+    },
+    {
+      "type": "color",
+      "id": "cart_icon_badge_color_has_items",
+      "label": "Badge color (has items)",
+      "default": "#FFFF00"
+    },
+    {
+      "type": "select",
+      "id": "cart_icon_animate_class",
+      "label": "Cart icon animation",
+      "info": "Only visible when cart has items. [Learn More](https://animate.style/)",
+      "default": "animate__heartBeat",
+      "options": [
+        {
+          "value": "",
+          "label": "No Animation"
+        },
+        {
+          "value": "animate__bounce",
+          "label": "Bounce"
+        },
+        {
+          "value": "animate__flash",
+          "label": "Flash"
+        },
+        {
+          "value": "animate__pulse",
+          "label": "Pulse"
+        },
+        {
+          "value": "animate__rubberBand",
+          "label": "rubberBand"
+        },
+        {
+          "value": "animate__shakeX",
+          "label": "ShakeX"
+        },
+        {
+          "value": "animate__shakeY",
+          "label": "ShakeY"
+        },
+        {
+          "value": "animate__headShake",
+          "label": "headShake"
+        },
+        {
+          "value": "animate__swing",
+          "label": "Swing"
+        },
+        {
+          "value": "animate__tada",
+          "label": "Tada"
+        },
+        {
+          "value": "animate__wobble",
+          "label": "Wobble"
+        },
+        {
+          "value": "animate__jello",
+          "label": "Jello"
+        },
+        {
+          "value": "animate__heartBeat",
+          "label": "heartBeat"
+        }
+      ]
+    }
+  ]
 }
 {% endschema %}
 

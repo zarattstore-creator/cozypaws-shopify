@@ -113,337 +113,261 @@
 
 {% schema %}
 {
-    "name": "Sobre",
-    "settings": [
+  "name": "Sobre",
+  "settings": [
+    {
+      "type": "header",
+      "content": "General settings"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Inspired by simplicity, driven by performance.</p>",
+      "info": "Leave blank to disable"
+    },
+    {
+      "type": "text",
+      "id": "page_max_width",
+      "label": "Maximum page width (px)",
+      "info": "Leave blank to disable",
+      "default": "767"
+    },
+    {
+      "type": "header",
+      "content": "Main image"
+    },
+    {
+      "type": "image_picker",
+      "id": "main_image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "main_image_width",
+      "label": "Image width (px)",
+      "default": "1200"
+    },
+    {
+      "type": "text",
+      "id": "main_image_height",
+      "label": "Image height (px)",
+      "default": "600"
+    },
+    {
+      "type": "checkbox",
+      "id": "main_image_img_thumbnail",
+      "label": "Image border",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Team"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_team_blocks",
+      "label": "Enable team locks",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "team_title",
+      "label": "Title",
+      "default": "Meet the Team"
+    },
+    {
+      "type": "richtext",
+      "id": "team_description",
+      "label": "Description",
+      "default": "<p>We are passionate about providing you with the most..</p>"
+    },
+    {
+      "type": "checkbox",
+      "id": "team_bg_light",
+      "label": "Light background",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "team_title_alignment",
+      "label": "Title alignment",
+      "default": "text-center",
+      "options": [
         {
-            "type": "header",
-            "content": {
-             "en": "General settings",
-             "pt-BR": "Configurações gerais"
-            }
+          "value": "text-left",
+          "label": "Left"
         },
         {
-            "type": "richtext",
-            "id": "description",
-            "label": {
-             "en": "Description",
-             "pt-BR": "Descrição"
-            },
-            "default": {
-             "en": "<p>Inspired by simplicity, driven by performance.</p>",
-             "pt-BR": "<p>Inspirado pela simplicidade, impulsionado pelo desempenho.</p>"
-            },
-            "info": {
-             "en": "Leave blank to disable",
-             "pt-BR": "Deixe em branco para desativar"
-            }
+          "value": "text-center",
+          "label": "Center"
         },
         {
-            "type": "text",
-            "id": "page_max_width",
-            "label": {
-             "en": "Maximum page width (px)",
-             "pt-BR": "Largura máxima da página (px)"
-            },
-            "info": {
-             "en": "Leave blank to disable",
-             "pt-BR": "Deixe em branco para desativar"
-            },
-            "default": "767"
-        },
-        {
-            "type": "header",
-            "content": {
-             "en": "Main image",
-             "pt-BR": "imagem principal"
-            }
-        },
-        {
-            "type": "image_picker",
-            "id": "main_image",
-            "label": {
-             "en": "Image",
-             "pt-BR": "Imagem"
-            }
-        },
-        {
-            "type": "text",
-            "id": "main_image_width",
-            "label": {
-               "en": "Image width (px)",
-               "pt-BR": "Largura da imagem (px)"
-             },
-            "default": "1200"
-        },
-        {
-            "type": "text",
-            "id": "main_image_height",
-            "label": {
-               "en": "Image height (px)",
-               "pt-BR": "Altura da imagem (px)"
-             },
-            "default": "600"
-        },
-        {
-            "type": "checkbox",
-            "id": "main_image_img_thumbnail",
-            "label": {
-               "en": "Image border",
-               "pt-BR": "Borda da imagem"
-             },
-            "default": true
-        },
-        {
-            "type": "header",
-            "content": {
-             "en": "Team",
-             "pt-BR": "Equipe"
-            }
-        },
-        {
-            "type": "checkbox",
-            "id": "enable_team_blocks",
-            "label": {
-             "en": "Enable team locks",
-             "pt-BR": "Habilitar bloqueios de equipe"
-            },
-            "default": true
-        },
-        {
-            "type": "text",
-            "id": "team_title",
-            "label": {
-             "en": "Title",
-             "pt-BR": "Título"
-            },
-            "default": {
-             "en": "Meet the Team",
-             "pt-BR": "Conheça o time"
-            }
-        },
-        {
-            "type": "richtext",
-            "id": "team_description",
-            "label": {
-             "en": "Description",
-             "pt-BR": "Descrição"
-            },
-            "default": {
-             "en": "<p>We are passionate about providing you with the most..</p>",
-             "pt-BR": "<p>Somos apaixonados por fornecer-lhe o máximo..</p>"
-            }
-        },
-        {
-            "type": "checkbox",
-            "id": "team_bg_light",
-            "label": {
-             "en": "Light background",
-             "pt-BR": "Fundo claro"
-            },
-            "default": true
-        },
-        {
-            "type": "select",
-            "id": "team_title_alignment",
-            "label": {
-             "en": "Title alignment",
-             "pt-BR": "Alinhamento do título"
-            },
-            "default": "text-center",
-            "options": [
-                { "value": "text-left", "label": {"en": "Left","pt-BR": "Esquerda"} },
-                { "value": "text-center", "label": {"en": "Center","pt-BR": "Centro"} },
-                { "value": "text-right", "label": {"en": "Right","pt-BR": "Direita"} }
-            ]
-        },
-        {
-            "type": "text",
-            "id": "team_image_width",
-            "label": {
-               "en": "Image width (px)",
-               "pt-BR": "Largura da imagem (px)"
-             },
-            "default": "480"
-        },
-        {
-            "type": "text",
-            "id": "team_image_height",
-            "label": {
-               "en": "Image height (px)",
-               "pt-BR": "Altura da imagem (px)"
-             },
-            "default": "480"
-        },
-        {
-            "type": "checkbox",
-            "id": "team_image_img_thumbnail",
-            "label": {
-               "en": "Image border",
-               "pt-BR": "Borda da imagem"
-             },
-            "default": true
-        },
-        {
-            "type": "range",
-            "id": "team_row_mobile",
-            "label": {
-             "en": "Team per row / Mobile",
-             "pt-BR": "Equipe por linha / Celular"
-            },
-            "min": 1,
-            "max": 3,
-            "step": 1,
-            "default": 2
-        },
-        {
-            "type": "range",
-            "id": "team_row_tablet",
-            "label": {
-             "en": "Team per row / Tablet",
-             "pt-BR": "Equipe por linha / Tablet"
-            },
-            "min": 1,
-            "max": 4,
-            "step": 1,
-            "default": 4
-        },
-        {
-            "type": "range",
-            "id": "team_row_desktop",
-            "label": {
-             "en": "Team per row / Desktop",
-             "pt-BR": "Equipe por linha / Desktop"
-            },
-            "min": 1,
-            "max": 6,
-            "step": 1,
-            "default": 4
-        },
-        {
-            "type": "header",
-            "content": {
-             "en": "Bottom warning",
-             "pt-BR": "Aviso inferior"
-            }
-        },
-        {
-            "type": "richtext",
-            "id": "bottom_notice",
-            "label": {
-             "en": "Warning button",
-             "pt-BR": "Botão do aviso"
-            },
-            "default": {
-             "en": "<p>Questions? <a href=\"/pages/contact\">Contact Us</a></p>",
-             "pt-BR": "<p>Dúvidas? <a href=\"/pages/contato\">Fale conosco</a></p>"
-            }
-        },
-        {
-            "type": "select",
-            "id": "bottom_notice_alert_style",
-            "label": {
-             "en": "Bottom notice alert style",
-             "pt-BR": "Estilo do aviso em baixo"
-            },
-            "default": "alert-info",
-            "options": [
-                { "value": "alert-light", "label": "Light" },
-                { "value": "alert-dark", "label": "Dark" },
-                { "value": "alert-info", "label": "Info" },
-                { "value": "alert-success", "label": "Success" },
-                { "value": "alert-warning", "label": "Warning" },
-                { "value": "alert-danger", "label": "Danger" },
-                { "value": "alert-primary", "label": "Primary" },
-                { "value": "alert-secondary", "label": "Secondary" }
-            ]
+          "value": "text-right",
+          "label": "Right"
         }
-    ],
-    "blocks": [
+      ]
+    },
+    {
+      "type": "text",
+      "id": "team_image_width",
+      "label": "Image width (px)",
+      "default": "480"
+    },
+    {
+      "type": "text",
+      "id": "team_image_height",
+      "label": "Image height (px)",
+      "default": "480"
+    },
+    {
+      "type": "checkbox",
+      "id": "team_image_img_thumbnail",
+      "label": "Image border",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "team_row_mobile",
+      "label": "Team per row / Mobile",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "team_row_tablet",
+      "label": "Team per row / Tablet",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "team_row_desktop",
+      "label": "Team per row / Desktop",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "header",
+      "content": "Bottom warning"
+    },
+    {
+      "type": "richtext",
+      "id": "bottom_notice",
+      "label": "Warning button",
+      "default": "<p>Questions? <a href=\"/pages/contact\">Contact Us</a></p>"
+    },
+    {
+      "type": "select",
+      "id": "bottom_notice_alert_style",
+      "label": "Bottom notice alert style",
+      "default": "alert-info",
+      "options": [
         {
-            "type": "team",
-            "name": {
-             "en": "Team",
-             "pt-BR": "Equipe"
-            },
-            "settings": [
-                {
-                    "type": "image_picker",
-                    "id": "team_image",
-                    "label": {
-                     "en": "Image",
-                     "pt-BR": "Imagem"
-                    }
-                },
-                {
-                    "type": "text",
-                    "id": "team_name",
-                    "label": {
-                     "en": "Name",
-                     "pt-BR": "Nome"
-                    }
-                },
-                {
-                    "type": "richtext",
-                    "id": "team_description",
-                    "label": {
-                     "en": "Description",
-                     "pt-BR": "Descrição"
-                    }
-                }
-            ]
+          "value": "alert-light",
+          "label": "Light"
         },
         {
-            "type": "text",
-            "name": {
-             "en": "Text",
-             "pt-BR": "Texto"
-            },
-            "settings": [
-                {
-                    "type": "text",
-                    "id": "title",
-                    "label": {
-                     "en": "Title",
-                     "pt-BR": "Título"
-                    }
-                },
-                {
-                    "type": "richtext",
-                    "id": "description",
-                    "label": {
-                     "en": "Description",
-                     "pt-BR": "Descrição"
-                    }
-                }
-            ]
+          "value": "alert-dark",
+          "label": "Dark"
+        },
+        {
+          "value": "alert-info",
+          "label": "Info"
+        },
+        {
+          "value": "alert-success",
+          "label": "Success"
+        },
+        {
+          "value": "alert-warning",
+          "label": "Warning"
+        },
+        {
+          "value": "alert-danger",
+          "label": "Danger"
+        },
+        {
+          "value": "alert-primary",
+          "label": "Primary"
+        },
+        {
+          "value": "alert-secondary",
+          "label": "Secondary"
         }
-    ],
-    "default": {
-        "settings": {
-        },
-        "blocks": [
-            {
-                "type": "text",
-                "settings": {
-                    "title": "Working days",
-                    "description": "<p>From monday to friday</p>"
-                }
-            },
-            {
-                "type": "text",
-                "settings": {
-                    "title": "Working hours",
-                    "description": "<p>9 am to 5 pm</p>"
-                }
-            },
-            {
-                "type": "text",
-                "settings": {
-                    "title": "Prefer to call?",
-                    "description": "<p><a href=\"tel:63 9 0000-0000\" title=\"tel:63 9 0000-0000\">+63 9 0000-0000</a></p>"
-                }
-            }
-        ]
+      ]
     }
+  ],
+  "blocks": [
+    {
+      "type": "team",
+      "name": "Team",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "team_image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "team_name",
+          "label": "Name"
+        },
+        {
+          "type": "richtext",
+          "id": "team_description",
+          "label": "Description"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    }
+  ],
+  "default": {
+    "settings": {},
+    "blocks": [
+      {
+        "type": "text",
+        "settings": {
+          "title": "Working days",
+          "description": "<p>From monday to friday</p>"
+        }
+      },
+      {
+        "type": "text",
+        "settings": {
+          "title": "Working hours",
+          "description": "<p>9 am to 5 pm</p>"
+        }
+      },
+      {
+        "type": "text",
+        "settings": {
+          "title": "Prefer to call?",
+          "description": "<p><a href=\"tel:63 9 0000-0000\" title=\"tel:63 9 0000-0000\">+63 9 0000-0000</a></p>"
+        }
+      }
+    ]
+  }
 }
 {% endschema %}

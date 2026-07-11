@@ -128,436 +128,283 @@
 
 {% schema %}
 {
-    "name": {
-     "en": "Collections in Carousel",
-     "pt-BR": "Coleções em Carrossel"
+  "name": "Collections in Carousel",
+  "settings": [
+    {
+      "type": "header",
+      "content": "General settings"
     },
-    "settings": [
+    {
+      "type": "text",
+      "id": "title_t",
+      "label": "Title",
+      "default": "Collection list"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Write something attractive for this section.</p>"
+    },
+    {
+      "type": "checkbox",
+      "id": "container",
+      "label": "Container",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "title_alignment",
+      "label": "Title alignment",
+      "options": [
         {
-            "type": "header",
-            "content": {
-             "en": "General settings",
-             "pt-BR": "Configurações Gerais"
-            }
+          "value": "text-left",
+          "label": "Left"
         },
         {
-            "type": "text",
-            "id": "title_t",
-            "label": {
-             "en": "Title",
-             "pt-BR": "Título"
-            },
-            "default": {
-             "en": "Collection list",
-             "pt-BR": "Lista de coleções"
-            }
+          "value": "text-center",
+          "label": "Center"
         },
         {
-            "type": "richtext",
-            "id": "description",
-            "label": {
-             "en": "Description",
-             "pt-BR": "Descrição"
-            },
-            "default": {
-             "en": "<p>Write something attractive for this section.</p>",
-             "pt-BR": "<p>Escreva algo atraente para esta seção.</p>"
-            }
-        },
-        {
-            "type": "checkbox",
-            "id": "container",
-            "label": {
-             "en": "Container",
-             "pt-BR": "Container"
-            },
-            "default": true
-        },
-
-        {
-            "type": "select",
-            "id": "title_alignment",
-            "label": {
-             "en": "Title alignment",
-             "pt-BR": "Alinhamento do título"
-            },
-            "options": [
-                { "value": "text-left", "label": {"en": "Left","pt-BR": "Esquerda"} },
-                { "value": "text-center", "label": {"en": "Center","pt-BR": "Centro"} },
-                { "value": "text-right", "label": {"en": "Right","pt-BR": "Direita"} }
-            ],
-            "default": "text-center"
-        },
-
-        {
-            "type": "checkbox",
-            "id": "title",
-            "label": {
-             "en": "Show collection title",
-             "pt-BR": "Mostrar Titulo da coleção"
-            },
-            "default": false
-        },
-        {
-            "type": "color",
-            "id": "cortitlec",
-            "label": {
-             "en": "Title Color",
-             "pt-BR": "Cor do título"
-            },
-            "default": "#fff"
-        },
-        {
-            "type": "color",
-            "id": "corhover",
-            "label": {
-             "en": "On hover",
-             "pt-BR": "Ao passar o Mouse"
-            },
-            "default": "#3380ff"
-        },
-
-       {
-            "type": "color",
-            "id": "cor_bg",
-            "label": {
-             "en": "Background",
-             "pt-BR": "Fundo"
-            },
-            "default": "#fff"
-        },
-        {
-            "type": "header",
-            "content": {
-             "en": "Carousel settings",
-             "pt-BR": "Configurações de carrossel"
-            }
-        },
-        {
-            "type": "checkbox",
-            "id": "carousel_arrows",
-            "label": {
-             "en": "Show arrows",
-             "pt-BR": "Mostrar flechas"
-            },
-            "info": {
-             "en": "Previous / Next Icons",
-             "pt-BR": "Ícones anterior / seguinte"
-            },
-            "default": false
-        },
-        {
-            "type": "checkbox",
-            "id": "carousel_pagination",
-            "label": {
-             "en": "Show pagination",
-             "pt-BR": "Mostrar paginação"
-            },
-            "info": {
-             "en": "Small dots at the bottom",
-             "pt-BR": "Pequenos pontos na parte inferior"
-            },
-            "default": true
-        },
-        {
-            "type": "checkbox",
-            "id": "carousel_rewind",
-            "label": {
-             "en": "Carousel rewind",
-             "pt-BR": "Retroceder"
-            },
-            "info": {
-             "en": "Move to first slide when done",
-             "pt-BR": "Mova para o primeiro slide quando terminar"
-            },
-            "default": true
-        },
-        {
-            "type": "header",
-            "content": {
-             "en": "Carousel Autoplay",
-             "pt-BR": "Autoplay do carrossel"
-            }
-        },
-        {
-            "type": "checkbox",
-            "id": "carousel_autoplay",
-            "label": {
-             "en": "Autoplay",
-             "pt-BR": "Autoplay"
-            },
-            "default": false
-        },
-        {
-            "type": "range",
-            "id": "carousel_interval",
-            "label": {
-             "en": "Carousel interval",
-             "pt-BR": "Tempo do Autoplay"
-            },
-            "default": 6,
-            "min": 0,
-            "max": 20,
-            "step": 1,
-            "unit": "sec"
-        },
-        {
-            "type": "header",
-            "content": {
-             "en": "Carousel transition",
-             "pt-BR": "Transição Carrossel"
-            }
-        },
-        {
-            "type": "text",
-            "id": "carousel_easing",
-            "label": {
-             "en": "Transition effect",
-             "pt-BR": "Efeito de transição"
-            },
-            "info": {
-             "en": "[Learn more](https://cubic-bezier.com/#.42,.65,.27,.99)",
-             "pt-BR": "[Saber mais](https://cubic-bezier.com/#.42,.65,.27,.99)"
-            },
-            "default": "cubic-bezier(.42,.65,.27,.99)"
-        },
-        {
-            "type": "text",
-            "id": "carousel_speed",
-            "label": {
-             "en": "Transition speed",
-             "pt-BR": "Velocidade de transição"
-            },
-            "default": "400"
-        },
-        {
-            "type": "header",
-            "content": {
-             "en": "Product settings",
-             "pt-BR": "Configurações do produto"
-            }
-        },
-        {
-            "type": "text",
-            "id": "img_width",
-            "label": {
-               "en": "Image width (px)",
-               "pt-BR": "Largura da imagem (px)"
-             },
-            "default": "480"
-        },
-        {
-            "type": "text",
-            "id": "img_height",
-            "label": {
-               "en": "Image height (px)",
-               "pt-BR": "Altura da imagem (px)"
-             },
-            "default": "480"
-        },
-        {
-            "type": "checkbox",
-            "id": "img_thumbnail",
-            "label": {
-               "en": "Image border",
-               "pt-BR": "Borda da imagem"
-             },
-            "default": true
-        },
-        {
-            "type": "header",
-            "content": {
-             "en": "Breakpoints",
-             "pt-BR": "Breakpoints"
-            },
-            "info": {
-             "en": "Adjust products per slide based on different screen resolutions",
-             "pt-BR": "Ajuste por slide com base em soluções diferentes de produtos de tela"
-            }
-        },
-        {
-            "type": "range",
-            "id": "breakpoint_xm",
-            "label": {
-             "en": "Products per slide /xm",
-             "pt-BR": "Produtos por slide /xm"
-            },
-            "info": {
-             "en": "Screen width: <=576px",
-             "pt-BR": "Largura da tela: <=576px"
-            },
-            "min": 1,
-            "max": 3,
-            "step": 1,
-            "default": 2
-        },
-        {
-            "type": "range",
-            "id": "breakpoint_sm",
-            "label": {
-             "en": "Products per slide /sm",
-             "pt-BR": "Produtos por slide /sm"
-            },
-            "info": {
-             "en": "Screen width: <=768px",
-             "pt-BR": "Largura da tela: <=768px"
-            },
-            "min": 1,
-            "max": 3,
-            "step": 1,
-            "default": 2
-        },
-        {
-            "type": "range",
-            "id": "breakpoint_md",
-            "label": {
-             "en": "Products per slide /md",
-             "pt-BR": "Produtos por slide /md"
-            },
-            "info": {
-             "en": "Screen width: <=992px",
-             "pt-BR": "Largura da tela: <=992px"
-            },
-            "min": 1,
-            "max": 4,
-            "step": 1,
-            "default": 3
-        },
-        {
-            "type": "range",
-            "id": "breakpoint_lg",
-            "label": {
-             "en": "Products per slide /lg",
-             "pt-BR": "Produtos por slide /lg"
-            },
-            "info": {
-             "en": "Screen width: <=1200px",
-             "pt-BR": "Largura da tela: <=1200px"
-            },
-            "min": 1,
-            "max": 6,
-            "step": 1,
-            "default": 3
-        },
-        {
-            "type": "range",
-            "id": "breakpoint_xl",
-            "label": {
-             "en": "Products per slide /xl",
-             "pt-BR": "Produtos por slide /xl"
-            },
-            "info": {
-             "en": "Screen width: <=1400px",
-             "pt-BR": "Largura da tela: <=1400px"
-            },
-            "min": 1,
-            "max": 6,
-            "step": 1,
-            "default": 4
-        },
-        {
-            "type": "range",
-            "id": "breakpoint_xxl",
-            "label": {
-             "en": "Products per slide /xxl",
-             "pt-BR": "Produtos por slide /xxl"
-            },
-            "info": {
-             "en": "Screen width: >1400px",
-             "pt-BR": "Largura da tela: >1400px"
-            },
-            "min": 1,
-            "max": 8,
-            "step": 1,
-            "default": 5
-        },
-        {
-            "type": "header",
-            "content": {
-             "en": "Spacing",
-             "pt-BR": "Espaçamento"
-            },
-            "info": {
-             "en": "Based on Bootstrap Spacing Utility Classes [Learn More](https://getbootstrap.com/docs/4.5/utilities/spacing/)",
-             "pt-BR": "Com base nas classes do utilitário de espaçamento Bootstrap [Saiba mais](https://getbootstrap.com/docs/4.5/utilities/spacing/)"
-            }
-        },
-        {
-            "type": "range",
-            "id": "padding_top",
-            "label": {
-             "en": "Padding top",
-             "pt-BR": "Espaçamento superior"
-            },
-            "min": 0,
-            "max": 15,
-            "step": 1,
-            "default": 0
-        },
-        {
-            "type": "range",
-            "id": "padding_bottom",
-            "label": {
-             "en": "Padding bottom",
-             "pt-BR": "Espaçamento inferior"
-            },
-            "min": 0,
-            "max": 15,
-            "step": 1,
-            "default": 0
-        },
-        {
-            "type": "range",
-            "id": "margin_top",
-            "label": {
-             "en": "Margin top",
-             "pt-BR": "Margem superior"
-            },
-            "min": 0,
-            "max": 15,
-            "step": 1,
-            "default": 0
-        },
-        {
-            "type": "range",
-            "id": "margin_bottom",
-            "label": {
-             "en": "Margin bottom",
-             "pt-BR": "Margem inferior"
-            },
-            "min": 0,
-            "max": 15,
-            "step": 1,
-            "default": 9
+          "value": "text-right",
+          "label": "Right"
         }
-    ],
-    "blocks": [
+      ],
+      "default": "text-center"
+    },
+    {
+      "type": "checkbox",
+      "id": "title",
+      "label": "Show collection title",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "cortitlec",
+      "label": "Title Color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "corhover",
+      "label": "On hover",
+      "default": "#3380ff"
+    },
+    {
+      "type": "color",
+      "id": "cor_bg",
+      "label": "Background",
+      "default": "#fff"
+    },
+    {
+      "type": "header",
+      "content": "Carousel settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "carousel_arrows",
+      "label": "Show arrows",
+      "info": "Previous / Next Icons",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "carousel_pagination",
+      "label": "Show pagination",
+      "info": "Small dots at the bottom",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "carousel_rewind",
+      "label": "Carousel rewind",
+      "info": "Move to first slide when done",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Carousel Autoplay"
+    },
+    {
+      "type": "checkbox",
+      "id": "carousel_autoplay",
+      "label": "Autoplay",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "carousel_interval",
+      "label": "Carousel interval",
+      "default": 6,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "sec"
+    },
+    {
+      "type": "header",
+      "content": "Carousel transition"
+    },
+    {
+      "type": "text",
+      "id": "carousel_easing",
+      "label": "Transition effect",
+      "info": "[Learn more](https://cubic-bezier.com/#.42,.65,.27,.99)",
+      "default": "cubic-bezier(.42,.65,.27,.99)"
+    },
+    {
+      "type": "text",
+      "id": "carousel_speed",
+      "label": "Transition speed",
+      "default": "400"
+    },
+    {
+      "type": "header",
+      "content": "Product settings"
+    },
+    {
+      "type": "text",
+      "id": "img_width",
+      "label": "Image width (px)",
+      "default": "480"
+    },
+    {
+      "type": "text",
+      "id": "img_height",
+      "label": "Image height (px)",
+      "default": "480"
+    },
+    {
+      "type": "checkbox",
+      "id": "img_thumbnail",
+      "label": "Image border",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Breakpoints",
+      "info": "Adjust products per slide based on different screen resolutions"
+    },
+    {
+      "type": "range",
+      "id": "breakpoint_xm",
+      "label": "Products per slide /xm",
+      "info": "Screen width: <=576px",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "breakpoint_sm",
+      "label": "Products per slide /sm",
+      "info": "Screen width: <=768px",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "breakpoint_md",
+      "label": "Products per slide /md",
+      "info": "Screen width: <=992px",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "breakpoint_lg",
+      "label": "Products per slide /lg",
+      "info": "Screen width: <=1200px",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "breakpoint_xl",
+      "label": "Products per slide /xl",
+      "info": "Screen width: <=1400px",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "breakpoint_xxl",
+      "label": "Products per slide /xxl",
+      "info": "Screen width: >1400px",
+      "min": 1,
+      "max": 8,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "header",
+      "content": "Spacing",
+      "info": "Based on Bootstrap Spacing Utility Classes [Learn More](https://getbootstrap.com/docs/4.5/utilities/spacing/)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 15,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 15,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "label": "Margin top",
+      "min": 0,
+      "max": 15,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "label": "Margin bottom",
+      "min": 0,
+      "max": 15,
+      "step": 1,
+      "default": 9
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection",
+      "settings": [
         {
-            "type": "collection",
-            "name": {
-             "en": "Collection",
-             "pt-BR": "Coleção"
-            },
-            "settings": [
-                {
-                    "label": {
-                     "en": "Collection",
-                     "pt-BR": "Coleção"
-                    },
-                    "id": "collection",
-                    "type": "collection"
-                }
-            ]
+          "label": "Collection",
+          "id": "collection",
+          "type": "collection"
         }
-    ],
-    "presets": [
-        {
-            "name": {
-             "en": "Collections in Carousel",
-             "pt-BR": "Coleções em Carrossel"
-            },
-            "category": "products"
-        }
-    ]
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collections in Carousel",
+      "category": "products"
+    }
+  ]
 }
 {% endschema %}

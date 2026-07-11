@@ -144,108 +144,72 @@
 
 {% schema %}
 {
-    "name": {
-     "en": "Blog posts",
-     "pt-BR": "Postagens no blog"
+  "name": "Blog posts",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_tags",
+      "label": "Show tags",
+      "default": true
     },
-    "settings": [
-        {
-            "type": "checkbox",
-            "id": "show_tags",
-            "label": {
-             "en": "Show tags",
-             "pt-BR": "Mostrar tags"
-            },
-            "default": true
-        },
-        {
-            "type": "checkbox",
-            "id": "show_author",
-            "label": {
-             "en": "Show author",
-             "pt-BR": "Mostrar autor"
-            },
-            "default": true
-        },
-        {
-            "type": "checkbox",
-            "id": "show_date",
-            "label": {
-             "en": "Show date",
-             "pt-BR": "Mostrar data"
-            },
-            "default": true
-        },
-        {
-            "type": "checkbox",
-            "id": "show_comments_count",
-            "label": {
-             "en": "Show comment count",
-             "pt-BR": "Mostrar contagem de comentários"
-            },
-            "default": true
-        },
-        {
-            "type": "checkbox",
-            "id": "enable_social_sharing",
-            "label": {
-             "en": "Turn on social sharing",
-             "pt-BR": "Ativar compartilhamento social"
-            },
-            "default": true
-        },
-        {
-            "type": "text",
-            "id": "img_width",
-            "label": {
-             "en": "Image width (px)",
-             "pt-BR": "Largura da imagem (px)"
-            },
-            "default": "1280"
-        },
-        {
-            "type": "text",
-            "id": "img_height",
-            "label": {
-             "en": "Image height (px)",
-             "pt-BR": "Altura da imagem (px)"
-            },
-            "default": "720"
-        },
-        {
-            "type": "checkbox",
-            "id": "img_thumbnail",
-            "label": {
-             "en": "Image border",
-             "pt-BR": "Borda da imagem"
-            },
-            "default": true
-        },
-        {
-            "type": "text",
-            "id": "max_width",
-            "label": {
-             "en": "Maximum content width (px)",
-             "pt-BR": "Largura máxima do conteúdo (px)"
-            },
-            "info": {
-             "en": "Increase readability with narrow content width (recommended words per sentence are 20-25)",
-             "pt-BR": "Aumente a legibilidade com largura de conteúdo estreita (palavras recomendadas por frase são 20-25)"
-            },
-            "default": "767"
-        },
-        {
-            "type": "range",
-            "id": "comments_per_page",
-            "label": {
-             "en": "Comments per page",
-             "pt-BR": "Comentários por página"
-            },
-            "min": 1,
-            "max": 20,
-            "step": 1,
-            "default": 10
-        }
-    ]
+    {
+      "type": "checkbox",
+      "id": "show_author",
+      "label": "Show author",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_date",
+      "label": "Show date",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_comments_count",
+      "label": "Show comment count",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_social_sharing",
+      "label": "Turn on social sharing",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "img_width",
+      "label": "Image width (px)",
+      "default": "1280"
+    },
+    {
+      "type": "text",
+      "id": "img_height",
+      "label": "Image height (px)",
+      "default": "720"
+    },
+    {
+      "type": "checkbox",
+      "id": "img_thumbnail",
+      "label": "Image border",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "max_width",
+      "label": "Maximum content width (px)",
+      "info": "Increase readability with narrow content width (recommended words per sentence are 20-25)",
+      "default": "767"
+    },
+    {
+      "type": "range",
+      "id": "comments_per_page",
+      "label": "Comments per page",
+      "min": 1,
+      "max": 20,
+      "step": 1,
+      "default": 10
+    }
+  ]
 }
 {% endschema %}

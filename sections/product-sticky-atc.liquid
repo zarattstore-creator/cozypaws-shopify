@@ -152,216 +152,177 @@
 {% endif %}
 {% schema %}
 {
-    "name": {
-     "en": "Sticky buy button",
-     "pt-BR": "Sticky comprar agora"
+  "name": "Sticky buy button",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "It will show a simple add to cart form when the user scrolls below the standard add to cart form. Proven to increase purchases."
     },
-    "settings": [
+    {
+      "type": "header",
+      "content": "General settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_section",
+      "label": "Enable section",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "position",
+      "label": "Position",
+      "default": "bottom-center",
+      "options": [
         {
-            "type": "paragraph",
-            "content": {
-             "en": "It will show a simple add to cart form when the user scrolls below the standard add to cart form. Proven to increase purchases.",
-             "pt-BR": "Irá mostrar um formulário simples de adicionar ao carrinho quando o usuário rolar abaixo do formulário padrão adicionar ao carrinho. É comprovado que aumenta as compras."
-            }
+          "value": "bottom-left",
+          "label": "Bottom left"
         },
         {
-            "type": "header",
-            "content": {
-             "en": "General settings",
-             "pt-BR": "Configurações gerais"
-            }
+          "value": "bottom-center",
+          "label": "Bottom center"
         },
         {
-            "type": "checkbox",
-            "id": "enable_section",
-            "label": {
-             "en": "Enable section",
-             "pt-BR": "Ativar seção"
-            },
-            "default": true
-        },
-        {
-            "type": "select",
-            "id": "position",
-            "label": {
-               "en": "Position",
-               "pt-BR": "Posição"
-             },
-            "default": "bottom-center",
-             "options":[
-                {
-                   "value":"bottom-left",
-                   "label":{
-                     "en": "Bottom left",
-                     "pt-BR": "Inferior esquerdo"
-                   }
-                },
-                {
-                   "value":"bottom-center",
-                   "label":{
-                     "en": "Bottom center",
-                     "pt-BR": "Centro inferior"
-                   }
-                },
-                {
-                   "value":"bottom-right",
-                   "label":{
-                     "en": "Bottom right",
-                     "pt-BR": "Inferior direito"
-                   }
-                }
-             ]
-        },
-        {
-            "type": "header",
-            "content": {
-               "en": "Animation",
-               "pt-BR": "Animação"
-             }
-        },
-        {
-            "type": "text",
-            "id":  "animation_enter",
-            "label":{
-               "en": "Entry Animation",
-               "pt-BR": "Animação de Entrada"
-             },
-             "info":{
-               "en": "Copy and paste the name of the animation (entry) from the website animate.style. Leave blank to disable and use Bootstrap's default transitions. [Learn more](https:\/\/animate.style)",
-               "pt-BR": "Copie e cole o nome da animação (entrada) do site animate.style. Deixe em branco para desativar e usar as transições padrão do Bootstrap. [Saber mais](https:\/\/animate.style)"
-             },
-            "default": "animate__fadeInUp"
-        },
-        {
-            "type": "text",
-            "id":  "animation_exit",
-            "label":{
-               "en": "Exit Animation",
-               "pt-BR": "Animação de Saída"
-             },
-             "info":{
-               "en": "Copy and paste the name of the animation (exit) from the website animate.style. Leave blank to disable and use Bootstrap's default transitions. [Learn more](https:\/\/animate.style)",
-               "pt-BR": "Copie e cole o nome da animação (saída) do site animate.style. Deixe em branco para desativar e usar as transições padrão do Bootstrap. [Saber mais](https:\/\/animate.style)"
-             },
-            "default": "animate__fadeOutDown"
-        },
-        {
-            "type": "select",
-            "id":  "animation_speed",
-            "label":{
-               "en": "Animation Speed",
-               "pt-BR": "Velocidade da Animação"
-             },
-             "default":"animate__normal",
-             "options":[
-               {
-                  "value":"animate__slower",
-                  "label":{
-                    "en": "Slower",
-                    "pt-BR": "Mais lenta"
-                  }
-               },
-               {
-                  "value":"animate__slow",
-                  "label":{
-                    "en": "Slow",
-                    "pt-BR": "Lenta"
-                  }
-               },
-               {
-                  "value":"animate__normal",
-                  "label":{
-                    "en": "Normal",
-                    "pt-BR": "Normal"
-                  }
-               },
-               {
-                  "value":"animate__fast",
-                  "label":{
-                    "en": "Fast",
-                    "pt-BR": "Rápida"
-                  }
-               },
-               {
-                  "value":"animate__faster",
-                  "label":{
-                    "en": "Faster",
-                    "pt-BR": "Mais rápida"
-                  }
-               }
-             ]
-        },
-        {
-            "type": "header",
-            "content": {
-                     "en": "Product settings",
-                     "pt-BR": "Configurações do produto"
-                    }
-        },
-        {
-            "type": "text",
-            "id": "img_width",
-            "label": {
-               "en": "Image width (px)",
-               "pt-BR": "Largura da imagem (px)"
-             },
-            "default": "60"
-        },
-        {
-            "type": "text",
-            "id": "img_height",
-            "label": {
-               "en": "Image height (px)",
-               "pt-BR": "Altura da imagem (px)"
-             },
-            "default": "60"
-        },
-        {
-            "type": "checkbox",
-            "id": "img_thumbnail",
-            "label": {
-               "en": "Image border",
-               "pt-BR": "Borda da imagem"
-             },
-            "default": false
-        },
-        {
-            "type": "checkbox",
-            "id": "show_rating",
-            "label": {
-               "en": "Show product review",
-               "pt-BR": "Mostrar avaliação do produto"
-             },
-            "default": true
-        },
-        {
-            "type": "select",
-            "id": "add_to_cart_btn_animation",
-            "label": {
-                     "en": "Add cart button animation",
-                     "pt-BR": "Adicionar animação do botão do carrinho"
-                    },
-            "info": {
-                     "en": "Raise buyers' awareness by catching their attention. It will run every 5 seconds. [Learn More](https://animate.style/)",
-                     "pt-BR": "Aumente a conscientização dos compradores, chamando sua atenção. Será executado a cada 5 segundos. [Saber mais](https://animate.style/)"
-                    },
-            "default": "animate__pulse",
-            "options": [
-                { "value": "", "label": "No Animation" },
-                { "value": "animate__bounce", "label": "Bounce" },
-                { "value": "animate__flash", "label": "Flash" },
-                { "value": "animate__pulse", "label": "Pulse" },
-                { "value": "animate__rubberBand", "label": "rubberBand" },
-                { "value": "animate__shakeX", "label": "ShakeX" },
-                { "value": "animate__shakeY", "label": "ShakeY" },
-                { "value": "animate__headShake", "label": "headShake" },
-                { "value": "animate__swing", "label": "Swing" },
-                { "value": "animate__tada", "label": "Tada" },
-                { "value": "animate__wobble", "label": "Wobble" },
-                { "value": "animate__jello", "label": "Jello" },
-                { "value": "animate__heartBeat", "label": "heartBeat" }
-            ]
+          "value": "bottom-right",
+          "label": "Bottom right"
         }
-    ]
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Animation"
+    },
+    {
+      "type": "text",
+      "id": "animation_enter",
+      "label": "Entry Animation",
+      "info": "Copy and paste the name of the animation (entry) from the website animate.style. Leave blank to disable and use Bootstrap's default transitions. [Learn more](https://animate.style)",
+      "default": "animate__fadeInUp"
+    },
+    {
+      "type": "text",
+      "id": "animation_exit",
+      "label": "Exit Animation",
+      "info": "Copy and paste the name of the animation (exit) from the website animate.style. Leave blank to disable and use Bootstrap's default transitions. [Learn more](https://animate.style)",
+      "default": "animate__fadeOutDown"
+    },
+    {
+      "type": "select",
+      "id": "animation_speed",
+      "label": "Animation Speed",
+      "default": "animate__normal",
+      "options": [
+        {
+          "value": "animate__slower",
+          "label": "Slower"
+        },
+        {
+          "value": "animate__slow",
+          "label": "Slow"
+        },
+        {
+          "value": "animate__normal",
+          "label": "Normal"
+        },
+        {
+          "value": "animate__fast",
+          "label": "Fast"
+        },
+        {
+          "value": "animate__faster",
+          "label": "Faster"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Product settings"
+    },
+    {
+      "type": "text",
+      "id": "img_width",
+      "label": "Image width (px)",
+      "default": "60"
+    },
+    {
+      "type": "text",
+      "id": "img_height",
+      "label": "Image height (px)",
+      "default": "60"
+    },
+    {
+      "type": "checkbox",
+      "id": "img_thumbnail",
+      "label": "Image border",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_rating",
+      "label": "Show product review",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "add_to_cart_btn_animation",
+      "label": "Add cart button animation",
+      "info": "Raise buyers' awareness by catching their attention. It will run every 5 seconds. [Learn More](https://animate.style/)",
+      "default": "animate__pulse",
+      "options": [
+        {
+          "value": "",
+          "label": "No Animation"
+        },
+        {
+          "value": "animate__bounce",
+          "label": "Bounce"
+        },
+        {
+          "value": "animate__flash",
+          "label": "Flash"
+        },
+        {
+          "value": "animate__pulse",
+          "label": "Pulse"
+        },
+        {
+          "value": "animate__rubberBand",
+          "label": "rubberBand"
+        },
+        {
+          "value": "animate__shakeX",
+          "label": "ShakeX"
+        },
+        {
+          "value": "animate__shakeY",
+          "label": "ShakeY"
+        },
+        {
+          "value": "animate__headShake",
+          "label": "headShake"
+        },
+        {
+          "value": "animate__swing",
+          "label": "Swing"
+        },
+        {
+          "value": "animate__tada",
+          "label": "Tada"
+        },
+        {
+          "value": "animate__wobble",
+          "label": "Wobble"
+        },
+        {
+          "value": "animate__jello",
+          "label": "Jello"
+        },
+        {
+          "value": "animate__heartBeat",
+          "label": "heartBeat"
+        }
+      ]
+    }
+  ]
 }
 {% endschema %}

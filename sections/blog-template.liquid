@@ -135,314 +135,200 @@
 
 {% schema %}
 {
-    "name": {
-             "en": "Blog Pages",
-             "pt-BR": "Páginas de blogs"
-            },
-    "settings": [
+  "name": "Blog Pages",
+  "settings": [
+    {
+      "type": "header",
+      "content": "General Settings"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "info": "Leave blank to disable",
+      "default": "<p>Welcome to our blog, we hope it inspires you.</p>"
+    },
+    {
+      "type": "range",
+      "id": "results_per_page",
+      "label": "Resultados por p\u00e1gina",
+      "min": 1,
+      "max": 20,
+      "step": 1,
+      "default": 10
+    },
+    {
+      "type": "checkbox",
+      "id": "show_tags",
+      "label": "Show tags",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Blog post settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_author",
+      "label": "Show Author",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_date",
+      "label": "Show date",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_comments_count",
+      "label": "Show comments count",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_excerpt",
+      "label": "Show excerpt",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "excerpt_length",
+      "label": "Excerpt lenght",
+      "info": "Leave blank to show all text",
+      "default": "240"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_readmore",
+      "label": "Read More button",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "readmore_color",
+      "label": "Read More button color",
+      "default": "btn-outline-primary",
+      "options": [
         {
-            "type": "header",
-            "content": {
-             "en": "General Settings",
-             "pt-BR": "Configurações Gerais"
-            }
+          "group": "Normal",
+          "value": "btn-link",
+          "label": "Link"
         },
         {
-            "type": "richtext",
-            "id": "description",
-            "label": {
-             "en": "Description",
-             "pt-BR": "Descrição"
-            },
-            "info": {
-             "en": "Leave blank to disable",
-             "pt-BR": "Deixe em branco para desativar"
-            },
-            "default": {
-             "en": "<p>Welcome to our blog, we hope it inspires you.</p>",
-             "pt-BR": "<p>Bem-vindo ao nosso blog, esperamos que inspire você.</p>"
-            }
+          "group": "Normal",
+          "value": "btn-light",
+          "label": "Light"
         },
         {
-            "type": "range",
-            "id": "results_per_page",
-            "label": "Resultados por página",
-            "min": 1,
-            "max": 20,
-            "step": 1,
-            "default": 10
+          "group": "Normal",
+          "value": "btn-dark",
+          "label": "Dark"
         },
         {
-            "type": "checkbox",
-            "id": "show_tags",
-            "label": {
-             "en": "Show tags",
-             "pt-BR": "Mostrar tags"
-            },
-            "default": true
+          "group": "Normal",
+          "value": "button-buy",
+          "label": "Primary"
         },
         {
-            "type": "header",
-            "content": {
-             "en": "Blog post settings",
-             "pt-BR": "Configurações de postagem do blog"
-            }
+          "group": "Normal",
+          "value": "btn-secondary",
+          "label": "Secondary"
         },
         {
-            "type": "checkbox",
-            "id": "show_author",
-            "label": {
-             "en": "Show Author",
-             "pt-BR": "Mostrar Autor"
-            },
-            "default": true
+          "group": "Normal",
+          "value": "btn-success",
+          "label": "Success"
         },
         {
-            "type": "checkbox",
-            "id": "show_date",
-            "label": {
-             "en": "Show date",
-             "pt-BR": "Mostrar data"
-            },
-            "default": true
+          "group": "Normal",
+          "value": "btn-danger",
+          "label": "Danger"
         },
         {
-            "type": "checkbox",
-            "id": "show_comments_count",
-            "label": {
-             "en": "Show comments count",
-             "pt-BR": "Mostrar contagem de comentários"
-            },
-            "default": true
+          "group": "Normal",
+          "value": "btn-warning",
+          "label": "Warning"
         },
         {
-            "type": "checkbox",
-            "id": "show_excerpt",
-            "label": {
-             "en": "Show excerpt",
-             "pt-BR": "Mostrar trecho"
-            },
-            "default": true
+          "group": "Normal",
+          "value": "btn-info",
+          "label": "Info"
         },
         {
-            "type": "text",
-            "id": "excerpt_length",
-            "label": {
-             "en": "Excerpt lenght",
-             "pt-BR": "Tamanho do Resumo"
-            },
-            "info": {
-             "en": "Leave blank to show all text",
-             "pt-BR": "Deixe em branco para mostrar todo o texto"
-            },
-            "default": "240"
+          "group": "Outline",
+          "value": "btn-outline-dark",
+          "label": "Dark outline"
         },
         {
-            "type": "checkbox",
-            "id": "show_readmore",
-            "label": {
-             "en": "Read More button",
-             "pt-BR": "Mostrar botão ver mais"
-            },
-            "default": true
+          "group": "Outline",
+          "value": "btn-outline-primary",
+          "label": "Primary outline"
         },
         {
-            "type": "select",
-            "id": "readmore_color",
-            "label": {
-             "en": "Read More button color",
-             "pt-BR": "Cor do botão ver mais"
-            },
-            "default": "btn-outline-primary",
-"options":[
-                {
-                   "group":"Normal",
-                   "value":"btn-link",
-                   "label":{
-                     "en": "Link",
-                     "pt-BR": "Link"
-                   }
-                },
-                {
-                   "group":"Normal",
-                   "value":"btn-light",
-                   "label":{
-                     "en": "Light",
-                     "pt-BR": "Claro"
-                   }
-                },
-                {
-                   "group":"Normal",
-                   "value":"btn-dark",
-                   "label":{
-                     "en": "Dark",
-                     "pt-BR": "Escuro"
-                   }
-                },
-                {
-                   "group":"Normal",
-                   "value":"button-buy",
-                   "label":{
-                     "en": "Primary",
-                     "pt-BR": "Primário"
-                   }
-                },
-                {
-                   "group":"Normal",
-                   "value":"btn-secondary",
-                   "label":{
-                     "en": "Secondary",
-                     "pt-BR": "Secundário"
-                   }
-                },
-                {
-                   "group":"Normal",
-                   "value":"btn-success",
-                   "label":{
-                     "en": "Success",
-                     "pt-BR": "Sucesso"
-                   }
-                },
-                {
-                   "group":"Normal",
-                   "value":"btn-danger",
-                   "label":{
-                     "en": "Danger",
-                     "pt-BR": "Perigo"
-                   }
-                },
-                {
-                   "group":"Normal",
-                   "value":"btn-warning",
-                   "label":{
-                     "en": "Warning",
-                     "pt-BR": "Aviso"
-                   }
-                },
-                {
-                   "group":"Normal",
-                   "value":"btn-info",
-                   "label":{
-                     "en": "Info",
-                     "pt-BR": "Informações"
-                   }
-                },
-                {
-                   "group":"Outline",
-                   "value":"btn-outline-dark",
-                   "label":{
-                     "en": "Dark outline",
-                     "pt-BR": "Contorno escuro"
-                   }
-                },
-                {
-                   "group":"Outline",
-                   "value":"btn-outline-primary",
-                   "label":{
-                     "en": "Primary outline",
-                     "pt-BR": "Contorno cor do primário"
-                   }
-                },
-                {
-                   "group":"Outline",
-                   "value":"btn-outline-secondary",
-                   "label":{
-                     "en": "Secondary outline",
-                     "pt-BR": "Contorno cor do secundário"
-                   }
-                },
-                {
-                   "group":"Outline",
-                   "value":"btn-outline-success",
-                   "label":{
-                     "en": "Success outline",
-                     "pt-BR": "Contorno do sucesso"
-                   }
-                },
-                {
-                   "group":"Outline",
-                   "value":"btn-outline-danger",
-                   "label":{
-                     "en": "Danger outline",
-                     "pt-BR": "Contorno cor do perigo"
-                   }
-                },
-                {
-                   "group":"Outline",
-                   "value":"btn-outline-warning",
-                   "label":{
-                     "en": "Warning outline",
-                     "pt-BR": "Contorno cor do aviso"
-                   }
-                },
-                {
-                   "group":"Outline",
-                   "value":"btn-outline-info",
-                   "label":{
-                     "en": "Info ouline",
-                     "pt-BR": "Contorno cor do informações"
-                   }
-                }
-             ]
+          "group": "Outline",
+          "value": "btn-outline-secondary",
+          "label": "Secondary outline"
         },
         {
-            "type": "select",
-            "id": "readmore_size",
-            "label": {
-               "en": "Read more button size",
-               "pt-BR": "Tamanho do botão ver mais"
-             },
-             "options":[
-                {
-                   "value":"btn-sm",
-                   "label":{
-                     "en": "Small",
-                     "pt-BR": "Pequeno"
-                   }
-                },
-                {
-                   "value":"",
-                   "label":{
-                     "en": "Normal",
-                     "pt-BR": "Normal"
-                   }
-                },
-                {
-                   "value":"btn-lg",
-                   "label":{
-                     "en": "Large",
-                     "pt-BR": "Grande"
-                   }
-                }
-             ]
+          "group": "Outline",
+          "value": "btn-outline-success",
+          "label": "Success outline"
         },
         {
-            "type": "text",
-            "id": "img_width",
-            "label": {
-               "en": "Image width (px)",
-               "pt-BR": "Largura da imagem (px)"
-             },
-            "default": "720"
+          "group": "Outline",
+          "value": "btn-outline-danger",
+          "label": "Danger outline"
         },
         {
-            "type": "text",
-            "id": "img_height",
-            "label": {
-               "en": "Image height (px)",
-               "pt-BR": "Altura da imagem (px)"
-             },
-            "default": "405"
+          "group": "Outline",
+          "value": "btn-outline-warning",
+          "label": "Warning outline"
         },
         {
-            "type": "checkbox",
-            "id": "img_thumbnail",
-            "label": {
-               "en": "Image border",
-               "pt-BR": "Borda da imagem"
-             },
-            "default": true
+          "group": "Outline",
+          "value": "btn-outline-info",
+          "label": "Info ouline"
         }
-    ]
+      ]
+    },
+    {
+      "type": "select",
+      "id": "readmore_size",
+      "label": "Read more button size",
+      "options": [
+        {
+          "value": "btn-sm",
+          "label": "Small"
+        },
+        {
+          "value": "",
+          "label": "Normal"
+        },
+        {
+          "value": "btn-lg",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "img_width",
+      "label": "Image width (px)",
+      "default": "720"
+    },
+    {
+      "type": "text",
+      "id": "img_height",
+      "label": "Image height (px)",
+      "default": "405"
+    },
+    {
+      "type": "checkbox",
+      "id": "img_thumbnail",
+      "label": "Image border",
+      "default": true
+    }
+  ]
 }
 {% endschema %}

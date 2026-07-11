@@ -1374,1049 +1374,750 @@
 
 {% schema %}
 {
-    "name": {
-     "en": "Product page",
-     "pt-BR": "Pagina do produto"
+  "name": "Product page",
+  "settings": [
+    {
+      "type": "header",
+      "content": "General settings"
     },
-    "settings": [
-        {
-            "type": "header",
-            "content": {
-             "en": "General settings",
-             "pt-BR": "Configurações gerais"
-            }
-        },
-        {
-            "type": "checkbox",
-            "id": "title_small_font",
-            "label": {
-             "en": "Product title small font",
-             "pt-BR": "Fonte pequena do título do produto"
-            },
-            "default": false
-        },
-        {
-            "type": "checkbox",
-            "id": "show_valor_parcelado",
-            "label": {
-                     "en": "Show installment amount in principal",
-                     "pt-BR": "Mostrar valor parcelado no principal"
-                    },
-            "default": false
-        },
-        {
-          "type": "checkbox",
-            "id": "show_vendor",
-            "label": {
-             "en": "Show vendor",
-             "pt-BR": "Mostrar vendedor"
-            },
-            "default": false
-        },
-        {
-            "type": "header",
-            "content": {
-             "en": "GIF Frete Grátis",
-             "pt-BR": "GIF Frete Grátis"
-            }
-        },
-        {
-            "type": "checkbox",
-            "id": "frete",
-            "label": {
-                     "en": "Activate",
-                     "pt-BR": "Ativar"
-                    },
-            "default": false
-        },
-        {
-            "type": "image_picker",
-            "id": "gif_frete",
-            "label": {
-                     "en": "Custom GIF",
-                     "pt-BR": "GIF Customizado"
-                    },
-            "info": {
-                     "en": "Add one of your choice or leave the default",
-                     "pt-BR": "Adicione um de sua escolha ou deixe o padrão"
-                    }
-        },
-        {
-            "type": "checkbox",
-            "id": "show_type",
-            "label": {
-                     "en": "Show product type",
-                     "pt-BR": "Mostrar tipo de produto"
-                    },
-            "default": false
-        },
-        {
-            "type": "checkbox",
-            "id": "show_sku",
-            "label": {
-                     "en": "Show SKU",
-                     "pt-BR": "Mostrar SKU"
-                    },
-            "default": false
-        },
-        {
-            "type": "checkbox",
-            "id": "show_qty",
-            "label": {
-                     "en": "Show quantity",
-                     "pt-BR": "Mostrar quantidade"
-                    },
-            "default": true
-        },
-        {
-            "type": "checkbox",
-            "id": "show_add_to_cart_button",
-            "label": {
-                     "en": "Show 'Add to Cart' button",
-                     "pt-BR": "Mostrar o botão 'Adicionar ao carrinho'"
-                    },
-            "default": false
-        },
-        {
-            "type": "checkbox",
-            "id": "show_buy_it_now_button",
-            "label": {
-                     "en": "Show 'Buy Now' button",
-                     "pt-BR": "Mostrar o botão 'Comprar agora'"
-                    },
-            "default": true
-        },
-        {
-            "type": "header",
-            "content": {
-                     "en": "Discount triggers",
-                     "pt-BR": "Gatilhos de desconto"
-                    }
-        },
-        {
-            "type": "checkbox",
-            "id": "desconto",
-            "label": {
-                     "en": "Enable",
-                     "pt-BR": "Habilitar"
-                    },
-            "info": {
-                     "en": "Discount bag next to the price",
-                     "pt-BR": "Bag de desconto ao lado do preço"
-                    },
-            "default": true
-        },
-        {
-            "type": "checkbox",
-            "id": "enable_texto_economize",
-            "label": {
-             "en": "Enable",
-             "pt-BR": "Habilitar"
-            },
-            "info": {
-             "en": "Save text with the amount saved",
-             "pt-BR": "Texto de economize com o valor economizado"
-            },
-            "default": true
-        },
-        {
-            "type": "text",
-            "id": "text_economize",
-            "label": {
-             "en": "Text (Save)",
-             "pt-BR": "Texto (Economize)"
-            },
-            "default": {
-             "en": "Save",
-             "pt-BR": "Economize"
-            }
-        },
-        {
-            "type": "text",
-            "id": "size_text_economize",
-            "label": {
-                     "en": "Text Size (Save)",
-                     "pt-BR": "Tamanho do texto (Economize)"
-                    },
-            "default": "12px",
-            "info": {
-             "en": "Enter the size in px.",
-             "pt-BR": "Insira o tamanho em px."
-            }
-        },
-        {
-            "type": "text",
-            "id": "size_text_12x",
-            "label": {
-                     "en": "Value size in 12x",
-                     "pt-BR": "Tamanho do valor em 12x"
-                    },
-            "default": "18px",
-            "info": {
-             "en": "Enter the size in px.",
-             "pt-BR": "Insira o tamanho em px."
-            }
-        },
-        {
-            "type": "header",
-            "content": {
-                     "en": "Timer Settings",
-                     "pt-BR": "Configurações do Timer"
-                    }
-          },
-          {
-            "type": "checkbox",
-            "id": "enable_timer",
-            "label": "Habilitar",
-            "info": {
-                     "en": "Leave the end date blank for 24 hours",
-                     "pt-BR": "Deixe a data final em branco para 24hs"
-                    },
-            "default": true
-          },
-          {
-            "type": "text",
-            "id": "time_limit",
-            "label": {
-               "en": "Final date",
-               "pt-BR": "Data final"
-              },
-            "info": {
-             "en": "Enter the date in English month/day/year format. Ex: 12/31/2022",
-             "pt-BR": "Insira a data no formato em inglês mês/dia/ano. Ex: 12/31/2022"
-            }
-          },
-          {
-            "type": "text",
-            "id": "size_text",
-            "label": {
-                     "en": "Main text size",
-                     "pt-BR": "Tamanho do texto principal"
-                    },
-            "default": "18px",
-            "info": {
-                     "en": "Enter the size in px.",
-                     "pt-BR": "Insira o tamanho em px."
-                    }
-          },
-          {
-            "type": "text",
-            "id": "size_timer",
-            "label": {
-                     "en": "Timer size",
-                     "pt-BR": "Tamanho do timer"
-                    },
-            "default": "18px",
-            "info": {
-                     "en": "Enter the size in px.",
-                     "pt-BR": "Insira o tamanho em px."
-                    }
-          },
-          {
-            "type": "text",
-            "id": "size_timer_text",
-            "label": {
-                     "en": "Timer Text Size",
-                     "pt-BR": "Tamanho texto do timer"
-                    },
-            "default": "14px",
-            "info": {
-                     "en": "Enter the size in px.",
-                     "pt-BR": "Insira o tamanho em px."
-                    }
-          },
-          {
-            "type": "richtext",
-            "label": {
-                     "en": "Text",
-                     "pt-BR": "Texto"
-                    },
-            "default": {
-                     "en": "<p><strong>OFFER ENDS AT:</strong></p>",
-                     "pt-BR": "<p><strong>OFERTA ACABA EM:</strong></p>"
-                    },
-            "id": "text_timer"
-          },
-        {
-            "type": "header",
-            "content": {
-             "en": "Payment methods",
-             "pt-BR": "Formas de pagamento"
-            }
-        },
-        {
-            "type": "checkbox",
-            "id": "show_payment_icons",
-            "label": {
-                     "en": "Show payment icons",
-                     "pt-BR": "Mostrar ícones de pagamento"
-                    },
-            "default": true
-        },
-        {
-            "type": "text",
-            "id": "cardspg",
-            "label": {
-             "en": "List of cards, separated by commas",
-             "pt-BR": "Lista de cartões, separados por vírgula"
-            },
-            "default": {
-             "en": "visa,master,american_express,paypal",
-             "pt-BR": "visa,master,american_express,paypal"
-            },
-            "info": {
-             "en": "Most commom cards: afterpay, american_express, apple_pay, bitcoin, boleto, dankort, diners_club, discover, dwolla, elo, facebook_pay, forbrugsforeningen, google_pay, ideal, jcb, klarna, klarna-pay-later, maestro, master, paypal, pix, shopify_pay, sofort, unionpay, visa",
-             "pt-BR": "Cartões mais comuns: afterpay, american_express, apple_pay, bitcoin, boleto, dankort, diners_club, discover, dwolla, elo, facebook_pay, forbrugsforeningen, google_pay, ideal, jcb, klarna, klarna-pay-later, maestro, master, paypal, pix, shopify_pay, sofort, unionpay, visa"
-            }
-        },
-        {
-            "type": "checkbox",
-            "id": "show_social_sharing",
-            "label": {
-                     "en": "Show social sharing",
-                     "pt-BR": "Mostrar compartilhamento social"
-                    },
-            "default": false
-        },
-        {
-            "type": "checkbox",
-            "id": "show_tags",
-            "label": {
-                     "en": "Show tags",
-                     "pt-BR": "Mostrar tags"
-                    },
-            "default": false
-        },
-        {
-            "type": "select",
-            "id": "add_to_cart_btn_animation",
-            "label": {
-             "en": "Add button animation",
-             "pt-BR": "Adicionar animação do botão"
-            },
-            "info": {
-             "en": "Raise buyers' awareness by catching their attention. It will run every 5 seconds. [Learn More](https://animate.style/)",
-             "pt-BR": "Aumente a conscientização dos compradores, chamando sua atenção. Será executado a cada 5 segundos. [Saber mais](https://animate.style/)"
-            },
-            "default": "animate__shakeX",
-             "options":[
-                {
-                   "value":"animate__bounce",
-                   "label":"Bounce"
-                },
-                {
-                   "value":"animate__flash",
-                   "label":"Flash"
-                },
-                {
-                   "value":"animate__pulse",
-                   "label":"Pulse"
-                },
-                {
-                   "value":"animate__rubberBand",
-                   "label":"rubberBand"
-                },
-                {
-                   "value":"animate__shakeX",
-                   "label":"ShakeX"
-                },
-                {
-                   "value":"animate__shakeY",
-                   "label":"ShakeY"
-                },
-                {
-                   "value":"animate__headShake",
-                   "label":"headShake"
-                },
-                {
-                   "value":"animate__swing",
-                   "label":"Swing"
-                },
-                {
-                   "value":"animate__tada",
-                   "label":"Tada"
-                },
-                {
-                   "value":"animate__wobble",
-                   "label":"Wobble"
-                },
-                {
-                   "value":"animate__jello",
-                   "label":"Jello"
-                },
-                {
-                   "value":"animate__heartBeat",
-                   "label":"heartBeat"
-                }
-             ]
-        },
-        {
-            "type": "image_picker",
-            "id": "imgextra",
-            "label": {
-             "en": "Picture below the Buy Button",
-             "pt-BR": "Imagem abaixo do Botão de compra"
-            },
-            "info": {
-             "en": "Ideal for adding stamps and payment options",
-             "pt-BR": "Ideal para adicionar selos e opções de pagamento"
-            }
-        },
-        {
-            "type": "header",
-            "content": {
-             "en": "Image gallery",
-             "pt-BR": "Galeria de imagens"
-            }
-        },
-        {
-            "type": "text",
-            "id": "img_width",
-            "label": {
-             "en": "Image width (px)",
-             "pt-BR": "Largura da imagem (px)"
-            },
-            "default": "720"
-        },
-        {
-            "type": "text",
-            "id": "img_height",
-            "label": {
-             "en": "Image height (px)",
-             "pt-BR": "Altura da imagem (px)"
-            },
-            "default": "720"
-        },
-        {
-            "type": "checkbox",
-            "id": "img_thumbnail",
-            "label": {
-             "en": "Image border",
-             "pt-BR": "Borda da imagem"
-            },
-            "default": false
-        },
-        {
-            "type": "checkbox",
-            "id": "image_gallery_controls",
-            "default": true,
-            "label": {
-             "en": "Show controls",
-             "pt-BR": "Mostrar controles"
-            },
-            "info": {
-             "en": "Previous / Next Buttons",
-             "pt-BR": "Botões Anterior / Próximo"
-            }
-        },
-        {
-            "type": "checkbox",
-            "id": "image_gallery_thumbnails",
-            "default": true,
-            "label": {
-             "en": "Show thumbnails",
-             "pt-BR": "Mostrar miniaturas"
-            },
-            "info": {
-             "en": "Thumbnails at the bottom",
-             "pt-BR": "Imagens pequenas na parte inferior"
-            }
-        },
-        {
-            "type": "checkbox",
-            "id": "image_gallery_thumbnails_auto_play",
-            "default": false,
-            "label": {
-             "en": "Autoplay on thumbnails",
-             "pt-BR": "Autoplay nas imagens de miniatura"
-            }
-        },
-        {
-            "type": "range",
-            "id": "image_gallery_interval",
-            "min": 0,
-            "max": 20,
-            "step": 1,
-            "unit": "sec",
-            "label": {
-             "en": "Autoplay",
-             "pt-BR": "Autoplay"
-            },
-            "default": 5
-        },
-        {
-            "type": "checkbox",
-            "id": "image_gallery_progress_bar",
-            "label": {
-             "en": "Show progress bar",
-             "pt-BR": "Mostrar barra de progresso"
-            },
-            "default": true
-        },
-        {
-            "type": "select",
-            "id": "image_gallery_progress_bar_color",
-            "label": {
-             "en": "Progress bar color",
-             "pt-BR": "Cor da barra de progresso"
-            },
-            "default": "bg-custom-gradient",
-            "options": [
-                { "value": "bg-white", "label": "White" },
-                { "value": "bg-white opacity-50", "label": "White (50% opacity)" },
-                { "value": "bg-primary", "label": "Primary" },
-                { "value": "bg-secondary", "label": "Secondary" },
-                { "value": "bg-success", "label": "Success" },
-                { "value": "bg-danger", "label": "Danger" },
-                { "value": "bg-warning", "label": "Warning" },
-                { "value": "bg-info", "label": "Info" },
-                { "value": "bg-custom-gradient", "label": "Custom Gradient" }
-            ]
-        },
-        {
-            "type": "select",
-            "id":  "image_gallery_transition",
-            "label": {
-             "en": "Transition effect",
-             "pt-BR": "Efeito de transição"
-            },
-            "default": "slide",
-            "options": [
-                { "value": "slide", "label": "Slide" },
-                { "value": "slide carousel-fade", "label": "Fade" }
-            ]
-        },
-        {
-            "type": "header",
-            "content": {
-             "en": "Fancybox Gallery",
-             "pt-BR": "Galeria Fancybox"
-            }
-        },
-        {
-            "type": "select",
-            "id":  "image_gallery_fancybox_animation_effect",
-            "label": {
-             "en": "Animation effect",
-             "pt-BR": "Efeito de animação"
-            },
-            "default": "zoom",
-            "options": [
-                { "value": "zoom", "label": "Zoom from image" },
-                { "value": "fade", "label": "Fade" },
-                { "value": "zoom-in-out", "label": "Zoom in/out" }
-            ]
-        },
-        {
-            "type": "text",
-            "id": "image_gallery_fancybox_animation_duration",
-            "label": {
-             "en": "Animation duration (ms)",
-             "pt-BR": "Duração da animação (ms)"
-            },
-            "default": "300"
-        },
-        {
-            "type": "select",
-            "id":  "image_gallery_fancybox_transition_effect",
-            "label": {
-             "en": "Transition effect",
-             "pt-BR": "Efeito de transição"
-            },
-            "default": "tube",
-            "options": [
-                { "value": "fade", "label": "Fade" },
-                { "value": "slide", "label": "Slide" },
-                { "value": "circular", "label": "Circular" },
-                { "value": "tube", "label": "Tube" },
-                { "value": "zoom-in-out", "label": "Zoom in/out" },
-                { "value": "rotate", "label": "Rotate" }
-            ]
-        },
-        {
-            "type": "text",
-            "id": "image_gallery_fancybox_transition_duration",
-            "label": {
-             "en": "Transition duration (ms)",
-             "pt-BR": "Duração da transição (ms)"
-            },
-            "default": "600"
-        },
-        {
-            "type": "header",
-            "content": {
-             "en": "Color swatches",
-             "pt-BR": "Swatch de variantes e cores"
-            }
-        },
-        {
-            "type": "checkbox",
-            "id": "color_swatches_enabled",
-            "label": {
-             "en": "Enable swatch",
-             "pt-BR": "Habilitar swatch"
-            },
-            "default": true
-        },
-        {
-            "type": "checkbox",
-            "id": "show_badge_mostsell",
-            "label": {
-             "en": "Show top selling badge",
-             "pt-BR": "Mostrar badge Mais Vendido"
-            },
-            "default": true
-        },
-        {
-            "type": "checkbox",
-            "id": "show_badge_moreeconomy",
-            "label": {
-             "en": "Show bigger savings badge",
-             "pt-BR": "Mostrar badge Maior economia"
-            },
-            "default": true
-        },
-        {
-            "type": "number",
-            "id": "badge_mostsell_position",
-            "label": {
-             "en": "Most selling badge position",
-             "pt-BR": "Posição do badge Mais Vendido"
-            },
-            "default": 2
-        },
-        {
-            "type": "number",
-            "id": "badge_moreeconomy_position",
-            "label": {
-             "en": "More economy badge position",
-             "pt-BR": "Posição do badge Maior Economia"
-            },
-            "default": 3
-        },
-        {
-            "type": "color",
-            "id": "color_kit_main",
-            "label": {
-             "en": "Product kit main color",
-             "pt-BR": "Cor principal do kit de produtos"
-            },
-            "default": "#28BA86"
-        },
-        {
-            "type": "color",
-            "id": "color_kit_badge_mostsell",
-            "label": {
-             "en": "Best seller badge color",
-             "pt-BR": "Cor do badge de Mais Vendido"
-            },
-            "default": "#ff6500"
-        },
-        {
-            "type": "color",
-            "id": "color_kit_badge_discount",
-            "label": {
-             "en": "Discount badge color",
-             "pt-BR": "Cor do badge de Desconto"
-            },
-            "default": "#c11b1b"
-        },
-        {
-            "type": "color",
-            "id": "color_kit_badge_moreeconomy",
-            "label": {
-             "en": "More economy badge color",
-             "pt-BR": "Cor do badge de Maior economia"
-            },
-            "default": "#ffc107"
-        },
-        {
-            "type": "color",
-            "id": "color_kit_badge_soldout",
-            "label": {
-             "en": "Sold out badge color",
-             "pt-BR": "Cor do badge de Esgotado"
-            },
-            "default": "#333333"
-        },
-        {
-            "type": "checkbox",
-            "id": "swatch_quadrado",
-            "label": {
-             "en": "Color swatch square format.",
-             "pt-BR": "Formato quadrado do swatch de cores."
-            },
-            "default": false
-        },
-        {
-            "type": "text",
-            "id": "size_swatch",
-            "label": {
-             "en": "Swatch size",
-             "pt-BR": "Tamanho do swatch"
-            },
-            "default": "55px"
-        },
-        {
-            "type": "text",
-            "id": "variant_swatch_color_name",
-            "label": {
-             "en": "Custom color variant name",
-             "pt-BR": "Nome da variante de cores personalizado"
-            },
-            "default": {
-             "en": "Choose color",
-             "pt-BR": "Escolha a cor"
-            }
-        },
-        {
-            "type": "header",
-            "content": {
-             "en": "Inventory bar",
-             "pt-BR": "Barra de inventário"
-            },
-            "info": {
-             "en": "Display available stock with an animated progress bar",
-             "pt-BR": "Exibir o estoque disponível com uma barra de progresso animada"
-            }
-        },
-        {
-            "type": "checkbox",
-            "id": "inventory_bar_enable",
-            "label": {
-             "en": "Enable inventory bar",
-             "pt-BR": "Ativar barra de estoque"
-            },
-            "default": true
-        },
-        {
-            "type": "text",
-            "id": "inventory_bar_low_no",
-            "label": {
-             "en": "Low stock number",
-             "pt-BR": "Número de estoque baixo"
-            },
-            "info": {
-             "en": "If the stock is below or equal to this number, the stock bar will indicate low stock.",
-             "pt-BR": "Se o estoque estiver abaixo ou igual a este número, a barra de estoque indicará pouco estoque."
-            },
-            "default": "5"
-        },
-        {
-            "type": "select",
-            "id": "inventory_bar_has_stock_color",
-            "label": {
-             "en": "Has stock color",
-             "pt-BR": "Cor do tem estoque"
-            },
-            "info": {
-             "en": "Note: Low stock will be displayed in yellow \"warning\" color and no stock will be displayed in red \"danger\" color",
-             "pt-BR": "Nota: Estoque baixo será exibido em amarelo \"warning\" cor e nenhum estoque será exibido com vermelho \"danger\" cor"
-            },
-            "default": "bg-success",
-            "options": [
-                { "value": "bg-primary", "label": "Primary" },
-                { "value": "bg-secondary", "label": "Secondary" },
-                { "value": "bg-success", "label": "Success" },
-                { "value": "bg-danger", "label": "Danger" },
-                { "value": "bg-warning", "label": "Warning" },
-                { "value": "bg-info", "label": "Info" }
-            ]
-        },
-                {
-            "type": "header",
-            "content": {
-             "en": "Estimated Delivery",
-             "pt-BR": "Entrega estimada"
-            },
-            "info": {
-             "en": "Let your customers know when they should expect their order to arrive.",
-             "pt-BR": "Informe seus clientes quando eles devem esperar a chegada de seu pedido."
-            }
-        },
-        {
-            "type": "checkbox",
-            "id": "delivery_time",
-            "label": {
-             "en": "Enable delivery time",
-             "pt-BR": "Habilitar tempo de entrega"
-            },
-            "info": {
-             "en": "Go to your store outside of the editor to view the changes you've made.",
-             "pt-BR": "Acesse sua loja fora do editor para visualizar as alterações feitas."
-            },
-            "default": false
-        },
-
-        {
-            "type": "color",
-            "id": "entrega_estimada_cor",
-            "label": {
-             "en": "Text color",
-             "pt-BR": "Cor do texto"
-            },
-            "default": "#B75E56"
-        },
-        {
-            "type": "text",
-            "id": "textofrete",
-            "label": {
-             "en": "Shipping text",
-             "pt-BR": "Texto frete"
-            },
-            "default": {
-             "en": "Free shipping",
-             "pt-BR": "Frete Grátis"
-            }
-        },
-        {
-            "type": "text",
-            "id": "delivery_time_text",
-            "label": {
-             "en": "Delivery time text",
-             "pt-BR": "Texto prazo"
-            },
-            "default": {
-             "en": "Receive between:",
-             "pt-BR": "Receba entre:"
-            }
-        },
-        {
-            "type": "checkbox",
-            "id": "enable_garantia",
-            "label": {
-             "en": "Enable warranty",
-             "pt-BR": "Habilitar garantia"
-            },
-            "default": true
-        },
-        {
-            "type": "text",
-            "id": "garantia_text",
-            "label": {
-             "en": "Warranty text",
-             "pt-BR": "Texto garantia"
-            },
-            "default": {
-             "en": "30 days guarantee",
-             "pt-BR": "30 Dias de Garantia"
-            }
-        },
-        {
-            "type": "checkbox",
-            "id": "enable_troca",
-            "label": {
-             "en": "Enable exchange",
-             "pt-BR": "Habilitar troca"
-            },
-            "default": true
-        },
-        {
-            "type": "text",
-            "id": "troca_text",
-            "label": {
-             "en": "Text exchange",
-             "pt-BR": "Texto troca"
-            },
-            "default": {
-             "en": "7 days for exchanges and returns",
-             "pt-BR": "7 dias para trocas e devoluções"
-            }
-        },
-        {
-            "type": "color",
-            "id": "troca_cor",
-            "label": {
-             "en": "Text color",
-             "pt-BR": "Cor do texto"
-            },
-            "default": "#53CA58"
-        },
-        {
-            "type": "text",
-            "id": "size_text_frete",
-            "label": {
-             "en": "Text size",
-             "pt-BR": "Tamanho do texto"
-            },
-            "default": "14px",
-            "info": {
-             "en": "Enter the size in px.",
-             "pt-BR": "Insira o tamanho em px."
-            }
-        },
-        {
-            "type": "range",
-            "id": "delivery_time_min_days",
-            "min": 1,
-            "max": 60,
-            "step": 1,
-            "label": {
-             "en": "Minimum time (Days)",
-             "pt-BR": "Tempo mínimo (Dias)"
-            },
-            "default": 3
-        },
-        {
-            "type": "range",
-            "id": "delivery_time_max_days",
-            "min": 2,
-            "max": 60,
-            "step": 1,
-            "label": {
-             "en": "max time (Days)",
-             "pt-BR": "Tempo máximo (Dias)"
-            },
-            "default": 7
-        },
-        {
-            "type": "header",
-            "content": {
-             "en": "Counter",
-             "pt-BR": "Contador"
-            }
-
-        },
-        {
-            "type": "checkbox",
-            "id": "vendidos",
-            "label": {
-             "en": "Enable sales count",
-             "pt-BR": "Habilitar Contagem de vendidos"
-            },
-            "info": {
-             "en": "Data is captured from product inventory*",
-             "pt-BR": "Os dados são capturados do estoque do produto*"
-            },
-            "default": true
-        },
-        {
-            "type": "text",
-            "id": "vendidos_texto",
-            "label": {
-             "en": "Text sold",
-             "pt-BR": "Texto vendidos"
-            },
-            "default": {
-             "en": "units sold",
-             "pt-BR": "unidades vendidas"
-            }
-        },
-        {
-            "type": "color",
-            "id": "vendidos_cor",
-            "label": {
-             "en": "Icon color",
-             "pt-BR": "Cor do icone "
-            },
-            "default": "#e22120"
+    {
+      "type": "checkbox",
+      "id": "title_small_font",
+      "label": "Product title small font",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_valor_parcelado",
+      "label": "Show installment amount in principal",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "label": "Show vendor",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "GIF Frete Gr\u00e1tis"
+    },
+    {
+      "type": "checkbox",
+      "id": "frete",
+      "label": "Activate",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "gif_frete",
+      "label": "Custom GIF",
+      "info": "Add one of your choice or leave the default"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_type",
+      "label": "Show product type",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_sku",
+      "label": "Show SKU",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_qty",
+      "label": "Show quantity",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_add_to_cart_button",
+      "label": "Show 'Add to Cart' button",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_buy_it_now_button",
+      "label": "Show 'Buy Now' button",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Discount triggers"
+    },
+    {
+      "type": "checkbox",
+      "id": "desconto",
+      "label": "Enable",
+      "info": "Discount bag next to the price",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_texto_economize",
+      "label": "Enable",
+      "info": "Save text with the amount saved",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "text_economize",
+      "label": "Text (Save)",
+      "default": "Save"
+    },
+    {
+      "type": "text",
+      "id": "size_text_economize",
+      "label": "Text Size (Save)",
+      "default": "12px",
+      "info": "Enter the size in px."
+    },
+    {
+      "type": "text",
+      "id": "size_text_12x",
+      "label": "Value size in 12x",
+      "default": "18px",
+      "info": "Enter the size in px."
+    },
+    {
+      "type": "header",
+      "content": "Timer Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_timer",
+      "label": "Habilitar",
+      "info": "Leave the end date blank for 24 hours",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "time_limit",
+      "label": "Final date",
+      "info": "Enter the date in English month/day/year format. Ex: 12/31/2022"
+    },
+    {
+      "type": "text",
+      "id": "size_text",
+      "label": "Main text size",
+      "default": "18px",
+      "info": "Enter the size in px."
+    },
+    {
+      "type": "text",
+      "id": "size_timer",
+      "label": "Timer size",
+      "default": "18px",
+      "info": "Enter the size in px."
+    },
+    {
+      "type": "text",
+      "id": "size_timer_text",
+      "label": "Timer Text Size",
+      "default": "14px",
+      "info": "Enter the size in px."
+    },
+    {
+      "type": "richtext",
+      "label": "Text",
+      "default": "<p><strong>OFFER ENDS AT:</strong></p>",
+      "id": "text_timer"
+    },
+    {
+      "type": "header",
+      "content": "Payment methods"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_payment_icons",
+      "label": "Show payment icons",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "cardspg",
+      "label": "List of cards, separated by commas",
+      "default": "visa,master,american_express,paypal",
+      "info": "Most commom cards: afterpay, american_express, apple_pay, bitcoin, boleto, dankort, diners_club, discover, dwolla, elo, facebook_pay, forbrugsforeningen, google_pay, ideal, jcb, klarna, klarna-pay-later, maestro, master, paypal, pix, shopify_pay, sofort, unionpay, visa"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_social_sharing",
+      "label": "Show social sharing",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_tags",
+      "label": "Show tags",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "add_to_cart_btn_animation",
+      "label": "Add button animation",
+      "info": "Raise buyers' awareness by catching their attention. It will run every 5 seconds. [Learn More](https://animate.style/)",
+      "default": "animate__shakeX",
+      "options": [
+        {
+          "value": "animate__bounce",
+          "label": "Bounce"
+        },
+        {
+          "value": "animate__flash",
+          "label": "Flash"
+        },
+        {
+          "value": "animate__pulse",
+          "label": "Pulse"
+        },
+        {
+          "value": "animate__rubberBand",
+          "label": "rubberBand"
+        },
+        {
+          "value": "animate__shakeX",
+          "label": "ShakeX"
+        },
+        {
+          "value": "animate__shakeY",
+          "label": "ShakeY"
+        },
+        {
+          "value": "animate__headShake",
+          "label": "headShake"
+        },
+        {
+          "value": "animate__swing",
+          "label": "Swing"
+        },
+        {
+          "value": "animate__tada",
+          "label": "Tada"
+        },
+        {
+          "value": "animate__wobble",
+          "label": "Wobble"
+        },
+        {
+          "value": "animate__jello",
+          "label": "Jello"
+        },
+        {
+          "value": "animate__heartBeat",
+          "label": "heartBeat"
         }
-    ],
-    "blocks": [
+      ]
+    },
+    {
+      "type": "image_picker",
+      "id": "imgextra",
+      "label": "Picture below the Buy Button",
+      "info": "Ideal for adding stamps and payment options"
+    },
+    {
+      "type": "header",
+      "content": "Image gallery"
+    },
+    {
+      "type": "text",
+      "id": "img_width",
+      "label": "Image width (px)",
+      "default": "720"
+    },
+    {
+      "type": "text",
+      "id": "img_height",
+      "label": "Image height (px)",
+      "default": "720"
+    },
+    {
+      "type": "checkbox",
+      "id": "img_thumbnail",
+      "label": "Image border",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "image_gallery_controls",
+      "default": true,
+      "label": "Show controls",
+      "info": "Previous / Next Buttons"
+    },
+    {
+      "type": "checkbox",
+      "id": "image_gallery_thumbnails",
+      "default": true,
+      "label": "Show thumbnails",
+      "info": "Thumbnails at the bottom"
+    },
+    {
+      "type": "checkbox",
+      "id": "image_gallery_thumbnails_auto_play",
+      "default": false,
+      "label": "Autoplay on thumbnails"
+    },
+    {
+      "type": "range",
+      "id": "image_gallery_interval",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "sec",
+      "label": "Autoplay",
+      "default": 5
+    },
+    {
+      "type": "checkbox",
+      "id": "image_gallery_progress_bar",
+      "label": "Show progress bar",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "image_gallery_progress_bar_color",
+      "label": "Progress bar color",
+      "default": "bg-custom-gradient",
+      "options": [
         {
-            "type": "product_desc",
-            "name": {
-             "en": "Product description",
-             "pt-BR": "Descrição do produto"
-            },
-            "limit": 1,
-            "settings": [
-                {
-                    "type": "text",
-                    "id": "title",
-                    "label": {
-                     "en": "Title",
-                     "pt-BR": "Título"
-                    },
-                    "default": {
-                     "en": "Details",
-                     "pt-BR": "Detalhes"
-                    }
-                }
-            ]
+          "value": "bg-white",
+          "label": "White"
         },
         {
-            "type": "ask_question",
-            "name": {
-             "en": "Contact",
-             "pt-BR": "Contato"
-            },
-            "limit": 1,
-            "settings": [
-                {
-                    "type": "text",
-                    "id": "title",
-                    "label": {
-                     "en": "Title",
-                     "pt-BR": "Título"
-                    },
-                    "default": {
-                     "en": "Title",
-                     "pt-BR": "Título"
-                    }
-                },
-                {
-                    "type": "richtext",
-                    "id": "description",
-                    "label": {
-                     "en": "Description",
-                     "pt-BR": "Descrição"
-                    }
-                }
-            ]
+          "value": "bg-white opacity-50",
+          "label": "White (50% opacity)"
         },
         {
-            "type": "richtext",
-            "name": {
-             "en": "Richtext",
-             "pt-BR": "Richtext"
-            },
-            "settings": [
-                {
-                    "type": "text",
-                    "id": "title",
-                    "label": {
-                     "en": "Title",
-                     "pt-BR": "Título"
-                    },
-                    "default": {
-                     "en": "Text",
-                     "pt-BR": "Texto"
-                    }
-                },
-                {
-                    "type": "richtext",
-                    "id": "description",
-                    "label": {
-                     "en": "Description",
-                     "pt-BR": "Descrição"
-                    }
-                }
-            ]
+          "value": "bg-primary",
+          "label": "Primary"
+        },
+        {
+          "value": "bg-secondary",
+          "label": "Secondary"
+        },
+        {
+          "value": "bg-success",
+          "label": "Success"
+        },
+        {
+          "value": "bg-danger",
+          "label": "Danger"
+        },
+        {
+          "value": "bg-warning",
+          "label": "Warning"
+        },
+        {
+          "value": "bg-info",
+          "label": "Info"
+        },
+        {
+          "value": "bg-custom-gradient",
+          "label": "Custom Gradient"
         }
-    ],
-    "default": {
-        "blocks": [
-            {
-                "type": "product_desc",
-                "settings": {
-                    "title": "Details"
-                }
-            },
-            {
-                "type": "ask_question",
-                "settings": {
-                    "description": "<p>Please feel free to contact us with any questions you may have about this product. We will be happy to help you.</p>"
-                }
-            },
-            {
-                "type": "richtext",
-                "settings": {
-                    "title": "Extra text",
-                    "description": "<p>Feel free to create additional blocks like this one for <strong>Shipments, payments, etc.</strong> via Shopify's theme editor. Also, you can easily adjust the order by dragging and dropping.</p>"
-                }
-            }
-        ]
+      ]
+    },
+    {
+      "type": "select",
+      "id": "image_gallery_transition",
+      "label": "Transition effect",
+      "default": "slide",
+      "options": [
+        {
+          "value": "slide",
+          "label": "Slide"
+        },
+        {
+          "value": "slide carousel-fade",
+          "label": "Fade"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Fancybox Gallery"
+    },
+    {
+      "type": "select",
+      "id": "image_gallery_fancybox_animation_effect",
+      "label": "Animation effect",
+      "default": "zoom",
+      "options": [
+        {
+          "value": "zoom",
+          "label": "Zoom from image"
+        },
+        {
+          "value": "fade",
+          "label": "Fade"
+        },
+        {
+          "value": "zoom-in-out",
+          "label": "Zoom in/out"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "image_gallery_fancybox_animation_duration",
+      "label": "Animation duration (ms)",
+      "default": "300"
+    },
+    {
+      "type": "select",
+      "id": "image_gallery_fancybox_transition_effect",
+      "label": "Transition effect",
+      "default": "tube",
+      "options": [
+        {
+          "value": "fade",
+          "label": "Fade"
+        },
+        {
+          "value": "slide",
+          "label": "Slide"
+        },
+        {
+          "value": "circular",
+          "label": "Circular"
+        },
+        {
+          "value": "tube",
+          "label": "Tube"
+        },
+        {
+          "value": "zoom-in-out",
+          "label": "Zoom in/out"
+        },
+        {
+          "value": "rotate",
+          "label": "Rotate"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "image_gallery_fancybox_transition_duration",
+      "label": "Transition duration (ms)",
+      "default": "600"
+    },
+    {
+      "type": "header",
+      "content": "Color swatches"
+    },
+    {
+      "type": "checkbox",
+      "id": "color_swatches_enabled",
+      "label": "Enable swatch",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_badge_mostsell",
+      "label": "Show top selling badge",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_badge_moreeconomy",
+      "label": "Show bigger savings badge",
+      "default": true
+    },
+    {
+      "type": "number",
+      "id": "badge_mostsell_position",
+      "label": "Most selling badge position",
+      "default": 2
+    },
+    {
+      "type": "number",
+      "id": "badge_moreeconomy_position",
+      "label": "More economy badge position",
+      "default": 3
+    },
+    {
+      "type": "color",
+      "id": "color_kit_main",
+      "label": "Product kit main color",
+      "default": "#28BA86"
+    },
+    {
+      "type": "color",
+      "id": "color_kit_badge_mostsell",
+      "label": "Best seller badge color",
+      "default": "#ff6500"
+    },
+    {
+      "type": "color",
+      "id": "color_kit_badge_discount",
+      "label": "Discount badge color",
+      "default": "#c11b1b"
+    },
+    {
+      "type": "color",
+      "id": "color_kit_badge_moreeconomy",
+      "label": "More economy badge color",
+      "default": "#ffc107"
+    },
+    {
+      "type": "color",
+      "id": "color_kit_badge_soldout",
+      "label": "Sold out badge color",
+      "default": "#333333"
+    },
+    {
+      "type": "checkbox",
+      "id": "swatch_quadrado",
+      "label": "Color swatch square format.",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "size_swatch",
+      "label": "Swatch size",
+      "default": "55px"
+    },
+    {
+      "type": "text",
+      "id": "variant_swatch_color_name",
+      "label": "Custom color variant name",
+      "default": "Choose color"
+    },
+    {
+      "type": "header",
+      "content": "Inventory bar",
+      "info": "Display available stock with an animated progress bar"
+    },
+    {
+      "type": "checkbox",
+      "id": "inventory_bar_enable",
+      "label": "Enable inventory bar",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "inventory_bar_low_no",
+      "label": "Low stock number",
+      "info": "If the stock is below or equal to this number, the stock bar will indicate low stock.",
+      "default": "5"
+    },
+    {
+      "type": "select",
+      "id": "inventory_bar_has_stock_color",
+      "label": "Has stock color",
+      "info": "Note: Low stock will be displayed in yellow \"warning\" color and no stock will be displayed in red \"danger\" color",
+      "default": "bg-success",
+      "options": [
+        {
+          "value": "bg-primary",
+          "label": "Primary"
+        },
+        {
+          "value": "bg-secondary",
+          "label": "Secondary"
+        },
+        {
+          "value": "bg-success",
+          "label": "Success"
+        },
+        {
+          "value": "bg-danger",
+          "label": "Danger"
+        },
+        {
+          "value": "bg-warning",
+          "label": "Warning"
+        },
+        {
+          "value": "bg-info",
+          "label": "Info"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Estimated Delivery",
+      "info": "Let your customers know when they should expect their order to arrive."
+    },
+    {
+      "type": "checkbox",
+      "id": "delivery_time",
+      "label": "Enable delivery time",
+      "info": "Go to your store outside of the editor to view the changes you've made.",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "entrega_estimada_cor",
+      "label": "Text color",
+      "default": "#B75E56"
+    },
+    {
+      "type": "text",
+      "id": "textofrete",
+      "label": "Shipping text",
+      "default": "Free shipping"
+    },
+    {
+      "type": "text",
+      "id": "delivery_time_text",
+      "label": "Delivery time text",
+      "default": "Receive between:"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_garantia",
+      "label": "Enable warranty",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "garantia_text",
+      "label": "Warranty text",
+      "default": "30 days guarantee"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_troca",
+      "label": "Enable exchange",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "troca_text",
+      "label": "Text exchange",
+      "default": "7 days for exchanges and returns"
+    },
+    {
+      "type": "color",
+      "id": "troca_cor",
+      "label": "Text color",
+      "default": "#53CA58"
+    },
+    {
+      "type": "text",
+      "id": "size_text_frete",
+      "label": "Text size",
+      "default": "14px",
+      "info": "Enter the size in px."
+    },
+    {
+      "type": "range",
+      "id": "delivery_time_min_days",
+      "min": 1,
+      "max": 60,
+      "step": 1,
+      "label": "Minimum time (Days)",
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "delivery_time_max_days",
+      "min": 2,
+      "max": 60,
+      "step": 1,
+      "label": "max time (Days)",
+      "default": 7
+    },
+    {
+      "type": "header",
+      "content": "Counter"
+    },
+    {
+      "type": "checkbox",
+      "id": "vendidos",
+      "label": "Enable sales count",
+      "info": "Data is captured from product inventory*",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "vendidos_texto",
+      "label": "Text sold",
+      "default": "units sold"
+    },
+    {
+      "type": "color",
+      "id": "vendidos_cor",
+      "label": "Icon color",
+      "default": "#e22120"
     }
+  ],
+  "blocks": [
+    {
+      "type": "product_desc",
+      "name": "Product description",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Details"
+        }
+      ]
+    },
+    {
+      "type": "ask_question",
+      "name": "Contact",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    },
+    {
+      "type": "richtext",
+      "name": "Richtext",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Text"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "product_desc",
+        "settings": {
+          "title": "Details"
+        }
+      },
+      {
+        "type": "ask_question",
+        "settings": {
+          "description": "<p>Please feel free to contact us with any questions you may have about this product. We will be happy to help you.</p>"
+        }
+      },
+      {
+        "type": "richtext",
+        "settings": {
+          "title": "Extra text",
+          "description": "<p>Feel free to create additional blocks like this one for <strong>Shipments, payments, etc.</strong> via Shopify's theme editor. Also, you can easily adjust the order by dragging and dropping.</p>"
+        }
+      }
+    ]
+  }
 }
 {% endschema %}

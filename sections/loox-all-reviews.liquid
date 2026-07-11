@@ -9,79 +9,57 @@
 ></div>
 {% schema %}
 {
-	"name": {
-     "en": "Loox Widget - Reviews",
-     "pt-BR": "Loox Widget - avaliações"
+  "name": "Loox Widget - Reviews",
+  "class": "index-section",
+  "settings": [
+    {
+      "id": "only_photos",
+      "type": "checkbox",
+      "label": "Show only photo comments",
+      "default": false
     },
-	"class": "index-section",
-	"settings": [
-		{
-			"id": "only_photos",
-			"type": "checkbox",
-			"label": {
-             "en": "Show only photo comments",
-             "pt-BR": "Exibir apenas comentários com fotos"
-            },
-			"default": false
-		},
-		{
-			"id": "hide_thumbnails",
-			"type": "checkbox",
-			"label": {
-             "en": "Hide Product Thumbnails",
-             "pt-BR": "Ocultar miniaturas de produtos"
-            },
-			"default": false
-		},
-		{
-			"type": "product",
-			"id": "product_handle",
-			"label": {
-             "en": "Add \"Write a review\" button linked to:",
-             "pt-BR": "Adicionar \"Escreva uma crítica\" botão vinculado a:"
-            }
-		},
-		{
-			"type": "checkbox",
-			"id": "aggregated",
-			"label": {
-             "en": "Show reviews for all products",
-             "pt-BR": "Mostrar resenhas de todos os produtos"
-            },
-			"default": true
-		},
-		{
-			"type": "range",
-			"id": "data-limit",
-			"min": 1,
-			"max": 40,
-			"step": 1,
-			"label": {
-             "en": "Number of reviews to display",
-             "pt-BR": "Número de avaliações para exibir"
-            },
-			"default": 20
-		},
-		{
-			"type": "range",
-			"id": "maxwidth",
-			"min": 480,
-			"max": 1920,
-			"step": 40,
-			"unit": "px",
-			"label": {
-             "en": "Max width",
-             "pt-BR": "Largura máxima"
-            },
-			"default": 1080
-		}
-	],
-	"presets": [{
-		"name": {
-             "en": "Loox Widget - All Reviews",
-             "pt-BR": "Loox Widget - Todas Avaliações"
-            },
-		"category": "Loox"
-	}]
+    {
+      "id": "hide_thumbnails",
+      "type": "checkbox",
+      "label": "Hide Product Thumbnails",
+      "default": false
+    },
+    {
+      "type": "product",
+      "id": "product_handle",
+      "label": "Add \"Write a review\" button linked to:"
+    },
+    {
+      "type": "checkbox",
+      "id": "aggregated",
+      "label": "Show reviews for all products",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "data-limit",
+      "min": 1,
+      "max": 40,
+      "step": 1,
+      "label": "Number of reviews to display",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "maxwidth",
+      "min": 480,
+      "max": 1920,
+      "step": 40,
+      "unit": "px",
+      "label": "Max width",
+      "default": 1080
+    }
+  ],
+  "presets": [
+    {
+      "name": "Loox Widget - All Reviews",
+      "category": "Loox"
+    }
+  ]
 }
 {% endschema %}

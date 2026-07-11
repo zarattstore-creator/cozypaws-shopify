@@ -341,129 +341,81 @@
 
 {% schema %}
 {
-    "name": "Carrinho",
-    "settings": [
-        {
-            "type": "richtext",
-            "id": "description",
-            "label": {
-             "en": "Description",
-             "pt-BR": "Descrição"
-            },
-            "info": {
-             "en": "Leave blank to disable",
-             "pt-BR": "Deixe em branco para desativar"
-            },
-            "default": {
-             "en": "<p>Do you have questions? Please <a href=\"/pages/contact\">contact us</a></p>",
-             "pt-BR": "<p>Tem perguntas? Por favor <a href=\"/pages/contato\">contate-nos</a></p>"
-            }
-        },
-        {
-            "type": "text",
-            "id": "img_width",
-            "label": {
-             "en": "Image width (px)",
-             "pt-BR": "Largura da imagem (px)"
-            },
-            "default": "360"
-        },
-        {
-            "type": "text",
-            "id": "img_height",
-            "label": {
-               "en": "Image height (px)",
-               "pt-BR": "Altura da imagem (px)"
-             },
-            "default": "360"
-        },
-        {
-            "type": "checkbox",
-            "id": "img_thumbnail",
-            "label": {
-               "en": "Image border",
-               "pt-BR": "Borda da imagem"
-             },
-            "default": true
-        },
-        {
-            "type": "checkbox",
-            "id": "show_qty",
-            "label": {
-             "en": "Show quantity",
-             "pt-BR": "Mostrar quantidade"
-            },
-            "default": true
-        },
-        {
-            "type": "header",
-            "content": {
-             "en": "Summary",
-             "pt-BR": "Resumo"
-            }
-        },
-        {
-            "type": "checkbox",
-            "id": "show_note",
-            "label": {
-             "en": "Show note field",
-             "pt-BR": "Mostrar campo de nota"
-            },
-            "default": true
-        },
-        {
-            "type": "range",
-            "id": "note_rows",
-            "min": 2,
-            "max": 12,
-            "step": 1,
-            "label": {
-             "en": "Note lines (height)",
-             "pt-BR": "Linhas de nota (altura)"
-            },
-            "default": 3
-        },
-        {
-            "type": "checkbox",
-            "id": "show_discount_code",
-            "label": {
-             "en": "Show 'Enter discount' button",
-             "pt-BR": "Mostrar o botão 'Inserir desconto'"
-            },
-            "default": true
-        },
-        {
-            "type": "header",
-            "content": {
-             "en": "Payment methods",
-             "pt-BR": "Formas de pagamento"
-            }
-        },
-        {
-            "type": "checkbox",
-            "id": "show_payment_icons",
-            "label": {
-             "en": "Show payment icons",
-             "pt-BR": "Mostrar ícones de pagamento"
-            },
-            "default": true
-        },
-        {
-            "type": "text",
-            "id": "cardspg",
-            "label": {
-             "en": "List of cards, separated by commas",
-             "pt-BR": "Lista de cartões, separados por vírgula"
-            },
-            "default": {
-             "en": "visa,master,american_express,paypal",
-             "pt-BR": "visa,master,american_express,paypal"
-            },
-            "info": {
-             "en": "Most commom cards: afterpay, american_express, apple_pay, bitcoin, boleto, dankort, diners_club, discover, dwolla, elo, facebook_pay, forbrugsforeningen, google_pay, ideal, jcb, klarna, klarna-pay-later, maestro, master, paypal, pix, shopify_pay, sofort, unionpay, visa",
-             "pt-BR": "Cartões mais comuns: afterpay, american_express, apple_pay, bitcoin, boleto, dankort, diners_club, discover, dwolla, elo, facebook_pay, forbrugsforeningen, google_pay, ideal, jcb, klarna, klarna-pay-later, maestro, master, paypal, pix, shopify_pay, sofort, unionpay, visa"
-            }
-        }
-    ]
+  "name": "Carrinho",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "info": "Leave blank to disable",
+      "default": "<p>Do you have questions? Please <a href=\"/pages/contact\">contact us</a></p>"
+    },
+    {
+      "type": "text",
+      "id": "img_width",
+      "label": "Image width (px)",
+      "default": "360"
+    },
+    {
+      "type": "text",
+      "id": "img_height",
+      "label": "Image height (px)",
+      "default": "360"
+    },
+    {
+      "type": "checkbox",
+      "id": "img_thumbnail",
+      "label": "Image border",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_qty",
+      "label": "Show quantity",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Summary"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_note",
+      "label": "Show note field",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "note_rows",
+      "min": 2,
+      "max": 12,
+      "step": 1,
+      "label": "Note lines (height)",
+      "default": 3
+    },
+    {
+      "type": "checkbox",
+      "id": "show_discount_code",
+      "label": "Show 'Enter discount' button",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Payment methods"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_payment_icons",
+      "label": "Show payment icons",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "cardspg",
+      "label": "List of cards, separated by commas",
+      "default": "visa,master,american_express,paypal",
+      "info": "Most commom cards: afterpay, american_express, apple_pay, bitcoin, boleto, dankort, diners_club, discover, dwolla, elo, facebook_pay, forbrugsforeningen, google_pay, ideal, jcb, klarna, klarna-pay-later, maestro, master, paypal, pix, shopify_pay, sofort, unionpay, visa"
+    }
+  ]
 }
 {% endschema %}

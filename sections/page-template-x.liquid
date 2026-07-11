@@ -912,1297 +912,754 @@ $(document).ready(function(){
 {% endif %}
 
 {% schema %}
-  {
-     "name": {
-       "en": "Landingx",
-       "pt-BR": "Landingx"
-      },
-     "settings":[
+{
+  "name": "Landingx",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Footer Settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "imagemlogo",
+      "label": "Footer Logo"
+    },
+    {
+      "type": "richtext",
+      "id": "sobre",
+      "label": "About",
+      "default": "<p>Working hours:<br> Mon to Fri: 09 am to 5 pm </p>"
+    },
+    {
+      "type": "text",
+      "id": "textowhats",
+      "label": "WhatsApp Button Text",
+      "default": "Service via WhatsApp"
+    },
+    {
+      "type": "text",
+      "id": "numerowhats",
+      "label": "WhatsApp Number",
+      "info": "Put it like this (63992029347) with (63) being the DDD. (Only for Brazil)",
+      "default": "630000000"
+    },
+    {
+      "type": "text",
+      "id": "whatsfrase",
+      "label": "Standard Text",
+      "default": "Hello, I would like to know how I can buy your product"
+    },
+    {
+      "type": "color",
+      "id": "bt_whats",
+      "label": "WhatsApp Button Color",
+      "default": "#20C200"
+    },
+    {
+      "type": "color",
+      "id": "bt_hove",
+      "label": "On hover",
+      "default": "#309D1D"
+    },
+    {
+      "type": "header",
+      "content": "General Settings"
+    },
+    {
+      "type": "color",
+      "id": "btn_geral",
+      "label": "Button color",
+      "default": "#ff5030"
+    },
+    {
+      "type": "color",
+      "id": "btn_hove",
+      "label": "On hover",
+      "default": "#FFA425"
+    },
+    {
+      "type": "color",
+      "id": "icone",
+      "label": "Benefits icon color",
+      "default": "#fff",
+      "info": "This option changes the color of the icons in the benefits section"
+    },
+    {
+      "type": "checkbox",
+      "id": "compra",
+      "label": "Floating buy button",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "textbotaoflut",
+      "label": "Floating button text",
+      "default": "BUY NOW"
+    },
+    {
+      "type": "url",
+      "id": "botaoflut",
+      "label": "Floating Button URL",
+      "info": "Put (#comprar) to take the product section"
+    },
+    {
+      "type": "checkbox",
+      "id": "borda",
+      "label": "Rounded Button Edge",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Product Box",
+      "limit": 1,
+      "settings": [
         {
-           "type":"header",
-           "content":{
-             "en": "Footer Settings",
-             "pt-BR": "Configurações do rodapé"
-            }
+          "type": "header",
+          "content": "Product Settings"
         },
         {
-           "type":"image_picker",
-           "id":"imagemlogo",
-           "label":{
-             "en": "Footer Logo",
-             "pt-BR": "Logo do Rodapé"
-            }
+          "type": "text",
+          "id": "titlec",
+          "label": "Section Title",
+          "default": "Get yours now!"
         },
         {
-           "type":"richtext",
-           "id":"sobre",
-           "label":{
-             "en": "About",
-             "pt-BR": "Sobre"
-            },
-           "default":{
-             "en": "<p>Working hours:<br> Mon to Fri: 09 am to 5 pm </p>",
-             "pt-BR": "<p>Horário Comercial:<br> Seg à Sex: 09:00h às 18:00h, exceto feriados.</p>"
-            }
+          "type": "richtext",
+          "id": "richtext",
+          "label": "Offer Text",
+          "default": "<p>This is a special offer and is valid until midnight tonight.</p>"
         },
         {
-           "type":"text",
-           "id":"textowhats",
-           "label":{
-             "en": "WhatsApp Button Text",
-             "pt-BR": "Texto do botão WhatsApp"
-            },
-           "default":{
-             "en": "Service via WhatsApp",
-             "pt-BR": "Atendimento via WhatsApp"
-            }
+          "type": "checkbox",
+          "id": "time",
+          "label": "Offer ends in",
+          "default": true
         },
         {
-           "type":"text",
-           "id":"numerowhats",
-           "label":{
-             "en": "WhatsApp Number",
-             "pt-BR": "Numero de Whatsapp"
-            },
-           "info":{
-             "en": "Put it like this (63992029347) with (63) being the DDD. (Only for Brazil)",
-             "pt-BR": "Coloque dessa forma (63992029347) sendo (63) o DDD."
-            },
-           "default":"630000000"
+          "type": "header",
+          "content": "Product 01"
         },
         {
-           "type":"text",
-           "id":"whatsfrase",
-           "label":{
-             "en": "Standard Text",
-             "pt-BR": "Texto Padrão"
-            },
-           "default":{
-             "en": "Hello, I would like to know how I can buy your product",
-             "pt-BR": "Olá, gostaria de saber como posso comprar o produto de vocês"
-            }
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Product Title"
         },
         {
-           "type":"color",
-           "id":"bt_whats",
-           "label":{
-             "en": "WhatsApp Button Color",
-             "pt-BR": "Cor do Botão Whats"
-            },
-           "default":"#20C200"
+          "type": "image_picker",
+          "id": "img",
+          "label": "Image"
         },
         {
-           "type":"color",
-           "id":"bt_hove",
-           "label":{
-             "en": "On hover",
-             "pt-BR": "Ao passar o mouse"
-            },
-           "default":"#309D1D"
+          "type": "richtext",
+          "id": "de",
+          "label": "Product price of",
+          "default": "<p>from U$40 per:</p>"
         },
         {
-           "type":"header",
-           "content":{
-             "en": "General Settings",
-             "pt-BR": "Configurações Gerais"
-            }
+          "type": "richtext",
+          "id": "por",
+          "label": "Price of the product",
+          "default": "<p>U$30.00</p>"
         },
         {
-           "type":"color",
-           "id":"btn_geral",
-           "label":{
-             "en": "Button color",
-             "pt-BR": "Cor dos botões"
-            },
-           "default":"#ff5030"
+          "type": "richtext",
+          "id": "ou",
+          "label": "Or in cash",
+          "default": "<p>or U$30 IN CASH</p>"
         },
         {
-           "type":"color",
-           "id":"btn_hove",
-           "label":{
-             "en": "On hover",
-             "pt-BR": "Ao passar o mouse"
-            },
-           "default":"#FFA425"
+          "type": "text",
+          "id": "bttx",
+          "label": "Button Text",
+          "default": "Buy now"
         },
         {
-           "type":"color",
-           "id":"icone",
-           "label":{
-             "en": "Benefits icon color",
-             "pt-BR": "Cor do icone beneficios"
-            },
-           "default":"#fff",
-           "info":{
-             "en": "This option changes the color of the icons in the benefits section",
-             "pt-BR": "Essa opção altera a cor dos icones na seção beneficios"
-            }
+          "type": "url",
+          "id": "c1",
+          "label": "Button URL"
         },
         {
-           "type":"checkbox",
-           "id":"compra",
-           "label":{
-             "en": "Floating buy button",
-             "pt-BR": "Botão de compra Flutuante"
-            },
-           "default":true
+          "type": "color",
+          "id": "t1",
+          "label": "Title Color",
+          "default": "#fff"
         },
         {
-           "type":"text",
-           "id":"textbotaoflut",
-           "label":{
-             "en": "Floating button text",
-             "pt-BR": "Texto do botão Flutuante"
-            },
-           "default":{
-             "en": "BUY NOW",
-             "pt-BR": "COMPRAR AGORA"
-            }
+          "type": "color",
+          "id": "bg",
+          "label": "Background color",
+          "default": "#000"
         },
         {
-           "type":"url",
-           "id":"botaoflut",
-           "label":{
-             "en": "Floating Button URL",
-             "pt-BR": "URL do botão Flutuante"
-            },
-           "info":{
-             "en": "Put (#comprar) to take the product section",
-             "pt-BR": "Coloque (#comprar) para levar a seção do produto"
-            }
+          "type": "image_picker",
+          "id": "imgg",
+          "label": "Product Footer Image",
+          "info": "Ideal for stamps and payment methods"
         },
         {
-           "type":"checkbox",
-           "id":"borda",
-           "label":{
-             "en": "Rounded Button Edge",
-             "pt-BR": "Borda do botão arredondada"
-            },
-           "default":true
+          "type": "header",
+          "content": "Producto 02"
+        },
+        {
+          "type": "text",
+          "id": "title2",
+          "label": "Title",
+          "default": "Product Title"
+        },
+        {
+          "type": "image_picker",
+          "id": "img2",
+          "label": "Image"
+        },
+        {
+          "type": "richtext",
+          "id": "de2",
+          "label": "Product price of",
+          "default": "<p>from U$40 per:</p>"
+        },
+        {
+          "type": "richtext",
+          "id": "por2",
+          "label": "Price of the product",
+          "default": "<p>from U$40 per:</p>"
+        },
+        {
+          "type": "richtext",
+          "id": "ou2",
+          "label": "Or in cash",
+          "default": "<p>or U$30 IN CASH</p>"
+        },
+        {
+          "type": "text",
+          "id": "bttx2",
+          "label": "Button Text",
+          "default": "Buy now"
+        },
+        {
+          "type": "url",
+          "id": "c2",
+          "label": "Button URL"
+        },
+        {
+          "type": "color",
+          "id": "t2",
+          "label": "Title Color",
+          "default": "#fff"
+        },
+        {
+          "type": "color",
+          "id": "bg2",
+          "label": "Background color",
+          "default": "#000"
+        },
+        {
+          "type": "image_picker",
+          "id": "imgg2",
+          "label": "Product Footer Image",
+          "info": "Ideal for stamps and payment methods"
+        },
+        {
+          "type": "header",
+          "content": "Produto 03"
+        },
+        {
+          "type": "text",
+          "id": "title3",
+          "label": "Title",
+          "default": "Product Title"
+        },
+        {
+          "type": "image_picker",
+          "id": "img3",
+          "label": "Image"
+        },
+        {
+          "type": "richtext",
+          "id": "de3",
+          "label": "Product price of",
+          "default": "<p>from U$40 per:</p>"
+        },
+        {
+          "type": "richtext",
+          "id": "por3",
+          "label": "Price of the product",
+          "default": "<p>from U$40 per:</p>"
+        },
+        {
+          "type": "richtext",
+          "id": "ou3",
+          "label": "Or in cash",
+          "default": "<p>or U$30 IN CASH</p>"
+        },
+        {
+          "type": "text",
+          "id": "bttx3",
+          "label": "Button Text",
+          "default": "Buy now"
+        },
+        {
+          "type": "url",
+          "id": "c3",
+          "label": "Button URL"
+        },
+        {
+          "type": "color",
+          "id": "t3",
+          "label": "Title Color",
+          "default": "#fff"
+        },
+        {
+          "type": "color",
+          "id": "bg3",
+          "label": "Background color",
+          "default": "#000"
+        },
+        {
+          "type": "image_picker",
+          "id": "imgg3",
+          "label": "Product Footer Image",
+          "info": "Ideal for stamps and payment methods"
         }
-     ],
-     "blocks":[
+      ]
+    },
+    {
+      "type": "social",
+      "name": "Benefits",
+      "limit": 2,
+      "settings": [
         {
-           "type":"text",
-           "name":{
-             "en": "Product Box",
-             "pt-BR": "Box de produtos"
-            },
-           "limit":1,
-           "settings":[
-              {
-                 "type":"header",
-                 "content":{
-                   "en": "Product Settings",
-                   "pt-BR": "Configurações do produto"
-                  }
-              },
-              {
-                 "type":"text",
-                 "id":"titlec",
-                 "label":{
-             "en": "Section Title",
-             "pt-BR": "Titulo da seção"
-            },
-                 "default":{
-             "en": "Get yours now!",
-             "pt-BR": "Garanta já o seu!"
-            }
-              },
-              {
-                 "type":"richtext",
-                 "id":"richtext",
-                 "label":{
-             "en": "Offer Text",
-             "pt-BR": "Texto da oferta"
-            },
-                 "default":{
-             "en": "<p>This is a special offer and is valid until midnight tonight.</p>",
-             "pt-BR": "<p>Esta é uma oferta especial e é válida até a meia noite de hoje.</p>"
-            }
-              },
-              {
-                 "type":"checkbox",
-                 "id":"time",
-                 "label":{
-                 "en": "Offer ends in",
-                 "pt-BR": "Oferta termina em"
-                },
-                 "default":true
-              },
-              {
-                 "type":"header",
-                 "content":{
-                 "en": "Product 01",
-                 "pt-BR": "Produto 01"
-                }
-              },
-              {
-                 "type":"text",
-                 "id":"title",
-                 "label":{
-                 "en": "Title",
-                 "pt-BR": "Titulo"
-                },
-                 "default":{
-                 "en": "Product Title",
-                 "pt-BR": "Titulo do produto"
-                }
-              },
-              {
-                 "type":"image_picker",
-                 "id":"img",
-                 "label":{
-                   "en": "Image",
-                   "pt-BR": "Imagem"
-                  }
-              },
-              {
-                 "type":"richtext",
-                 "id":"de",
-                 "label":{
-             "en": "Product price of",
-             "pt-BR": "Preço do produto de"
-            },
-                 "default":{
-             "en": "<p>from U$40 per:</p>",
-             "pt-BR": "<p>de R$540 por:</p>"
-            }
-              },
-              {
-                 "type":"richtext",
-                 "id":"por",
-                 "label":{
-             "en": "Price of the product",
-             "pt-BR": "Preço do produto"
-            },
-                 "default":{
-             "en": "<p>U$30.00</p>",
-             "pt-BR": "<p>R$39,90</p>"
-            }
-              },
-              {
-                 "type":"richtext",
-                 "id":"ou",
-                 "label":{
-                   "en": "Or in cash",
-                   "pt-BR": "Ou à vista"
-                  },
-                 "default":{
-                   "en": "<p>or U$30 IN CASH</p>",
-                   "pt-BR": "<p>ou R$390 À VISTA</p>"
-                  }
-              },
-              {
-                 "type":"text",
-                 "id":"bttx",
-                 "label":{
-                   "en": "Button Text",
-                   "pt-BR": "Texto do botão"
-                 },
-                 "default":{
-                   "en": "Buy now",
-                   "pt-BR": "Comprar agora"
-                 } 
-              },
-              {
-                 "type":"url",
-                 "id":"c1",
-                 "label":{
-                   "en": "Button URL",
-                   "pt-BR": "URL do botão"
-                  }
-              },
-              {
-                 "type":"color",
-                 "id":"t1",
-                 "label":{
-                   "en": "Title Color",
-                   "pt-BR": "Cor do titulo"
-                 },
-                 "default":"#fff"
-              },
-              {
-                 "type":"color",
-                 "id":"bg",
-                 "label":{
-                   "en": "Background color",
-                   "pt-BR": "Cor do fundo"
-                  },
-                 "default":"#000"
-              },
-              {
-                 "type":"image_picker",
-                 "id":"imgg",
-                 "label":{
-                 "en": "Product Footer Image",
-                 "pt-BR": "Imagem do rodapé do produto"
-                },
-                 "info":{
-                   "en": "Ideal for stamps and payment methods",
-                   "pt-BR": "Ideal para selos e formas de pagamento"
-                 }
-              },
-              {
-                 "type":"header",
-                 "content":{
-             "en": "Producto 02",
-             "pt-BR": "Produto 02"
-            }
-              },
-              {
-                 "type":"text",
-                 "id":"title2",
-                 "label":{
-                 "en": "Title",
-                 "pt-BR": "Titulo"
-                },
-                 "default":{
-                 "en": "Product Title",
-                 "pt-BR": "Titulo do produto"
-                }
-              },
-              {
-                 "type":"image_picker",
-                 "id":"img2",
-                  "label":{
-                   "en": "Image",
-                   "pt-BR": "Imagem"
-                  }
-              },
-              {
-                 "type":"richtext",
-                 "id":"de2",
-                 "label":{
-                   "en": "Product price of",
-                   "pt-BR": "Preço do produto de"
-                  },
-                  "default":{
-                   "en": "<p>from U$40 per:</p>",
-                   "pt-BR": "<p>de R$540 por:</p>"
-                  }
-              },
-              {
-                 "type":"richtext",
-                 "id":"por2",
-                 "label":{
-                   "en": "Price of the product",
-                   "pt-BR": "Preço do produto"
-                  },
-                  "default":{
-                   "en": "<p>from U$40 per:</p>",
-                   "pt-BR": "<p>de R$540 por:</p>"
-                  }
-              },
-              {
-                 "type":"richtext",
-                 "id":"ou2",
-                 "label":{
-                   "en": "Or in cash",
-                   "pt-BR": "Ou à vista"
-                  },
-                 "default":{
-                   "en": "<p>or U$30 IN CASH</p>",
-                   "pt-BR": "<p>ou R$390 À VISTA</p>"
-                  }
-              },
-              {
-                 "type":"text",
-                 "id":"bttx2",
-                 "label":{
-                   "en": "Button Text",
-                   "pt-BR": "Texto do botão"
-                 },
-                 "default":{
-                   "en": "Buy now",
-                   "pt-BR": "Comprar agora"
-                 } 
-              },
-              {
-                 "type":"url",
-                 "id":"c2",
-                 "label":{
-                   "en": "Button URL",
-                   "pt-BR": "URL do botão"
-                  }
-              },
-              {
-                 "type":"color",
-                 "id":"t2",
-                 "label":{
-                   "en": "Title Color",
-                   "pt-BR": "Cor do titulo"
-                 },
-                 "default":"#fff"
-              },
-              {
-                 "type":"color",
-                 "id":"bg2",
-                 "label":{
-                   "en": "Background color",
-                   "pt-BR": "Cor do fundo"
-                  },
-                 "default":"#000"
-              },
-              {
-                 "type":"image_picker",
-                 "id":"imgg2",
-                 "label":{
-                 "en": "Product Footer Image",
-                 "pt-BR": "Imagem do rodapé do produto"
-                },
-                 "info":{
-                   "en": "Ideal for stamps and payment methods",
-                   "pt-BR": "Ideal para selos e formas de pagamento"
-                 }
-              },
-              {
-                 "type":"header",
-                 "content":"Produto 03"
-              },
-              {
-                 "type":"text",
-                 "id":"title3",
-                 "label":{
-                 "en": "Title",
-                 "pt-BR": "Titulo"
-                },
-                 "default":{
-                 "en": "Product Title",
-                 "pt-BR": "Titulo do produto"
-                }
-              },
-              {
-                 "type":"image_picker",
-                 "id":"img3",
-                 "label":{
-                   "en": "Image",
-                   "pt-BR": "Imagem"
-                 }
-              },
-              {
-                 "type":"richtext",
-                 "id":"de3",
-                 "label":{
-                   "en": "Product price of",
-                   "pt-BR": "Preço do produto de"
-                  },
-                  "default":{
-                   "en": "<p>from U$40 per:</p>",
-                   "pt-BR": "<p>de R$540 por:</p>"
-                  }
-              },
-              {
-                 "type":"richtext",
-                 "id":"por3",
-                 "label":{
-                   "en": "Price of the product",
-                   "pt-BR": "Preço do produto"
-                  },
-                  "default":{
-                   "en": "<p>from U$40 per:</p>",
-                   "pt-BR": "<p>de R$540 por:</p>"
-                  }
-              },
-              {
-                 "type":"richtext",
-                 "id":"ou3",
-                 "label":{
-                   "en": "Or in cash",
-                   "pt-BR": "Ou à vista"
-                  },
-                 "default":{
-                   "en": "<p>or U$30 IN CASH</p>",
-                   "pt-BR": "<p>ou R$390 À VISTA</p>"
-                  }
-              },
-              {
-                 "type":"text",
-                 "id":"bttx3",
-                 "label":{
-                   "en": "Button Text",
-                   "pt-BR": "Texto do botão"
-                 },
-                 "default":{
-                   "en": "Buy now",
-                   "pt-BR": "Comprar agora"
-                 } 
-              },
-              {
-                 "type":"url",
-                 "id":"c3",
-                 "label":{
-                   "en": "Button URL",
-                   "pt-BR": "URL do botão"
-                 }
-              },
-              {
-                 "type":"color",
-                 "id":"t3",
-                 "label":{
-                   "en": "Title Color",
-                   "pt-BR": "Cor do titulo"
-                 },
-                 "default":"#fff"
-              },
-              {
-                 "type":"color",
-                 "id":"bg3",
-                 "label":{
-                   "en": "Background color",
-                   "pt-BR": "Cor do fundo"
-                  },
-                 "default":"#000"
-              },
-              {
-                 "type":"image_picker",
-                 "id":"imgg3",
-                 "label":{
-                 "en": "Product Footer Image",
-                 "pt-BR": "Imagem do rodapé do produto"
-                },
-                 "info":{
-                   "en": "Ideal for stamps and payment methods",
-                   "pt-BR": "Ideal para selos e formas de pagamento"
-                 }
-              }
-           ]
+          "type": "text",
+          "id": "title",
+          "label": "Big Promise",
+          "default": "Big Promise"
         },
         {
-           "type":"social",
-           "name":{
-             "en": "Benefits",
-             "pt-BR": "Beneficios"
-            },
-           "limit":2,
-           "settings":[
-              {
-                 "type":"text",
-                 "id":"title",
-                 "label":{
-                   "en": "Big Promise",
-                   "pt-BR": "Grande promessa"
-                  },
-                 "default":{
-                   "en": "Big Promise",
-                   "pt-BR": "Grande promessa"
-                  }
-              },
-              {
-                 "type":"color",
-                 "id":"bg_cor",
-                 "label":{
-                   "en": "Background color",
-                   "pt-BR": "Cor do fundo"
-                  },
-                 "default":"#000"
-              },
-              {
-                 "type":"color",
-                 "id":"linkcor",
-                 "label":{
-                   "en": "Link color",
-                   "pt-BR": "Cor do link"
-                  },
-                 "default":"#fff"
-              },
-              {
-                 "type":"richtext",
-                 "id":"sub",
-                 "label":{
-                   "en": "Caption",
-                   "pt-BR": "Subtitulo"
-                  }
-              },
-              {
-                 "type":"image_picker",
-                 "id":"img",
-                 "label":{
-                   "en": "Image",
-                   "pt-BR": "Imagem"
-                  }
-              },
-              {
-                 "id":"video_url",
-                 "type":"video_url",
-                 "label":{
-                   "en": "Video URL",
-                   "pt-BR": "Video URL"
-                  },
-                 "accept":[
-                    "youtube",
-                    "vimeo"
-                 ],
-                 "default":"https://www.youtube.com/watch?v=ZaGWdqhy3tQ",
-                 "info":{
-                   "en": "Remove the image so that the video is visible",
-                   "pt-BR": "Remova a imagem para que o vídeo seja visivel"
-                  },
-                 "placeholder":"Text"
-              },
-              {
-                 "type":"url",
-                 "id":"botaobene",
-                 "label":{
-                   "en": "Button URL",
-                   "pt-BR": "URL do botão"
-                  },
-                 "info":{
-                   "en": "Put (#buy) to take the product section",
-                   "pt-BR": "Coloque (#comprar) para levar a seção do produto"
-                  }
-              },
-              {
-                 "type":"text",
-                 "id":"textobotaobene",
-                 "label":{
-                   "en": "Button Text",
-                   "pt-BR": "Texto do botão"
-                  },
-                 "default":{
-                   "en": "Buy now",
-                   "pt-BR": "Comprar agora"
-                  }
-              },
-              {
-                 "type":"html",
-                 "id":"icon",
-                 "label":{
-                   "en": "Benefits Icon",
-                   "pt-BR": "Icone dos beneficios"
-                  }
-              },
-              {
-                 "type":"text",
-                 "id":"p1",
-                 "label":"1",
-                 "default":{
-                   "en": "Big Promise",
-                   "pt-BR": "Grande promessa"
-                  }
-              },
-              {
-                 "type":"text",
-                 "id":"p2",
-                 "label":"2",
-                 "default":{
-                   "en": "Big Promise",
-                   "pt-BR": "Grande promessa"
-                  }
-              },
-              {
-                 "type":"text",
-                 "id":"p3",
-                 "label":"3",
-                 "default":{
-                   "en": "Big Promise",
-                   "pt-BR": "Grande promessa"
-                  }
-              },
-              {
-                 "type":"text",
-                 "id":"p4",
-                 "label":"4",
-                 "default":{
-                   "en": "Big Promise",
-                   "pt-BR": "Grande promessa"
-                  }
-              },
-              {
-                 "type":"text",
-                 "id":"p5",
-                 "label":"5",
-                 "default":{
-                   "en": "Big Promise",
-                   "pt-BR": "Grande promessa"
-                  }
-              },
-              {
-                 "type":"text",
-                 "id":"p6",
-                 "label":"6",
-                 "default":{
-                   "en": "Big Promise",
-                   "pt-BR": "Grande promessa"
-                  }
-              },
-              {
-                 "type":"text",
-                 "id":"p7",
-                 "label":"7",
-                 "default":{
-                   "en": "Big Promise",
-                   "pt-BR": "Grande promessa"
-                  }
-              },
-              {
-                 "type":"text",
-                 "id":"p8",
-                 "label":"8",
-                 "default":{
-                   "en": "Big Promise",
-                   "pt-BR": "Grande promessa"
-                  }
-              },
-              {
-                 "type":"text",
-                 "id":"p9",
-                 "label":"9",
-                 "default":{
-                   "en": "Big Promise",
-                   "pt-BR": "Grande promessa"
-                  }
-              },
-              {
-                 "type":"text",
-                 "id":"p10",
-                 "label":"10",
-                 "default":{
-                   "en": "Big Promise",
-                   "pt-BR": "Grande promessa"
-                  }
-              }
-           ]
+          "type": "color",
+          "id": "bg_cor",
+          "label": "Background color",
+          "default": "#000"
         },
         {
-           "type":"html",
-           "name":{
-             "en": "Product information",
-             "pt-BR": "Informações do produto"
-            },
-           "limit":2,
-           "settings":[
-              {
-                 "type":"text",
-                 "id":"title",
-                 "label":{
-                   "en": "Big Promise",
-                   "pt-BR": "Grande promessa"
-                  },
-                 "default":{
-                   "en": "Big Promise",
-                   "pt-BR": "Grande promessa"
-                  }
-              },
-              {
-                 "type":"richtext",
-                 "id":"htm",
-                 "label":{
-                   "en": "Big Promise",
-                   "pt-BR": "Grande promessa"
-                  },
-                 "default":{
-             "en": "<p>Big Promise<p>",
-             "pt-BR": "<p>Grande promessa<p>"
-            }
-              },
-              {
-                 "type":"image_picker",
-                 "id":"imgp",
-                 "label":{
-                   "en": "Image",
-                   "pt-BR": "Imagem"
-                  }
-              },
-              {
-                 "type":"color",
-                 "id":"bg_cor",
-                 "label":{
-                   "en": "Background color",
-                   "pt-BR": "Cor do fundo"
-                  },
-                 "default":"#000"
-              },
-              {
-                 "type":"color",
-                 "id":"bglink",
-                 "label":{
-                   "en": "Text Color",
-                   "pt-BR": "Cor do texto"
-                  },
-                 "default":"#ffffff"
-              },
-              {
-                 "type":"header",
-                 "content":{
-                   "en": "Button Settings",
-                   "pt-BR": "Configurações do botão"
-                  }
-              },
-              {
-                 "type":"url",
-                 "id":"botaoinfo",
-                 "label":{
-                   "en": "Button URL",
-                   "pt-BR": "URL do botão"
-                  },
-                 "info":{
-                   "en": "Put (#buy) to take the product section",
-                   "pt-BR": "Coloque (#comprar) para levar a seção do produto"
-                  }
-              },
-              {
-                 "type":"text",
-                 "id":"textobotaoinfo",
-                 "label":{
-                   "en": "Button Text",
-                   "pt-BR": "Texto do botão"
-                  },
-                 "default":{
-                   "en": "Buy now",
-                   "pt-BR": "Comprar agora"
-                  }
-              }
-           ]
+          "type": "color",
+          "id": "linkcor",
+          "label": "Link color",
+          "default": "#fff"
         },
         {
-           "type":"link_list",
-           "name":{
-             "en": "Menus",
-             "pt-BR": "Menus"
-            },
-           "settings":[
-              {
-                 "type":"link_list",
-                 "id":"menu",
-                 "label":{
-                 "en": "Menu",
-                 "pt-BR": "Menu"
-                }
-              },
-              {
-                 "type":"text",
-                 "id":"title",
-                 "label":{
-                 "en": "Title",
-                 "pt-BR": "Título"
-                }
-              }
-           ]
+          "type": "richtext",
+          "id": "sub",
+          "label": "Caption"
         },
         {
-           "type":"richtext",
-           "name":{
-             "en": "Information",
-             "pt-BR": "Informações"
-            },
-           "limit":2,
-           "settings":[
-              {
-                 "type":"richtext",
-                 "id":"htm",
-                 "label":{
-                 "en": "Title",
-                 "pt-BR": "Título"
-                },
-                 "default":{
-             "en": "<p>Reclaim your hair's beauty in up to 4 weeks!<p>",
-             "pt-BR": "<p>Resgate a beleza do seu cabelo em até 4 semanas!<p>"
-            }
-              },
-              {
-                 "type":"text",
-                 "id":"tag",
-                 "label":{
-                 "en": "Tag",
-                 "pt-BR": "Tag"
-                },
-                 "default":{
-                 "en": "Promotion",
-                 "pt-BR": "Promoção"
-                }
-              },
-              {
-                 "type":"checkbox",
-                 "id":"star",
-                 "label":{
-                 "en": "Enable Reviews",
-                 "pt-BR": "Ativar avaliações"
-                },
-                 "default":true
-              },
-              {
-                 "type":"image_picker",
-                 "id":"imgp",
-                 "label":{
-                 "en": "Featured Image",
-                 "pt-BR": "Imagem em destaque"
-                }
-              },
-              {
-                 "type":"color",
-                 "id":"bg_cor",
-                 "label":{
-                   "en": "Background color",
-                   "pt-BR": "Cor do fundo"
-                  },
-                 "default":"#262626"
-              },
-              {
-                 "type":"color",
-                 "id":"bglink",
-                 "label":"Background color",
-                 "default":"#ffffff"
-              },
-              {
-                 "type":"header",
-                 "content":{
-                   "en": "Button Settings",
-                   "pt-BR": "Configurações do botão"
-                  }
-              }
-           ]
+          "type": "image_picker",
+          "id": "img",
+          "label": "Image"
         },
         {
-           "type":"image",
-           "name":{
-             "en": "Social Proof",
-             "pt-BR": "Prova social"
-            },
-           "limit":1,
-           "settings":[
-              {
-                 "type":"header",
-                 "content":{
-             "en": "P1 - Social Proof",
-             "pt-BR": "P1 - Prova social"
-            }
-              },
-              {
-                 "type":"image_picker",
-                 "id":"imgprova1",
-                 "label":{
-                 "en": "Featured Image",
-                 "pt-BR": "Imagem em destaque"
-                }
-              },
-              {
-                 "type":"text",
-                 "id":"prova1nome",
-                 "label":{
-                   "en": "P1 - Name",
-                   "pt-BR": "P1 - Nome"
-                  },
-                 "default":"Rafaela Martins"
-              },
-              {
-                 "type":"richtext",
-                 "id":"prova1",
-                 "label":{
-                   "en": "P1 - Social Proof text",
-                   "pt-BR": "P1 - Texto da Prova Social"
-                  },
-                 "default":{
-                   "en": "<p>I'm satisfied with my purchase, the quality of the product is amazing, I highly recommend it 🥰🥰<p>",
-                   "pt-BR": "<p>Estou satisfeita com minha compra, a qualidade do produto é sensacional, super recomendo  🥰🥰<p>"
-                 }
-              },
-              {
-                 "type":"header",
-                 "content":{
-             "en": "P2 - Social Proof",
-             "pt-BR": "P2 - Prova social"
-            }
-              },
-              {
-                 "type":"image_picker",
-                 "id":"imgprova2",
-                 "label":{
-                 "en": "Featured Image",
-                 "pt-BR": "Imagem em destaque"
-                }
-              },
-              {
-                 "type":"text",
-                 "id":"prova2nome",
-                 "label":{
-                   "en": "P2 - Name",
-                   "pt-BR": "P2 - Nome"
-                  },
-                 "default":"Rafaela Martins"
-              },
-              {
-                 "type":"richtext",
-                 "id":"prova2",
-                 "label":{
-                   "en": "P2 - Social Proof text",
-                   "pt-BR": "P2 - Texto da Prova Social"
-                  },
-                 "default":{
-                   "en": "<p>I'm satisfied with my purchase, the quality of the product is amazing, I highly recommend it 🥰🥰<p>",
-                   "pt-BR": "<p>Estou satisfeita com minha compra, a qualidade do produto é sensacional, super recomendo  🥰🥰<p>"
-                 }
-              },
-              {
-                 "type":"header",
-                 "content":{
-                   "en": "P3 - Social Proof",
-                   "pt-BR": "P3 - Prova social"
-                  }
-              },
-              {
-                 "type":"image_picker",
-                 "id":"imgprova3",
-                 "label":{
-                 "en": "Featured Image",
-                 "pt-BR": "Imagem em destaque"
-                }
-              },
-              {
-                 "type":"text",
-                 "id":"prova3nome",
-                 "label":{
-                   "en": "P3 - Name",
-                   "pt-BR": "P3 - Nome"
-                  },
-                 "default":"Rafaela Martins"
-              },
-              {
-                 "type":"richtext",
-                 "id":"prova3",
-                 "label":{
-                   "en": "P3 - Social Proof text",
-                   "pt-BR": "P3 - Texto da Prova Social"
-                  },
-                 "default":{
-                   "en": "<p>I'm satisfied with my purchase, the quality of the product is amazing, I highly recommend it 🥰🥰<p>",
-                   "pt-BR": "<p>Estou satisfeita com minha compra, a qualidade do produto é sensacional, super recomendo  🥰🥰<p>"
-                 }
-              },
-              {
-                 "type":"header",
-                 "content":{
-                   "en": "P4 - Social Proof",
-                   "pt-BR": "P4 - Prova social"
-                  }
-              },
-              {
-                 "type":"image_picker",
-                 "id":"imgprova4",
-                 "label":{
-                 "en": "Featured Image",
-                 "pt-BR": "Imagem em destaque"
-                }
-              },
-              {
-                 "type":"text",
-                 "id":"prova4nome",
-                 "label":{
-                   "en": "P4 - Name",
-                   "pt-BR": "P4 - Nome"
-                  },
-                 "default":"Rafaela Martins"
-              },
-              {
-                 "type":"richtext",
-                 "id":"prova4",
-                 "label":{
-                   "en": "P4 - Social Proof text",
-                   "pt-BR": "P4 - Texto da Prova Social"
-                  },
-                 "default":{
-                   "en": "<p>I'm satisfied with my purchase, the quality of the product is amazing, I highly recommend it 🥰🥰<p>",
-                   "pt-BR": "<p>Estou satisfeita com minha compra, a qualidade do produto é sensacional, super recomendo  🥰🥰<p>"
-                 }
-              },
-              {
-                 "type":"header",
-                 "content":{
-                 "en": "P5 - Social Proof",
-                 "pt-BR": "P5 - Prova social"
-                }
-              },
-              {
-                 "type":"image_picker",
-                 "id":"imgprova5",
-                 "label":{
-                 "en": "Featured Image",
-                 "pt-BR": "Imagem em destaque"
-                }
-              },
-              {
-                 "type":"text",
-                 "id":"prova5nome",
-                 "label":{
-                   "en": "P5 - Name",
-                   "pt-BR": "P5 - Nome"
-                  },
-                 "default":"Rafaela Martins"
-              },
-              {
-                 "type":"richtext",
-                 "id":"prova5",
-                 "label":{
-                   "en": "P5 - Social Proof text",
-                   "pt-BR": "P5 - Texto da Prova Social"
-                  },
-                 "default":{
-                   "en": "<p>I'm satisfied with my purchase, the quality of the product is amazing, I highly recommend it 🥰🥰<p>",
-                   "pt-BR": "<p>Estou satisfeita com minha compra, a qualidade do produto é sensacional, super recomendo  🥰🥰<p>"
-                 }
-              }
-           ]
+          "id": "video_url",
+          "type": "video_url",
+          "label": "Video URL",
+          "accept": [
+            "youtube",
+            "vimeo"
+          ],
+          "default": "https://www.youtube.com/watch?v=ZaGWdqhy3tQ",
+          "info": "Remove the image so that the video is visible",
+          "placeholder": "Text"
         },
         {
-           "type":"button",
-           "name":{
-             "en": "F.A.Q",
-             "pt-BR": "Dúvidas Frequentes"
-            },
-           "limit":1,
-           "settings":[
-              {
-                 "type":"text",
-                 "id":"title",
-                 "label":{
-                 "en": "Title",
-                 "pt-BR": "Titulo"
-                },
-                 "default":{
-                 "en": "F.A.Q",
-                 "pt-BR": "Dúvidas Frequentes"
-                }
-              },
-              {
-                 "type":"text",
-                 "id":"faq1",
-                 "label":{
-                 "en": "FAQ - 01",
-                 "pt-BR": "FAQ - 01"
-                },
-                 "default":{
-                 "en": "Can I buy a unit?",
-                 "pt-BR": "Posso comprar uma unidade?"
-                }
-              },
-              {
-                 "type":"richtext",
-                 "id":"faqr1",
-                 "label":{
-                 "en": "FAQ - 01",
-                 "pt-BR": "FAQ - 01"
-                },
-                 "default":{
-                 "en": "<p>Yes, but you won't get the same discount. Click here to buy a unit.<p>",
-                 "pt-BR": "<p>Sim, porém não terá o mesmo desconto. Clique aqui para comprar uma unidade.<p>"
-                }
-              },
-              {
-                 "type":"text",
-                 "id":"faq2",
-                 "label":{
-                 "en": "FAQ - 02",
-                 "pt-BR": "FAQ - 02"
-                },
-                 "default":{
-                 "en": "Is the site trustworthy?",
-                 "pt-BR": "O site é confiável?"
-                }
-              },
-              {
-                 "type":"richtext",
-                 "id":"faqr2",
-                 "label":{
-                 "en": "FAQ - 02",
-                 "pt-BR": "FAQ - 02"
-                },
-                 "default":{
-                 "en": "<p>This site is completely safe. It has a Google security certificate and the payment is processed by one of the safest platforms for internet shopping in the world, 100% safe and confidential. It also has a guarantee of delivery and product quality. <p>",
-                 "pt-BR": "<p>Esse site é totalmente seguro. Possui certificado de segurança do Google e o pagamento é processado pelo MercadoPago, umas das plataformas mais seguras para compras na internet no Brasil, 100% segura e sigilosa. Também possui garantia de entrega e qualidade do produto.<p>"
-                }
-              },
-              {
-                 "type":"text",
-                 "id":"faq3",
-                 "label":{
-                 "en": "FAQ - 03",
-                 "pt-BR": "FAQ - 03"
-                },
-                 "default":{
-             "en": "Is there a guarantee?",
-             "pt-BR": "Tem garantia?" 
-            }
-              },
-              {
-                 "type":"richtext",
-                 "id":"faqr3",
-                 "label":{
-                 "en": "FAQ - 03",
-                 "pt-BR": "FAQ - 03"
-                },
-                 "default":{
-             "en": "<p>Yes, we have a 30-day extended warranty against manufacturing defects.<p>",
-             "pt-BR": "<p>Sim, possuímos garantia estendida de 30 dias contra defeitos de fabricação.<p>"
-            }
-              },
-              {
-                 "type":"text",
-                 "id":"faq4",
-                 "label":{
-                 "en": "FAQ - 04",
-                 "pt-BR": "FAQ - 04"
-                },
-                 "default":{
-             "en": "How long will it take to receive my order?",
-             "pt-BR": "Quanto tempo vai demorar para receber meu pedido?"
-            }
-              },
-              {
-                 "type":"richtext",
-                 "id":"faqr4",
-                 "label":{
-                 "en": "FAQ - 04",
-                 "pt-BR": "FAQ - 04"
-                },
-                 "default":{
-             "en": "<p>Our shipping is free worldwide, no additional surprises. We take 5 to 30 business days to arrive. Never worry about paying shipping again!<p>",
-             "pt-BR": "<p>Nosso envio é grátis para todo o Brasil, sem surpresas adicionais. nosso prazo é de15 à 35 dias úteis para chegar. Nunca mais se preocupe em pagar frete!<p>"
-            }
-              },
-              {
-                 "type":"text",
-                 "id":"faq5",
-                 "label":{
-                 "en": "FAQ - 05",
-                 "pt-BR": "FAQ - 05"
-                },
-                 "default":{
-             "en": "Do all orders come with a tracking number?",
-             "pt-BR": "Todos pedidos acompanham número de rastreio?"
-            }
-              },
-              {
-                 "type":"richtext",
-                 "id":"faqr5",
-                 "label":{
-                 "en": "FAQ - 05",
-                 "pt-BR": "FAQ - 05"
-                },
-                 "default":{
-                 "en": "<p>Yes. We value transparency and that's why all products are shipped with internationally valid tracking codes.<p>",
-                 "pt-BR": "<p>Sim. Nós prezamos pela transparência e por isso todos os produtos são enviados com códigos de rastreamento válidos internacionalmente.<p>"
-                }
-              },
-              {
-                 "type":"color",
-                 "id":"bg_cor",
-                 "label":{
-                   "en": "Background color",
-                   "pt-BR": "Cor do fundo"
-                  },
-                 "default":"#262626"
-              },
-              {
-                 "type":"color",
-                 "id":"bglink",
-                 "label":{
-                   "en": "Background color",
-                   "pt-BR": "Cor do fundo"
-                  },
-                 "default":"#ffffff"
-              }
-           ]
+          "type": "url",
+          "id": "botaobene",
+          "label": "Button URL",
+          "info": "Put (#buy) to take the product section"
+        },
+        {
+          "type": "text",
+          "id": "textobotaobene",
+          "label": "Button Text",
+          "default": "Buy now"
+        },
+        {
+          "type": "html",
+          "id": "icon",
+          "label": "Benefits Icon"
+        },
+        {
+          "type": "text",
+          "id": "p1",
+          "label": "1",
+          "default": "Big Promise"
+        },
+        {
+          "type": "text",
+          "id": "p2",
+          "label": "2",
+          "default": "Big Promise"
+        },
+        {
+          "type": "text",
+          "id": "p3",
+          "label": "3",
+          "default": "Big Promise"
+        },
+        {
+          "type": "text",
+          "id": "p4",
+          "label": "4",
+          "default": "Big Promise"
+        },
+        {
+          "type": "text",
+          "id": "p5",
+          "label": "5",
+          "default": "Big Promise"
+        },
+        {
+          "type": "text",
+          "id": "p6",
+          "label": "6",
+          "default": "Big Promise"
+        },
+        {
+          "type": "text",
+          "id": "p7",
+          "label": "7",
+          "default": "Big Promise"
+        },
+        {
+          "type": "text",
+          "id": "p8",
+          "label": "8",
+          "default": "Big Promise"
+        },
+        {
+          "type": "text",
+          "id": "p9",
+          "label": "9",
+          "default": "Big Promise"
+        },
+        {
+          "type": "text",
+          "id": "p10",
+          "label": "10",
+          "default": "Big Promise"
         }
-     ]
-  }
+      ]
+    },
+    {
+      "type": "html",
+      "name": "Product information",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Big Promise",
+          "default": "Big Promise"
+        },
+        {
+          "type": "richtext",
+          "id": "htm",
+          "label": "Big Promise",
+          "default": "<p>Big Promise<p>"
+        },
+        {
+          "type": "image_picker",
+          "id": "imgp",
+          "label": "Image"
+        },
+        {
+          "type": "color",
+          "id": "bg_cor",
+          "label": "Background color",
+          "default": "#000"
+        },
+        {
+          "type": "color",
+          "id": "bglink",
+          "label": "Text Color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "header",
+          "content": "Button Settings"
+        },
+        {
+          "type": "url",
+          "id": "botaoinfo",
+          "label": "Button URL",
+          "info": "Put (#buy) to take the product section"
+        },
+        {
+          "type": "text",
+          "id": "textobotaoinfo",
+          "label": "Button Text",
+          "default": "Buy now"
+        }
+      ]
+    },
+    {
+      "type": "link_list",
+      "name": "Menus",
+      "settings": [
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "Menu"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        }
+      ]
+    },
+    {
+      "type": "richtext",
+      "name": "Information",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "htm",
+          "label": "Title",
+          "default": "<p>Reclaim your hair's beauty in up to 4 weeks!<p>"
+        },
+        {
+          "type": "text",
+          "id": "tag",
+          "label": "Tag",
+          "default": "Promotion"
+        },
+        {
+          "type": "checkbox",
+          "id": "star",
+          "label": "Enable Reviews",
+          "default": true
+        },
+        {
+          "type": "image_picker",
+          "id": "imgp",
+          "label": "Featured Image"
+        },
+        {
+          "type": "color",
+          "id": "bg_cor",
+          "label": "Background color",
+          "default": "#262626"
+        },
+        {
+          "type": "color",
+          "id": "bglink",
+          "label": "Background color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "header",
+          "content": "Button Settings"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Social Proof",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "header",
+          "content": "P1 - Social Proof"
+        },
+        {
+          "type": "image_picker",
+          "id": "imgprova1",
+          "label": "Featured Image"
+        },
+        {
+          "type": "text",
+          "id": "prova1nome",
+          "label": "P1 - Name",
+          "default": "Rafaela Martins"
+        },
+        {
+          "type": "richtext",
+          "id": "prova1",
+          "label": "P1 - Social Proof text",
+          "default": "<p>I'm satisfied with my purchase, the quality of the product is amazing, I highly recommend it \ud83e\udd70\ud83e\udd70<p>"
+        },
+        {
+          "type": "header",
+          "content": "P2 - Social Proof"
+        },
+        {
+          "type": "image_picker",
+          "id": "imgprova2",
+          "label": "Featured Image"
+        },
+        {
+          "type": "text",
+          "id": "prova2nome",
+          "label": "P2 - Name",
+          "default": "Rafaela Martins"
+        },
+        {
+          "type": "richtext",
+          "id": "prova2",
+          "label": "P2 - Social Proof text",
+          "default": "<p>I'm satisfied with my purchase, the quality of the product is amazing, I highly recommend it \ud83e\udd70\ud83e\udd70<p>"
+        },
+        {
+          "type": "header",
+          "content": "P3 - Social Proof"
+        },
+        {
+          "type": "image_picker",
+          "id": "imgprova3",
+          "label": "Featured Image"
+        },
+        {
+          "type": "text",
+          "id": "prova3nome",
+          "label": "P3 - Name",
+          "default": "Rafaela Martins"
+        },
+        {
+          "type": "richtext",
+          "id": "prova3",
+          "label": "P3 - Social Proof text",
+          "default": "<p>I'm satisfied with my purchase, the quality of the product is amazing, I highly recommend it \ud83e\udd70\ud83e\udd70<p>"
+        },
+        {
+          "type": "header",
+          "content": "P4 - Social Proof"
+        },
+        {
+          "type": "image_picker",
+          "id": "imgprova4",
+          "label": "Featured Image"
+        },
+        {
+          "type": "text",
+          "id": "prova4nome",
+          "label": "P4 - Name",
+          "default": "Rafaela Martins"
+        },
+        {
+          "type": "richtext",
+          "id": "prova4",
+          "label": "P4 - Social Proof text",
+          "default": "<p>I'm satisfied with my purchase, the quality of the product is amazing, I highly recommend it \ud83e\udd70\ud83e\udd70<p>"
+        },
+        {
+          "type": "header",
+          "content": "P5 - Social Proof"
+        },
+        {
+          "type": "image_picker",
+          "id": "imgprova5",
+          "label": "Featured Image"
+        },
+        {
+          "type": "text",
+          "id": "prova5nome",
+          "label": "P5 - Name",
+          "default": "Rafaela Martins"
+        },
+        {
+          "type": "richtext",
+          "id": "prova5",
+          "label": "P5 - Social Proof text",
+          "default": "<p>I'm satisfied with my purchase, the quality of the product is amazing, I highly recommend it \ud83e\udd70\ud83e\udd70<p>"
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "F.A.Q",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "F.A.Q"
+        },
+        {
+          "type": "text",
+          "id": "faq1",
+          "label": "FAQ - 01",
+          "default": "Can I buy a unit?"
+        },
+        {
+          "type": "richtext",
+          "id": "faqr1",
+          "label": "FAQ - 01",
+          "default": "<p>Yes, but you won't get the same discount. Click here to buy a unit.<p>"
+        },
+        {
+          "type": "text",
+          "id": "faq2",
+          "label": "FAQ - 02",
+          "default": "Is the site trustworthy?"
+        },
+        {
+          "type": "richtext",
+          "id": "faqr2",
+          "label": "FAQ - 02",
+          "default": "<p>This site is completely safe. It has a Google security certificate and the payment is processed by one of the safest platforms for internet shopping in the world, 100% safe and confidential. It also has a guarantee of delivery and product quality. <p>"
+        },
+        {
+          "type": "text",
+          "id": "faq3",
+          "label": "FAQ - 03",
+          "default": "Is there a guarantee?"
+        },
+        {
+          "type": "richtext",
+          "id": "faqr3",
+          "label": "FAQ - 03",
+          "default": "<p>Yes, we have a 30-day extended warranty against manufacturing defects.<p>"
+        },
+        {
+          "type": "text",
+          "id": "faq4",
+          "label": "FAQ - 04",
+          "default": "How long will it take to receive my order?"
+        },
+        {
+          "type": "richtext",
+          "id": "faqr4",
+          "label": "FAQ - 04",
+          "default": "<p>Our shipping is free worldwide, no additional surprises. We take 5 to 30 business days to arrive. Never worry about paying shipping again!<p>"
+        },
+        {
+          "type": "text",
+          "id": "faq5",
+          "label": "FAQ - 05",
+          "default": "Do all orders come with a tracking number?"
+        },
+        {
+          "type": "richtext",
+          "id": "faqr5",
+          "label": "FAQ - 05",
+          "default": "<p>Yes. We value transparency and that's why all products are shipped with internationally valid tracking codes.<p>"
+        },
+        {
+          "type": "color",
+          "id": "bg_cor",
+          "label": "Background color",
+          "default": "#262626"
+        },
+        {
+          "type": "color",
+          "id": "bglink",
+          "label": "Background color",
+          "default": "#ffffff"
+        }
+      ]
+    }
+  ]
+}
 {% endschema %}

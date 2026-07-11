@@ -91,259 +91,232 @@
 
 {% schema %}
 {
-    "name": "Sticky newsletter",
-    "settings": [
+  "name": "Sticky newsletter",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Display a newsletter subscription form, usually offering a coupon code when signing up."
+    },
+    {
+      "type": "header",
+      "content": "General Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_section",
+      "label": "Enable selection",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_only_homepage",
+      "label": "Show only on homepage",
+      "info": "We recommend that you only show the home page. On product pages, it will always be hidden",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "position",
+      "label": "Position",
+      "default": "bottom-center",
+      "options": [
         {
-            "type": "paragraph",
-            "content": {
-             "en": "Display a newsletter subscription form, usually offering a coupon code when signing up.",
-             "pt-BR": "Exibir um formulário de assinatura de boletim informativo, geralmente oferecendo um código de cupom ao se inscrever."
-            }
+          "value": "bottom-left",
+          "label": "Bottom left"
         },
         {
-            "type": "header",
-            "content": {
-             "en": "General Settings",
-             "pt-BR": "Configurações gerais"
-            }
+          "value": "bottom-center",
+          "label": "Bottom center"
         },
         {
-            "type": "checkbox",
-            "id": "enable_section",
-            "label": {
-                     "en": "Enable selection",
-                     "pt-BR": "Ativar seção"
-                    },
-            "default": true
-        },
-        {
-            "type": "checkbox",
-            "id": "show_only_homepage",
-            "label": {
-                     "en": "Show only on homepage",
-                     "pt-BR": "Mostrar apenas na página inicial"
-                    },
-            "info": {
-                     "en": "We recommend that you only show the home page. On product pages, it will always be hidden",
-                     "pt-BR": "Recomendamos que você mostre apenas a página inicial. Nas páginas dos produtos, estará sempre oculto"
-                    },
-            "default": true
-        },
-        {
-            "type": "select",
-            "id": "position",
-            "label": {
-                     "en": "Position",
-                     "pt-BR": "Posição"
-                    },
-            "default": "bottom-center",
-            "options": [
-                {
-                   "value":"bottom-left",
-                   "label":{
-                     "en": "Bottom left",
-                     "pt-BR": "Inferior esquerdo"
-                   }
-                },
-                {
-                   "value":"bottom-center",
-                   "label":{
-                     "en": "Bottom center",
-                     "pt-BR": "Centro inferior"
-                   }
-                },
-                {
-                   "value":"bottom-right",
-                   "label":{
-                     "en": "Bottom right",
-                     "pt-BR": "Inferior direito"
-                   }
-                }
-            ]
-        },
-        {
-            "type": "text",
-            "id": "title",
-            "label": {
-                     "en": "Title",
-                     "pt-BR": "Título"
-                    },
-            "default": {
-                     "en": "GET 10% DISCOUNT NOW!",
-                     "pt-BR": "OBTENHA 10% DE DESCONTO AGORA!"
-                    }
-        },
-        {
-            "type": "richtext",
-            "id": "description",
-            "label": {
-                     "en": "Description",
-                     "pt-BR": "Descrição"
-                    },
-            "default": {
-                     "en": "<p>Get immediately <strong>10% OFF</strong> on your first purchase when you sign up for our newsletters!</p>",
-                     "pt-BR": "<p>Pegue imediatamente <strong>10% OFF</strong> em sua primeira compra ao se inscrever em nosso newsletter!</p>"
-                    }
-        },
-        {
-            "type": "text",
-            "id": "top_treshold",
-            "label": {
-                     "en": "Upper threshold (px)",
-                     "pt-BR": "Limiar superior (px)"
-                    },
-            "info": {
-                     "en": "It will be shown after scrolling as many pixels from the top.",
-                     "pt-BR": "Será mostrado depois de rolar tantos pixels a partir do topo."
-                    },
-            "default": "1000"
-        },
-        {
-            "type": "text",
-            "id": "bottom_treshold",
-            "label": {
-                     "en": "Lower threshold (px)",
-                     "pt-BR": "Limiar inferior (px)"
-                    },
-            "info": {
-                     "en": "It will hide after reaching that amount of pixels from the bottom",
-                     "pt-BR": "Vai se esconder depois de atingir essa quantidade de pixels da parte inferior"
-                    },
-            "default": "500"
-        },
-        {
-            "type": "range",
-            "id": "show_after_x_days",
-            "label": {
-                     "en": "Show again after x days",
-                     "pt-BR": "Mostrar novamente após x dias"
-                    },
-            "info": {
-                     "en": "If the user closes the popup, it will appear again after that number of days. We recommend that you set 3 days or more.",
-                     "pt-BR": "Se o usuário fechar o pop-up, aparecerá novamente após esse número de dias. Recomendamos que você defina 3 dias ou mais."
-                    },
-            "min": 1,
-            "max": 30,
-            "default": 3
-        },
-        {
-            "type": "select",
-            "id": "btn_color",
-            "label": {
-             "en": "Button color",
-             "pt-BR": "Cor do botão"
-            },
-            "default": "btn-primary",
-            "options": [
-                { "group": "Normal", "value": "btn-light", "label": {"en": "Light","pt-BR": "Claro"} },
-                { "group": "Normal", "value": "btn-dark", "label": {"en": "Dark","pt-BR": "Escuro"} },
-                { "group": "Normal", "value": "btn-primary", "label": {"en": "Primary from theme","pt-BR": "Primária do tema"} },
-                { "group": "Normal", "value": "btn-secondary", "label": {"en": "Secondary from theme","pt-BR": "Secundária do tema"} },
-                { "group": "Normal", "value": "btn-success", "label": {"en": "Success","pt-BR": "Sucesso"} },
-                { "group": "Normal", "value": "btn-danger", "label": {"en": "Danger","pt-BR": "Perigo"} },
-                { "group": "Normal", "value": "btn-warning", "label": {"en": "Warning","pt-BR": "Cuidado"} },
-                { "group": "Normal", "value": "btn-info", "label": {"en": "Info","pt-BR": "Informações"} },
-                { "group": "Outline", "value": "btn-outline-dark", "label": {"en": "Dark outline","pt-BR": "Contorno escuro"}},
-                { "group": "Outline", "value": "btn-outline-primary", "label": {"en": "Primary from theme outline","pt-BR": "Contorno primaria do tema"} },
-                { "group": "Outline", "value": "btn-outline-secondary", "label": {"en": "Secondary from theme outline","pt-BR": "Contorno secundária do tema"} },
-                { "group": "Outline", "value": "btn-outline-success", "label": {"en": "Success outline","pt-BR": "Contorno Sucesso"} },
-                { "group": "Outline", "value": "btn-outline-danger", "label": {"en": "Danger outline","pt-BR": "Contorno Perigo"} },
-                { "group": "Outline", "value": "btn-outline-warning", "label": {"en": "Warning outline","pt-BR": "Contorno Cuidado"} },
-                { "group": "Outline", "value": "btn-outline-info", "label": {"en": "Info outline","pt-BR": "Contorno Informações"}}
-            ]
-        },
-        {
-            "type": "select",
-            "id": "btn_size",
-            "label": {
-             "en": "Button size",
-             "pt-BR": "Tamanho do botão"
-            },
-            "options": [
-                { "value": "btn-sm", "label": {"en": "Small","pt-BR": "Pequeno"} },
-                { "value": "", "label": {"en": "Normal","pt-BR": "Normal"} },
-                { "value": "btn-lg", "label": {"en": "Large","pt-BR": "Grande"} }
-            ]
-        },
-        {
-            "type": "header",
-            "content": {
-               "en": "Animation",
-               "pt-BR": "Animação"
-             }
-        },
-        {
-            "type": "text",
-            "id":  "animation_enter",
-            "label": {
-               "en": "Entry Animation",
-               "pt-BR": "Animação de Entrada"
-             },
-            "info": {
-               "en": "Copy and paste the name of the animation (entry) from the website animate.style. Leave blank to disable and use Bootstrap's default transitions. [Learn more](https:\/\/animate.style)",
-               "pt-BR": "Copie e cole o nome da animação (entrada) do site animate.style. Deixe em branco para desativar e usar as transições padrão do Bootstrap. [Saber mais](https:\/\/animate.style)"
-             },
-            "default": "animate__fadeInUp"
-        },
-        {
-            "type": "text",
-            "id":  "animation_exit",
-            "label": {
-               "en": "Exit Animation",
-               "pt-BR": "Animação de Saída"
-             },
-            "info": {
-               "en": "Copy and paste the name of the animation (exit) from the website animate.style. Leave blank to disable and use Bootstrap's default transitions. [Learn more](https:\/\/animate.style)",
-               "pt-BR": "Copie e cole o nome da animação (saída) do site animate.style. Deixe em branco para desativar e usar as transições padrão do Bootstrap. [Saber mais](https:\/\/animate.style)"
-             },
-            "default": "animate__fadeOutDown"
-        },
-        {
-            "type": "select",
-            "id":  "animation_speed",
-            "label": {
-               "en": "Animation Speed",
-               "pt-BR": "Velocidade da Animação"
-             },
-            "default": "animate__normal",
-            "options": [
-               {
-                  "value":"animate__slower",
-                  "label":{
-                    "en": "Slower",
-                    "pt-BR": "Mais lenta"
-                  }
-               },
-               {
-                  "value":"animate__slow",
-                  "label":{
-                    "en": "Slow",
-                    "pt-BR": "Lenta"
-                  }
-               },
-               {
-                  "value":"animate__normal",
-                  "label":{
-                    "en": "Normal",
-                    "pt-BR": "Normal"
-                  }
-               },
-               {
-                  "value":"animate__fast",
-                  "label":{
-                    "en": "Fast",
-                    "pt-BR": "Rápida"
-                  }
-               },
-               {
-                  "value":"animate__faster",
-                  "label":{
-                    "en": "Faster",
-                    "pt-BR": "Mais rápida"
-                  }
-               }
-            ]
+          "value": "bottom-right",
+          "label": "Bottom right"
         }
-    ]
+      ]
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "GET 10% DISCOUNT NOW!"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Get immediately <strong>10% OFF</strong> on your first purchase when you sign up for our newsletters!</p>"
+    },
+    {
+      "type": "text",
+      "id": "top_treshold",
+      "label": "Upper threshold (px)",
+      "info": "It will be shown after scrolling as many pixels from the top.",
+      "default": "1000"
+    },
+    {
+      "type": "text",
+      "id": "bottom_treshold",
+      "label": "Lower threshold (px)",
+      "info": "It will hide after reaching that amount of pixels from the bottom",
+      "default": "500"
+    },
+    {
+      "type": "range",
+      "id": "show_after_x_days",
+      "label": "Show again after x days",
+      "info": "If the user closes the popup, it will appear again after that number of days. We recommend that you set 3 days or more.",
+      "min": 1,
+      "max": 30,
+      "default": 3
+    },
+    {
+      "type": "select",
+      "id": "btn_color",
+      "label": "Button color",
+      "default": "btn-primary",
+      "options": [
+        {
+          "group": "Normal",
+          "value": "btn-light",
+          "label": "Light"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-dark",
+          "label": "Dark"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-primary",
+          "label": "Primary from theme"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-secondary",
+          "label": "Secondary from theme"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-success",
+          "label": "Success"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-danger",
+          "label": "Danger"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-warning",
+          "label": "Warning"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-info",
+          "label": "Info"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-dark",
+          "label": "Dark outline"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-primary",
+          "label": "Primary from theme outline"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-secondary",
+          "label": "Secondary from theme outline"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-success",
+          "label": "Success outline"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-danger",
+          "label": "Danger outline"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-warning",
+          "label": "Warning outline"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-info",
+          "label": "Info outline"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "btn_size",
+      "label": "Button size",
+      "options": [
+        {
+          "value": "btn-sm",
+          "label": "Small"
+        },
+        {
+          "value": "",
+          "label": "Normal"
+        },
+        {
+          "value": "btn-lg",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Animation"
+    },
+    {
+      "type": "text",
+      "id": "animation_enter",
+      "label": "Entry Animation",
+      "info": "Copy and paste the name of the animation (entry) from the website animate.style. Leave blank to disable and use Bootstrap's default transitions. [Learn more](https://animate.style)",
+      "default": "animate__fadeInUp"
+    },
+    {
+      "type": "text",
+      "id": "animation_exit",
+      "label": "Exit Animation",
+      "info": "Copy and paste the name of the animation (exit) from the website animate.style. Leave blank to disable and use Bootstrap's default transitions. [Learn more](https://animate.style)",
+      "default": "animate__fadeOutDown"
+    },
+    {
+      "type": "select",
+      "id": "animation_speed",
+      "label": "Animation Speed",
+      "default": "animate__normal",
+      "options": [
+        {
+          "value": "animate__slower",
+          "label": "Slower"
+        },
+        {
+          "value": "animate__slow",
+          "label": "Slow"
+        },
+        {
+          "value": "animate__normal",
+          "label": "Normal"
+        },
+        {
+          "value": "animate__fast",
+          "label": "Fast"
+        },
+        {
+          "value": "animate__faster",
+          "label": "Faster"
+        }
+      ]
+    }
+  ]
 }
 {% endschema %}

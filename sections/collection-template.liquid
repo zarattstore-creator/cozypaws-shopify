@@ -196,214 +196,163 @@
 
 {% schema %}
 {
-    "name": {
-     "en": "Collection pages",
-     "pt-BR": "Páginas de coleções"
+  "name": "Collection pages",
+  "settings": [
+    {
+      "type": "header",
+      "content": "General settings"
     },
-    "settings": [
+    {
+      "type": "checkbox",
+      "id": "container",
+      "label": "Container",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "paginate",
+      "label": "Products per page",
+      "min": 1,
+      "max": 40,
+      "step": 1,
+      "default": 25
+    },
+    {
+      "type": "checkbox",
+      "id": "show_tags",
+      "label": "Show tags",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_img",
+      "label": "Show image from collection",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "infinite_scroll",
+      "label": "Infinite Scroll",
+      "info": "Hide default pagination and will load products on scroll",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_filters",
+      "label": "Enable filters",
+      "info": "Rule to add: add a tag to the products with NAME__OPTION , the '__' is the separator. Note that the collection that the product is in will be applied. Ex: color__azul",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_filter_color",
+      "label": "Show filter colors",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Product settings"
+    },
+    {
+      "type": "text",
+      "id": "img_width",
+      "label": "Image width (px)",
+      "default": "480"
+    },
+    {
+      "type": "text",
+      "id": "img_height",
+      "label": "Image height (px)",
+      "default": "480"
+    },
+    {
+      "type": "checkbox",
+      "id": "img_thumbnail",
+      "label": "Borda da imagem",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "product_title_heading_size",
+      "label": "Title size",
+      "default": "h6",
+      "options": [
         {
-            "type": "header",
-            "content": {
-             "en": "General settings",
-             "pt-BR": "Configurações gerais"
-            }
+          "value": "h1",
+          "label": "H1"
         },
         {
-            "type": "checkbox",
-            "id": "container",
-            "label": {
-             "en": "Container",
-             "pt-BR": "Container"
-            },
-            "default": true
+          "value": "h2",
+          "label": "H2"
         },
         {
-            "type": "range",
-            "id": "paginate",
-            "label": {
-             "en": "Products per page",
-             "pt-BR": "Produtos por página"
-            },
-            "min": 1,
-            "max": 40,
-            "step": 1,
-            "default": 25
+          "value": "h3",
+          "label": "H3"
         },
         {
-            "type": "checkbox",
-            "id": "show_tags",
-            "label": {
-             "en": "Show tags",
-             "pt-BR": "Mostrar tags"
-            },
-            "default": true
+          "value": "h4",
+          "label": "H4"
         },
         {
-            "type": "checkbox",
-            "id": "show_collection_img",
-            "label": {
-             "en": "Show image from collection",
-             "pt-BR": "Mostrar imagem da coleção"
-            },
-            "default": true
+          "value": "h5",
+          "label": "H5"
         },
         {
-            "type": "checkbox",
-            "id": "infinite_scroll",
-            "label": {
-             "en": "Infinite Scroll",
-             "pt-BR": "Rolagem infinita"
-            },
-            "info": {
-             "en": "Hide default pagination and will load products on scroll",
-             "pt-BR": "Oculte a paginação padrão e carregará os produtos na rolagem"
-            },
-            "default": true
-        },
-        {
-            "type": "checkbox",
-            "id": "enable_filters",
-            "label": {
-             "en": "Enable filters",
-             "pt-BR": "Habilitar filtros"
-            },
-            "info": {
-             "en": "Rule to add: add a tag to the products with NAME__OPTION , the '__' is the separator. Note that the collection that the product is in will be applied. Ex: color__azul",
-             "pt-BR": "Regra para adicionar: acrescente aos produtos uma tag com NOME__OPÇÃO , o '__' é o separador. Observe que será aplicada a coleção que o produto se encontra. Ex: cor__azul"
-            },
-            "default": false
-        },
-        {
-            "type": "checkbox",
-            "id": "show_filter_color",
-            "label": {
-             "en": "Show filter colors",
-             "pt-BR": "Mostrar cores de filtro"
-            },
-            "default": true
-        },
-        {
-            "type": "header",
-            "content": {
-             "en": "Product settings",
-             "pt-BR": "Configurações do produto"
-            }
-        },
-        {
-            "type": "text",
-            "id": "img_width",
-            "label": {
-               "en": "Image width (px)",
-               "pt-BR": "Largura da imagem (px)"
-             },
-            "default": "480"
-        },
-        {
-            "type": "text",
-            "id": "img_height",
-            "label": {
-               "en": "Image height (px)",
-               "pt-BR": "Altura da imagem (px)"
-             },
-            "default": "480"
-        },
-        {
-            "type": "checkbox",
-            "id": "img_thumbnail",
-            "label": "Borda da imagem",
-            "default": false
-        },
-        {
-            "type": "select",
-            "id": "product_title_heading_size",
-            "label": {
-             "en": "Title size",
-             "pt-BR": "Tamanho do título"
-            },
-            "default": "h6",
-            "options": [
-                { "value": "h1", "label": "H1" },
-                { "value": "h2", "label": "H2" },
-                { "value": "h3", "label": "H3" },
-                { "value": "h4", "label": "H4" },
-                { "value": "h5", "label": "H5" },
-                { "value": "h6", "label": "H6" }
-            ]
-        },
-        {
-            "type": "checkbox",
-            "id": "show_rating",
-            "label": {
-             "en": "Show rating",
-             "pt-BR": "Mostrar avaliação"
-            },
-            "default": true
-        },
-        {
-            "type": "checkbox",
-            "id": "no_show_rating_name",
-            "label": {
-             "en": "Disable 'Ratings' name in Ryviu app",
-             "pt-BR": "Desativar nome 'Avaliações' no app Ryviu"
-            },
-            "info": {
-             "en": "Warning: This option may cause an error on small screens when unchecked!",
-             "pt-BR": "Alerta: Essa opção pode causar erro em telas pequenas quando desmarcada!"
-            },
-            "default": true
-        },
-        {
-            "type": "checkbox",
-            "id": "show_price",
-            "label": {
-             "en": "Show price",
-             "pt-BR": "Mostrar preço"
-            },
-            "default": true
-        },
-        {
-            "type": "header",
-            "content": {
-             "en": "Rows",
-             "pt-BR": "Linhas"
-            }
-        },
-        {
-            "type": "range",
-            "id": "row_mobile",
-            "label": {
-             "en": "Products per line / Mobile ",
-             "pt-BR": "Produtos por linha / Celular "
-            },
-            "min": 1,
-            "max": 3,
-            "step": 1,
-            "default": 2
-        },
-        {
-            "type": "range",
-            "id": "row_tablet",
-            "label": {
-             "en": "Products per line / Tablet ",
-             "pt-BR": "Produtos por linha / Tablet "
-            },
-            "min": 1,
-            "max": 4,
-            "step": 1,
-            "default": 3
-        },
-        {
-            "type": "range",
-            "id": "row_desktop",
-            "label": {
-             "en": "Products per line / Desktop ",
-             "pt-BR": "Produtos por linha / Desktop "
-            },
-            "min": 1,
-            "max": 8,
-            "step": 1,
-            "default": 4
+          "value": "h6",
+          "label": "H6"
         }
-    ]
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "show_rating",
+      "label": "Show rating",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "no_show_rating_name",
+      "label": "Disable 'Ratings' name in Ryviu app",
+      "info": "Warning: This option may cause an error on small screens when unchecked!",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_price",
+      "label": "Show price",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Rows"
+    },
+    {
+      "type": "range",
+      "id": "row_mobile",
+      "label": "Products per line / Mobile ",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "row_tablet",
+      "label": "Products per line / Tablet ",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "row_desktop",
+      "label": "Products per line / Desktop ",
+      "min": 1,
+      "max": 8,
+      "step": 1,
+      "default": 4
+    }
+  ]
 }
 {% endschema %}

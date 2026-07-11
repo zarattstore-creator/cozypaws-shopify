@@ -102,355 +102,335 @@
 
 {% schema %}
 {
-    "name": {
-     "en": "Instagram Gallery",
-     "pt-BR": "Galeria do Instagram"
+  "name": "Instagram Gallery",
+  "settings": [
+    {
+      "type": "header",
+      "content": "General Settings"
     },
-    "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Store Instagram"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Write something here.</p>"
+    },
+    {
+      "type": "select",
+      "id": "title_size",
+      "label": "Title Size",
+      "default": "h4",
+      "options": [
         {
-            "type": "header",
-            "content": {
-             "en": "General Settings",
-             "pt-BR": "Configurações gerais"
-            }
+          "value": "h1",
+          "label": "H1"
         },
         {
-            "type": "text",
-            "id": "title",
-            "label": {
-             "en": "Title",
-             "pt-BR": "Título"
-            },
-            "default": {
-             "en": "Store Instagram",
-             "pt-BR": "Instagram da Loja"
-            }
+          "value": "h2",
+          "label": "H2"
         },
         {
-            "type": "richtext",
-            "id": "description",
-            "label": {
-             "en": "Description",
-             "pt-BR": "Descrição"
-            },
-            "default": {
-             "en": "<p>Write something here.</p>",
-             "pt-BR": "<p>Escreva alguma coisa aqui.</p>"
-            }
+          "value": "h3",
+          "label": "H3"
         },
         {
-            "type": "select",
-            "id": "title_size",
-            "label": {
-             "en": "Title Size",
-             "pt-BR": "Tamanho do título"
-            },
-            "default": "h4",
-            "options": [
-                {  "value": "h1", "label": "H1" },
-                {  "value": "h2", "label": "H2" },
-                {  "value": "h3", "label": "H3" },
-                {  "value": "h4", "label": "H4" },
-                {  "value": "h5", "label": "H5" },
-                {  "value": "h6", "label": "H6" }
-            ]
+          "value": "h4",
+          "label": "H4"
         },
         {
-            "type": "select",
-            "id": "title_alignment",
-            "label": {
-             "en": "Title Alignment",
-             "pt-BR": "Alinhamento do título"
-            },
-            "default": "text-center",
-            "options": [
-                { "value": "text-left", "label": {"en": "Left","pt-BR": "Esquerda"} },
-                { "value": "text-center", "label": {"en": "Center","pt-BR": "Centro"} },
-                { "value": "text-right", "label": {"en": "Right","pt-BR": "Direita"} }
-            ]
+          "value": "h5",
+          "label": "H5"
         },
         {
-            "type": "checkbox",
-            "id": "container",
-            "label": {
-             "en": "Wrap container",
-             "pt-BR": "Enrolar container"
-            },
-            "default": true
-        },
-        {
-            "type": "checkbox",
-            "id": "bg_light",
-            "label": {
-             "en": "Light Background",
-             "pt-BR": "Fundo claro"
-            },
-            "default": true
-        },
-        {
-            "type": "url",
-            "id": "follow_btn_url",
-            "label": {
-             "en": "Follow button link",
-             "pt-BR": "Link do botão seguir"
-            }
-        },
-        {
-            "type": "text",
-            "id": "follow_btn_text",
-            "label": {
-             "en": "Follow Button Text",
-             "pt-BR": "Texto do botão seguir"
-            },
-            "default": {
-             "en": "Follow",
-             "pt-BR": "Seguir"
-            }
-        },
-        {
-            "type": "select",
-            "id": "follow_btn_color",
-            "label": {
-             "en": "Follow button color",
-             "pt-BR": "Cor do botão seguir"
-            },
-            "default": "btn-outline-primary",
-            "options": [
-                { "group": "Normal", "value": "btn-link", "label": {"en": "Link","pt-BR": "Link"} },
-                { "group": "Normal", "value": "btn-light", "label": {"en": "Light","pt-BR": "Claro"} },
-                { "group": "Normal", "value": "btn-dark", "label": {"en": "Dark","pt-BR": "Escuro"} },
-                { "group": "Normal", "value": "btn-primary", "label": {"en": "Primary from theme","pt-BR": "Primária do tema"} },
-                { "group": "Normal", "value": "btn-secondary", "label": {"en": "Secondary from theme","pt-BR": "Secundária do tema"} },
-                { "group": "Normal", "value": "btn-success", "label": {"en": "Success","pt-BR": "Sucesso"} },
-                { "group": "Normal", "value": "btn-danger", "label": {"en": "Danger","pt-BR": "Perigo"} },
-                { "group": "Normal", "value": "btn-warning", "label": {"en": "Warning","pt-BR": "Cuidado"} },
-                { "group": "Normal", "value": "btn-info", "label": {"en": "Info","pt-BR": "Informações"} },
-                { "group": "Outline", "value": "btn-outline-dark", "label": {"en": "Dark outline","pt-BR": "Contorno escuro"}},
-                { "group": "Outline", "value": "btn-outline-primary", "label": {"en": "Primary from theme outline","pt-BR": "Contorno primaria do tema"} },
-                { "group": "Outline", "value": "btn-outline-secondary", "label": {"en": "Secondary from theme outline","pt-BR": "Contorno secundária do tema"} },
-                { "group": "Outline", "value": "btn-outline-success", "label": {"en": "Success outline","pt-BR": "Contorno Sucesso"} },
-                { "group": "Outline", "value": "btn-outline-danger", "label": {"en": "Danger outline","pt-BR": "Contorno Perigo"} },
-                { "group": "Outline", "value": "btn-outline-warning", "label": {"en": "Warning outline","pt-BR": "Contorno Cuidado"} },
-                { "group": "Outline", "value": "btn-outline-info", "label": {"en": "Info outline","pt-BR": "Contorno Informações"}}
-            ]
-        },
-        {
-            "type": "select",
-            "id": "follow_btn_size",
-            "label": {
-               "en": "Button size",
-               "pt-BR": "Tamanho do botão"
-             },
-             "options":[
-                {
-                   "value":"btn-sm",
-                   "label":{
-                     "en": "Small",
-                     "pt-BR": "Pequeno"
-                   }
-                },
-                {
-                   "value":"",
-                   "label":{
-                     "en": "Normal",
-                     "pt-BR": "Normal"
-                   }
-                },
-                {
-                   "value":"btn-lg",
-                   "label":{
-                     "en": "Large",
-                     "pt-BR": "Grande"
-                   }
-                }
-             ]
-        },
-        {
-            "type": "header",
-            "content": {
-             "en": "Post settings",
-             "pt-BR": "Configurações do post"
-            }
-        },
-        {
-            "type": "text",
-            "id": "img_width",
-            "label": {
-               "en": "Image width (px)",
-               "pt-BR": "Largura da imagem (px)"
-             },
-            "default": "480"
-        },
-        {
-            "type": "text",
-            "id": "img_height",
-            "label": {
-               "en": "Image height (px)",
-               "pt-BR": "Altura da imagem (px)"
-             },
-            "default": "480"
-        },
-        {
-            "type": "checkbox",
-            "id": "img_thumbnail",
-            "label": {
-               "en": "Image border",
-               "pt-BR": "Borda da imagem"
-             },
-            "default": true
-        },
-        {
-            "type": "checkbox",
-            "id": "show_modal",
-            "label": {
-             "en": "Open posts in modal",
-             "pt-BR": "Abrir posts no modal"
-            },
-            "default": true
-        },
-        {
-            "type": "header",
-            "content": {
-             "en": "Fit items per line",
-             "pt-BR": "Ajustar itens por linha"
-            }
-        },
-        {
-            "type": "range",
-            "id": "row_mobile",
-            "label": {
-             "en": "Collections by Line / Mobile",
-             "pt-BR": "Coleções por linha / Celular"
-            },
-            "min": 1,
-            "max": 3,
-            "step": 1,
-            "default": 2
-        },
-        {
-            "type": "range",
-            "id": "row_tablet",
-            "label": {
-             "en": "Collections by Line / Tablet",
-             "pt-BR": "Coleções por linha / Tablet"
-            },
-            "min": 1,
-            "max": 4,
-            "step": 1,
-            "default": 3
-        },
-        {
-            "type": "range",
-            "id": "row_desktop",
-            "label": {
-             "en": "Collections by Line / Desktop",
-             "pt-BR": "Coleções por linha / Desktop"
-            },
-            "min": 1,
-            "max": 6,
-            "step": 1,
-            "default": 6
-        },
-        {
-            "type": "header",
-            "content": {
-             "en": "Spacing",
-             "pt-BR": "Espaçamento"
-            },
-            "info": {
-             "en": "Based on Bootstrap Spacing Utility Classes [Learn More](https://getbootstrap.com/docs/4.5/utilities/spacing/)",
-             "pt-BR": "Com base nas classes do utilitário de espaçamento Bootstrap [Saiba mais](https://getbootstrap.com/docs/4.5/utilities/spacing/)"
-            }
-        },
-        {
-            "type": "range",
-            "id": "padding_top",
-            "label": {
-             "en": "Padding Top",
-             "pt-BR": "Espaçamento superior"
-            },
-            "min": 0,
-            "max": 12,
-            "step": 1,
-            "default": 8
-        },
-        {
-            "type": "range",
-            "id": "padding_bottom",
-            "label": {
-             "en": "Padding bottom",
-             "pt-BR": "Espaçamento inferior"
-            },
-            "min": 0,
-            "max": 12,
-            "step": 1,
-            "default": 8
-        },
-        {
-            "type": "range",
-            "id": "margin_top",
-            "label": {
-             "en": "Margin top",
-             "pt-BR": "Margem superior"
-            },
-            "min": 0,
-            "max": 12,
-            "step": 1,
-            "default": 0
-        },
-        {
-            "type": "range",
-            "id": "margin_bottom",
-            "label": {
-             "en": "Margin bottom",
-             "pt-BR": "Margem inferior"
-            },
-            "min": 0,
-            "max": 12,
-            "step": 1,
-            "default": 9
+          "value": "h6",
+          "label": "H6"
         }
-    ],
-    "blocks": [
+      ]
+    },
+    {
+      "type": "select",
+      "id": "title_alignment",
+      "label": "Title Alignment",
+      "default": "text-center",
+      "options": [
         {
-            "type": "post",
-            "name": {
-             "en": "Post",
-             "pt-BR": "Post"
-            },
-            "settings": [
-                {
-                    "type": "image_picker",
-                    "id": "image",
-                    "label": {
-                     "en": "Image",
-                     "pt-BR": "Imagem"
-                    }
-                },
-                {
-                    "type": "richtext",
-                    "id": "description",
-                    "label": {
-                     "en": "Description",
-                     "pt-BR": "Descrição"
-                    }
-                },
-                {
-                    "type": "url",
-                    "id": "url",
-                    "label": {
-                     "en": "Post URL",
-                     "pt-BR": "URL do post"
-                    }
-                }
-            ]
-        }
-    ],
-    "presets": [
+          "value": "text-left",
+          "label": "Left"
+        },
         {
-            "name": "Galeria do Instagram",
-            "category": "home"
+          "value": "text-center",
+          "label": "Center"
+        },
+        {
+          "value": "text-right",
+          "label": "Right"
         }
-    ]
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "container",
+      "label": "Wrap container",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "bg_light",
+      "label": "Light Background",
+      "default": true
+    },
+    {
+      "type": "url",
+      "id": "follow_btn_url",
+      "label": "Follow button link"
+    },
+    {
+      "type": "text",
+      "id": "follow_btn_text",
+      "label": "Follow Button Text",
+      "default": "Follow"
+    },
+    {
+      "type": "select",
+      "id": "follow_btn_color",
+      "label": "Follow button color",
+      "default": "btn-outline-primary",
+      "options": [
+        {
+          "group": "Normal",
+          "value": "btn-link",
+          "label": "Link"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-light",
+          "label": "Light"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-dark",
+          "label": "Dark"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-primary",
+          "label": "Primary from theme"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-secondary",
+          "label": "Secondary from theme"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-success",
+          "label": "Success"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-danger",
+          "label": "Danger"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-warning",
+          "label": "Warning"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-info",
+          "label": "Info"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-dark",
+          "label": "Dark outline"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-primary",
+          "label": "Primary from theme outline"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-secondary",
+          "label": "Secondary from theme outline"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-success",
+          "label": "Success outline"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-danger",
+          "label": "Danger outline"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-warning",
+          "label": "Warning outline"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-info",
+          "label": "Info outline"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "follow_btn_size",
+      "label": "Button size",
+      "options": [
+        {
+          "value": "btn-sm",
+          "label": "Small"
+        },
+        {
+          "value": "",
+          "label": "Normal"
+        },
+        {
+          "value": "btn-lg",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Post settings"
+    },
+    {
+      "type": "text",
+      "id": "img_width",
+      "label": "Image width (px)",
+      "default": "480"
+    },
+    {
+      "type": "text",
+      "id": "img_height",
+      "label": "Image height (px)",
+      "default": "480"
+    },
+    {
+      "type": "checkbox",
+      "id": "img_thumbnail",
+      "label": "Image border",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_modal",
+      "label": "Open posts in modal",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Fit items per line"
+    },
+    {
+      "type": "range",
+      "id": "row_mobile",
+      "label": "Collections by Line / Mobile",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "row_tablet",
+      "label": "Collections by Line / Tablet",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "row_desktop",
+      "label": "Collections by Line / Desktop",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 6
+    },
+    {
+      "type": "header",
+      "content": "Spacing",
+      "info": "Based on Bootstrap Spacing Utility Classes [Learn More](https://getbootstrap.com/docs/4.5/utilities/spacing/)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "min": 0,
+      "max": 12,
+      "step": 1,
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 12,
+      "step": 1,
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "label": "Margin top",
+      "min": 0,
+      "max": 12,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "label": "Margin bottom",
+      "min": 0,
+      "max": 12,
+      "step": 1,
+      "default": 9
+    }
+  ],
+  "blocks": [
+    {
+      "type": "post",
+      "name": "Post",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Post URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Galeria do Instagram",
+      "category": "home"
+    }
+  ]
 }
 {% endschema %}

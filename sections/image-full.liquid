@@ -30,165 +30,145 @@
 
 {% schema %}
 {
-    "name": {
-     "en": "Imagem em destaque",
-     "pt-BR": "Imagem em destaque"
+  "name": "Imagem em destaque",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Configura\u00e7\u00f5es gerais"
     },
-    "settings": [
+    {
+      "type": "select",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "bg-white text-body",
+      "options": [
         {
-            "type": "header",
-            "content": {
-             "en": "Configurações gerais",
-             "pt-BR": "Configurações Gerais"
-            }
+          "group": "Light",
+          "value": "bg-white text-body",
+          "label": "White"
         },
         {
-            "type": "select",
-            "id": "bg_color",
-            "label": {
-             "en": "Background color",
-             "pt-BR": "Cor do fundo"
-            },
-            "default": "bg-white text-body",
-            "options": [
-                { "group": "Light", "value": "bg-white text-body", "label": "White" },
-                { "group": "Light", "value": "bg-light text-body", "label": "Light" },
-                { "group": "Dark", "value": "bg-dark text-white", "label": "Dark" },
-                { "group": "Dark", "value": "bg-primary text-white", "label": "Primary" },
-                { "group": "Dark", "value": "bg-secondary text-white", "label": "Secondary" },
-                { "group": "Gradient", "value": "bg-dark-gradient text-white", "label": "Dark" },
-                { "group": "Gradient", "value": "bg-primary-gradient text-white", "label": "Primary" },
-                { "group": "Gradient", "value": "bg-secondary-gradient text-white", "label": "Secondary" },
-                { "group": "Gradient", "value": "bg-custom-gradient text-white", "label": "Custom" }
-            ]
+          "group": "Light",
+          "value": "bg-light text-body",
+          "label": "Light"
         },
         {
-            "type": "header",
-            "content": {
-             "en": "Image settings",
-             "pt-BR": "Configurações de imagem"
-            }
+          "group": "Dark",
+          "value": "bg-dark text-white",
+          "label": "Dark"
         },
         {
-            "type": "image_picker",
-            "id": "img",
-            "label": {
-             "en": "Image",
-             "pt-BR": "Imagem"
-            }
+          "group": "Dark",
+          "value": "bg-primary text-white",
+          "label": "Primary"
         },
         {
-            "type": "text",
-            "id": "img_width",
-            "label": {
-               "en": "Image width (px)",
-               "pt-BR": "Largura da imagem (px)"
-             },
-            "default": "720"
+          "group": "Dark",
+          "value": "bg-secondary text-white",
+          "label": "Secondary"
         },
         {
-            "type": "text",
-            "id": "img_height",
-            "label": {
-               "en": "Image height (px)",
-               "pt-BR": "Altura da imagem (px)"
-            },
-            "default": "405"
+          "group": "Gradient",
+          "value": "bg-dark-gradient text-white",
+          "label": "Dark"
         },
         {
-            "type": "checkbox",
-            "id": "img_thumbnail",
-            "label": {
-               "en": "Image border",
-               "pt-BR": "Borda da imagem"
-             },
-            "default": false
+          "group": "Gradient",
+          "value": "bg-primary-gradient text-white",
+          "label": "Primary"
         },
         {
-            "type": "url",
-            "id": "img_url",
-            "label": {
-             "en": "Link",
-             "pt-BR": "Link"
-            },
-            "info": {
-             "en": "Customer will be redirected when clicking on the image.",
-             "pt-BR": "O cliente será redirecionado quando clicar na imagem."
-            }
-        },
-
-        {
-            "type": "header",
-            "content": {
-             "en": "Spacing",
-             "pt-BR": "Espaçamento"
-            },
-            "info": {
-             "en": "Based on Bootstrap Spacing Utility Classes [Learn More](https://getbootstrap.com/docs/4.5/utilities/spacing/)",
-             "pt-BR": "Com base nas classes do utilitário de espaçamento Bootstrap [Saiba mais](https://getbootstrap.com/docs/4.5/utilities/spacing/)"
-            }
+          "group": "Gradient",
+          "value": "bg-secondary-gradient text-white",
+          "label": "Secondary"
         },
         {
-            "type": "range",
-            "id": "padding_top",
-            "label": {
-             "en": "Padding Top",
-             "pt-BR": "Espaçamento superior"
-            },
-            "min": 0,
-            "max": 15,
-            "step": 1,
-            "default": 0
-        },
-        {
-            "type": "range",
-            "id": "padding_bottom",
-            "label": {
-             "en": "Padding bottom",
-             "pt-BR": "Espaçamento inferior"
-            },
-            "min": 0,
-            "max": 15,
-            "step": 1,
-            "default": 0
-        },
-        {
-            "type": "range",
-            "id": "margin_top",
-            "label": {
-             "en": "Margin top",
-             "pt-BR": "Margem superior"
-            },
-            "min": 0,
-            "max": 15,
-            "step": 1,
-            "default": 0
-        },
-        {
-            "type": "range",
-            "id": "margin_bottom",
-            "label": {
-             "en": "Margin bottom",
-             "pt-BR": "Margem inferior"
-            },
-            "min": 0,
-            "max": 15,
-            "step": 1,
-            "default": 9
+          "group": "Gradient",
+          "value": "bg-custom-gradient text-white",
+          "label": "Custom"
         }
-
-    ],
-    "presets": [
-        {
-            "name": {
-             "en": "Imagem em destaque",
-             "pt-BR": "Imagem em destaque"
-            },
-            "category": {
-             "en": "image",
-             "pt-BR": "imagem"
-            }
-        }
-    ]
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Image settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "img",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "img_width",
+      "label": "Image width (px)",
+      "default": "720"
+    },
+    {
+      "type": "text",
+      "id": "img_height",
+      "label": "Image height (px)",
+      "default": "405"
+    },
+    {
+      "type": "checkbox",
+      "id": "img_thumbnail",
+      "label": "Image border",
+      "default": false
+    },
+    {
+      "type": "url",
+      "id": "img_url",
+      "label": "Link",
+      "info": "Customer will be redirected when clicking on the image."
+    },
+    {
+      "type": "header",
+      "content": "Spacing",
+      "info": "Based on Bootstrap Spacing Utility Classes [Learn More](https://getbootstrap.com/docs/4.5/utilities/spacing/)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "min": 0,
+      "max": 15,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 15,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "label": "Margin top",
+      "min": 0,
+      "max": 15,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "label": "Margin bottom",
+      "min": 0,
+      "max": 15,
+      "step": 1,
+      "default": 9
+    }
+  ],
+  "presets": [
+    {
+      "name": "Imagem em destaque",
+      "category": "image"
+    }
+  ]
 }
 {% endschema %}

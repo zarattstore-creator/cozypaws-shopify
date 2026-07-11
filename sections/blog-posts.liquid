@@ -125,487 +125,349 @@
 
 {% schema %}
 {
-    "name": {
-     "en": "Blog posts",
-     "pt-BR": "Postagens do blog"
+  "name": "Blog posts",
+  "settings": [
+    {
+      "id": "blog",
+      "type": "blog",
+      "label": "Blog"
     },
-    "settings": [
+    {
+      "type": "header",
+      "content": "General settings"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Blog posts"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Write something catchy here</p>"
+    },
+    {
+      "type": "checkbox",
+      "id": "container",
+      "label": "Wrap in container",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "bg_light",
+      "label": "Light background",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "title_alignment",
+      "label": "Title alignment",
+      "default": "text-center",
+      "options": [
         {
-            "id": "blog",
-            "type": "blog",
-            "label": {
-             "en": "Blog",
-             "pt-BR": "Blog"
-            }
+          "value": "text-left",
+          "label": "Left"
         },
         {
-            "type": "header",
-            "content": {
-             "en": "General settings",
-             "pt-BR": "Configurações gerais"
-            }
+          "value": "text-center",
+          "label": "Center"
         },
         {
-            "type": "text",
-            "id": "title",
-            "label": {
-             "en": "Title",
-             "pt-BR": "Título"
-            },
-            "default": {
-             "en": "Blog posts",
-             "pt-BR": "Postagens no blog"
-            }
-        },
-        {
-            "type": "richtext",
-            "id": "description",
-            "label": {
-             "en": "Description",
-             "pt-BR": "Descrição"
-            },
-            "default": {
-             "en": "<p>Write something catchy here</p>",
-             "pt-BR": "<p>Escreva algo cativante aqui</p>"
-            }
-        },
-        {
-            "type": "checkbox",
-            "id": "container",
-            "label": {
-             "en": "Wrap in container",
-             "pt-BR": "Colocar em container"
-            },
-            "default": true
-        },
-        {
-            "type": "checkbox",
-            "id": "bg_light",
-            "label": {
-             "en": "Light background",
-             "pt-BR": "Fundo claro"
-            },
-            "default": false
-        },
-        {
-            "type": "select",
-            "id": "title_alignment",
-            "label": {
-             "en": "Title alignment",
-             "pt-BR": "Alinhamento do título"
-            },
-            "default": "text-center",
-            "options": [
-                { "value": "text-left", "label": {"en": "Left","pt-BR": "Esquerda"} },
-                { "value": "text-center", "label": {"en": "Center","pt-BR": "Centro"} },
-                { "value": "text-right", "label": {"en": "Right","pt-BR": "Direita"} }
-            ]
-        },
-        {
-            "type": "select",
-            "id": "title_size",
-            "label": {
-             "en": "Title Size",
-             "pt-BR": "Tamanho do Título"
-            },
-            "default": "h2",
-            "options": [
-                {  "value": "h1", "label": "H1" },
-                {  "value": "h2", "label": "H2" },
-                {  "value": "h3", "label": "H3" },
-                {  "value": "h4", "label": "H4" },
-                {  "value": "h5", "label": "H5" },
-                {  "value": "h6", "label": "H6" }
-            ]
-        },
-        {
-            "type": "header",
-            "content": {
-             "en": "Post settings",
-             "pt-BR": "Configurações de postagem"
-            }
-        },
-        {
-            "type": "checkbox",
-            "id": "show_author",
-            "label": {
-             "en": "Show author",
-             "pt-BR": "Mostrar autor"
-            },
-            "default": true
-        },
-        {
-            "type": "checkbox",
-            "id": "show_date",
-            "label": {
-             "en": "Show date",
-             "pt-BR": "Mostrar data"
-            },
-            "default": true
-        },
-        {
-            "type": "checkbox",
-            "id": "show_comments",
-            "label": {
-             "en": "Show comments",
-             "pt-BR": "Mostrar comentários"
-            },
-            "default": true
-        },
-        {
-            "type": "checkbox",
-            "id": "show_excerpt",
-            "label": {
-             "en": "Show excerpt",
-             "pt-BR": "Mostrar trecho"
-            },
-            "default": true
-        },
-        {
-            "type": "text",
-            "id": "excerpt_length",
-            "label": {
-             "en": "Excerpt lenght",
-             "pt-BR": "Tamanho do Resumo"
-            },
-            "info": {
-             "en": "Leave blank to show all text",
-             "pt-BR": "Deixe em branco para mostrar todo o texto"
-            },
-            "default": "240"
-        },
-        {
-            "type": "checkbox",
-            "id": "show_readmore",
-            "label": {
-             "en": "Read More button",
-             "pt-BR": "Mostrar botão ver mais"
-            },
-            "default": true
-        },
-        {
-            "type": "select",
-            "id": "readmore_color",
-            "label": {
-             "en": "Read More button color",
-             "pt-BR": "Cor do botão ver mais"
-            },
-            "default": "btn-outline-primary",
-            "options":[
-                {
-                   "group":"Normal",
-                   "value":"btn-link",
-                   "label":{
-                     "en": "Link",
-                     "pt-BR": "Link"
-                   }
-                },
-                {
-                   "group":"Normal",
-                   "value":"btn-light",
-                   "label":{
-                     "en": "Light",
-                     "pt-BR": "Claro"
-                   }
-                },
-                {
-                   "group":"Normal",
-                   "value":"btn-dark",
-                   "label":{
-                     "en": "Dark",
-                     "pt-BR": "Escuro"
-                   }
-                },
-                {
-                   "group":"Normal",
-                   "value":"button-buy",
-                   "label":{
-                     "en": "Primary",
-                     "pt-BR": "Primário"
-                   }
-                },
-                {
-                   "group":"Normal",
-                   "value":"btn-secondary",
-                   "label":{
-                     "en": "Secondary",
-                     "pt-BR": "Secundário"
-                   }
-                },
-                {
-                   "group":"Normal",
-                   "value":"btn-success",
-                   "label":{
-                     "en": "Success",
-                     "pt-BR": "Sucesso"
-                   }
-                },
-                {
-                   "group":"Normal",
-                   "value":"btn-danger",
-                   "label":{
-                     "en": "Danger",
-                     "pt-BR": "Perigo"
-                   }
-                },
-                {
-                   "group":"Normal",
-                   "value":"btn-warning",
-                   "label":{
-                     "en": "Warning",
-                     "pt-BR": "Aviso"
-                   }
-                },
-                {
-                   "group":"Normal",
-                   "value":"btn-info",
-                   "label":{
-                     "en": "Info",
-                     "pt-BR": "Informações"
-                   }
-                },
-                {
-                   "group":"Outline",
-                   "value":"btn-outline-dark",
-                   "label":{
-                     "en": "Dark outline",
-                     "pt-BR": "Contorno escuro"
-                   }
-                },
-                {
-                   "group":"Outline",
-                   "value":"btn-outline-primary",
-                   "label":{
-                     "en": "Primary outline",
-                     "pt-BR": "Contorno cor do primário"
-                   }
-                },
-                {
-                   "group":"Outline",
-                   "value":"btn-outline-secondary",
-                   "label":{
-                     "en": "Secondary outline",
-                     "pt-BR": "Contorno cor do secundário"
-                   }
-                },
-                {
-                   "group":"Outline",
-                   "value":"btn-outline-success",
-                   "label":{
-                     "en": "Success outline",
-                     "pt-BR": "Contorno do sucesso"
-                   }
-                },
-                {
-                   "group":"Outline",
-                   "value":"btn-outline-danger",
-                   "label":{
-                     "en": "Danger outline",
-                     "pt-BR": "Contorno cor do perigo"
-                   }
-                },
-                {
-                   "group":"Outline",
-                   "value":"btn-outline-warning",
-                   "label":{
-                     "en": "Warning outline",
-                     "pt-BR": "Contorno cor do aviso"
-                   }
-                },
-                {
-                   "group":"Outline",
-                   "value":"btn-outline-info",
-                   "label":{
-                     "en": "Info ouline",
-                     "pt-BR": "Contorno cor do informações"
-                   }
-                }
-             ]
-        },
-        {
-            "type": "select",
-            "id": "readmore_size",
-            "label": {
-               "en": "Read more button size",
-               "pt-BR": "Tamanho do botão ver mais"
-             },
-             "options":[
-                {
-                   "value":"btn-sm",
-                   "label":{
-                     "en": "Small",
-                     "pt-BR": "Pequeno"
-                   }
-                },
-                {
-                   "value":"",
-                   "label":{
-                     "en": "Normal",
-                     "pt-BR": "Normal"
-                   }
-                },
-                {
-                   "value":"btn-lg",
-                   "label":{
-                     "en": "Large",
-                     "pt-BR": "Grande"
-                   }
-                }
-             ]
-        },
-        {
-            "type": "text",
-            "id": "img_width",
-            "label": {
-               "en": "Image width (px)",
-               "pt-BR": "Largura da imagem (px)"
-             },
-            "default": "480"
-        },
-        {
-            "type": "text",
-            "id": "img_height",
-            "label": {
-               "en": "Image height (px)",
-               "pt-BR": "Altura da imagem (px)"
-             },
-            "default": "270"
-        },
-        {
-            "type": "checkbox",
-            "id": "img_thumbnail",
-            "label": {
-               "en": "Image border",
-               "pt-BR": "Borda da imagem"
-             },
-            "default": true
-        },
-        {
-            "type": "header",
-            "content": {
-             "en": "Post list",
-             "pt-BR": "Lista de postagens"
-            }
-        },
-        {
-            "type": "range",
-            "id": "limit",
-            "label": {
-             "en": "Post limit",
-             "pt-BR": "Limite de postagens"
-            },
-            "min": 1,
-            "max": 16,
-            "step": 1,
-            "default": 4
-        },
-        {
-            "type": "range",
-            "id": "row_mobile",
-            "label": {
-             "en": "Posting by Line / Mobile",
-             "pt-BR": "Postagens por linha / celular"
-            },
-            "min": 1,
-            "max": 3,
-            "step": 1,
-            "default": 2
-        },
-        {
-            "type": "range",
-            "id": "row_tablet",
-            "label": {
-             "en": "Posts by Line / Tablet",
-             "pt-BR": "Postagens por linha / tablet"
-            },
-            "min": 1,
-            "max": 4,
-            "step": 1,
-            "default": 2
-        },
-        {
-            "type": "range",
-            "id": "row_desktop",
-            "label": {
-             "en": "Posts by Line / Desktop",
-             "pt-BR": "Postagens por linha / Desktop"
-            },
-            "min": 1,
-            "max": 6,
-            "step": 1,
-            "default": 2
-        },
-        {
-            "type": "header",
-            "content": {
-             "en": "Spacing",
-             "pt-BR": "Espaçamento"
-            },
-            "info": {
-             "en": "Based on Bootstrap Spacing Utility Classes [Learn More](https://getbootstrap.com/docs/4.5/utilities/spacing/)",
-             "pt-BR": "Com base nas classes do utilitário de espaçamento Bootstrap [Saiba mais](https://getbootstrap.com/docs/4.5/utilities/spacing/)"
-            }
-        },
-        {
-            "type": "range",
-            "id": "padding_top",
-            "label": {
-             "en": "Padding Top",
-             "pt-BR": "Espaçamento superior"
-            },
-            "min": 0,
-            "max": 12,
-            "step": 1,
-            "default": 0
-        },
-        {
-            "type": "range",
-            "id": "padding_bottom",
-            "label": {
-             "en": "Padding bottom",
-             "pt-BR": "Espaçamento inferior"
-            },
-            "min": 0,
-            "max": 12,
-            "step": 1,
-            "default": 0
-        },
-        {
-            "type": "range",
-            "id": "margin_top",
-            "label": {
-             "en": "Margin top",
-             "pt-BR": "Margem superior"
-            },
-            "min": 0,
-            "max": 12,
-            "step": 1,
-            "default": 0
-        },
-        {
-            "type": "range",
-            "id": "margin_bottom",
-            "label": {
-             "en": "Margin bottom",
-             "pt-BR": "Margem inferior"
-            },
-            "min": 0,
-            "max": 12,
-            "step": 1,
-            "default": 9
+          "value": "text-right",
+          "label": "Right"
         }
-    ],
-    "presets": [
+      ]
+    },
+    {
+      "type": "select",
+      "id": "title_size",
+      "label": "Title Size",
+      "default": "h2",
+      "options": [
         {
-            "name": {
-             "en": "Blog Posts",
-             "pt-BR": "Postagens do blog"
-            },
-            "category": "home",
-            "settings": {
-                "blog": "News"
-            }
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        },
+        {
+          "value": "h4",
+          "label": "H4"
+        },
+        {
+          "value": "h5",
+          "label": "H5"
+        },
+        {
+          "value": "h6",
+          "label": "H6"
         }
-    ]
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Post settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_author",
+      "label": "Show author",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_date",
+      "label": "Show date",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_comments",
+      "label": "Show comments",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_excerpt",
+      "label": "Show excerpt",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "excerpt_length",
+      "label": "Excerpt lenght",
+      "info": "Leave blank to show all text",
+      "default": "240"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_readmore",
+      "label": "Read More button",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "readmore_color",
+      "label": "Read More button color",
+      "default": "btn-outline-primary",
+      "options": [
+        {
+          "group": "Normal",
+          "value": "btn-link",
+          "label": "Link"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-light",
+          "label": "Light"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-dark",
+          "label": "Dark"
+        },
+        {
+          "group": "Normal",
+          "value": "button-buy",
+          "label": "Primary"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-secondary",
+          "label": "Secondary"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-success",
+          "label": "Success"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-danger",
+          "label": "Danger"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-warning",
+          "label": "Warning"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-info",
+          "label": "Info"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-dark",
+          "label": "Dark outline"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-primary",
+          "label": "Primary outline"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-secondary",
+          "label": "Secondary outline"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-success",
+          "label": "Success outline"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-danger",
+          "label": "Danger outline"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-warning",
+          "label": "Warning outline"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-info",
+          "label": "Info ouline"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "readmore_size",
+      "label": "Read more button size",
+      "options": [
+        {
+          "value": "btn-sm",
+          "label": "Small"
+        },
+        {
+          "value": "",
+          "label": "Normal"
+        },
+        {
+          "value": "btn-lg",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "img_width",
+      "label": "Image width (px)",
+      "default": "480"
+    },
+    {
+      "type": "text",
+      "id": "img_height",
+      "label": "Image height (px)",
+      "default": "270"
+    },
+    {
+      "type": "checkbox",
+      "id": "img_thumbnail",
+      "label": "Image border",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Post list"
+    },
+    {
+      "type": "range",
+      "id": "limit",
+      "label": "Post limit",
+      "min": 1,
+      "max": 16,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "row_mobile",
+      "label": "Posting by Line / Mobile",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "row_tablet",
+      "label": "Posts by Line / Tablet",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "row_desktop",
+      "label": "Posts by Line / Desktop",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "header",
+      "content": "Spacing",
+      "info": "Based on Bootstrap Spacing Utility Classes [Learn More](https://getbootstrap.com/docs/4.5/utilities/spacing/)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "min": 0,
+      "max": 12,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 12,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "label": "Margin top",
+      "min": 0,
+      "max": 12,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "label": "Margin bottom",
+      "min": 0,
+      "max": 12,
+      "step": 1,
+      "default": 9
+    }
+  ],
+  "presets": [
+    {
+      "name": "Blog Posts",
+      "category": "home",
+      "settings": {
+        "blog": "News"
+      }
+    }
+  ]
 }
 {% endschema %}

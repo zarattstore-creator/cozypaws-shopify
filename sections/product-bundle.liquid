@@ -107,323 +107,262 @@
 
 {% schema %}
 {
-    "name": {
-     "en": "Buy together",
-     "pt-BR": "Compre junto"
+  "name": "Buy together",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Have more conversion with this option."
     },
-    "settings": [
+    {
+      "type": "paragraph",
+      "content": "INSTRUCTIONS: Create collections with the name buy-together-01 (varying the last two digits from 01 to 10) with the packages. Note: if editing the name of the collection, check the field (URL and identifier) that must contain the name previously specified."
+    },
+    {
+      "type": "header",
+      "content": "General settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_section",
+      "label": "Enable section",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Often bought together"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Write something catchy for this section.</p>"
+    },
+    {
+      "type": "checkbox",
+      "id": "container",
+      "label": "Wrap container",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "title_alignment",
+      "label": "Title alignment",
+      "options": [
         {
-            "type": "paragraph",
-            "content": {
-             "en": "Have more conversion with this option.",
-             "pt-BR": "Tenha mais conversão com essa opção."
-            }
+          "value": "text-left",
+          "label": "Left"
         },
         {
-            "type": "paragraph",
-            "content": {
-             "en": "INSTRUCTIONS: Create collections with the name buy-together-01 (varying the last two digits from 01 to 10) with the packages. Note: if editing the name of the collection, check the field (URL and identifier) that must contain the name previously specified.",
-             "pt-BR": "INSTRUÇÕES: Crie coleções com o nome compre-junto-01 (variando os últimos dois dígitos de 01 a 10) com os pacotes. Obs: se for editar o nome da coleção verificar o campo (URL e identificador) que deve contém o nome especificado anteriormente."
-            }
+          "value": "text-center",
+          "label": "Center"
         },
         {
-            "type": "header",
-            "content": {
-             "en": "General settings",
-             "pt-BR": "Configurações gerais"
-            }
-        },
-        {
-            "type": "checkbox",
-            "id": "enable_section",
-            "label": {
-             "en": "Enable section",
-             "pt-BR": "Habilitar seção"
-            },
-            "default": true
-        },
-        {
-            "type": "text",
-            "id": "title",
-            "label": {
-             "en": "Title",
-             "pt-BR": "Título"
-            },
-            "default": {
-             "en": "Often bought together",
-             "pt-BR": "Frequentemente comprados juntos"
-            }
-        },
-        {
-            "type": "richtext",
-            "id": "description",
-            "label": {
-             "en": "Description",
-             "pt-BR": "Descrição"
-            },
-            "default": {
-             "en": "<p>Write something catchy for this section.</p>",
-             "pt-BR": "<p>Escreva algo cativante para esta seção.</p>"
-            }
-        },
-
-        {
-            "type": "checkbox",
-            "id": "container",
-            "label": {
-             "en": "Wrap container",
-             "pt-BR": "Wrap container"
-            },
-            "default": true
-        },
-        {
-            "type": "select",
-            "id": "title_alignment",
-            "label": {
-             "en": "Title alignment",
-             "pt-BR": "Alinhamento do título"
-            },
-            "options": [
-                { "value": "text-left", "label": {"en": "Left","pt-BR": "Esquerda"} },
-                { "value": "text-center", "label": {"en": "Center","pt-BR": "Centro"} },
-                { "value": "text-right", "label": {"en": "Right","pt-BR": "Direita"} }
-            ],
-            "default": "text-center"
-        },
-        {
-            "type": "select",
-            "id": "title_size",
-            "label": {
-             "en": "Title size",
-             "pt-BR": "Tamanho do título"
-            },
-            "default": "h2",
-            "options": [
-                {  "value": "h1", "label": "H1" },
-                {  "value": "h2", "label": "H2" },
-                {  "value": "h3", "label": "H3" },
-                {  "value": "h4", "label": "H4" },
-                {  "value": "h5", "label": "H5" },
-                {  "value": "h6", "label": "H6" }
-            ]
-        },
-        {
-            "type": "header",
-            "content": {
-             "en": "Product settings",
-             "pt-BR": "Configurações do produto"
-            }
-        },
-        {
-            "type": "text",
-            "id": "img_width",
-            "label": {
-               "en": "Image width (px)",
-               "pt-BR": "Largura da imagem (px)"
-             },
-            "default": "480"
-        },
-        {
-            "type": "text",
-            "id": "img_height",
-            "label": {
-               "en": "Image height (px)",
-               "pt-BR": "Altura da imagem (px)"
-             },
-            "default": "480"
-        },
-        {
-            "type": "checkbox",
-            "id": "img_thumbnail",
-            "label": {
-               "en": "Image border",
-               "pt-BR": "Borda da imagem"
-             },
-            "default": true
-        },
-        {
-            "type": "select",
-            "id": "product_title_heading_size",
-            "label": {
-             "en": "Title size",
-             "pt-BR": "Tamanho do título"
-            },
-            "default": "h6",
-            "options": [
-                { "value": "h1", "label": "H1" },
-                { "value": "h2", "label": "H2" },
-                { "value": "h3", "label": "H3" },
-                { "value": "h4", "label": "H4" },
-                { "value": "h5", "label": "H5" },
-                { "value": "h6", "label": "H6" }
-            ]
-        },
-        {
-            "type": "checkbox",
-            "id": "show_rating",
-            "label": {
-             "en": "Show Rating",
-             "pt-BR": "Mostrar avaliação"
-            },
-            "default": true
-        },
-        {
-            "type": "checkbox",
-            "id": "show_price",
-            "label": {
-             "en": "Show price",
-             "pt-BR": "Mostrar preço"
-            },
-            "default": true
-        },
-        {
-            "type": "header",
-            "content": {
-             "en": "Discount settings",
-             "pt-BR": "Configurações de desconto"
-            }
-        },
-        {
-            "type": "checkbox",
-            "id": "enable_discounts",
-            "label": {
-             "en": "Enable discounts (NOT AVAILABLE)",
-             "pt-BR": "Habilitar descontos (NÃO DISPONÍVEL)"
-            },
-            "info": {
-             "en": "To use the discount, create for each of your product bundles a discount code exactly like your collection identifier. For example: 'promo'.",
-             "pt-BR": "Para usar o desconto, crie para cada um de seus pacotes de produtos um código de desconto exatamente como o identificador de sua coleção. Por exemplo: 'promo'."
-            },
-            "default": false
-        },
-        {
-            "type": "range",
-            "id": "discount_percentage",
-            "label": {
-             "en": "Discount percentage",
-             "pt-BR": "Porcentagem de desconto"
-            },
-            "min": 1,
-            "max": 100,
-            "step": 1,
-            "unit": "%",
-            "default": 1
-        },
-        {
-            "type": "text",
-            "id": "discount_min_products",
-            "label": {
-             "en": "Min products",
-             "pt-BR": "Produtos mínimos"
-            },
-            "info": {
-             "en": "Discount will only apply if this number of products (or more) is selected.",
-             "pt-BR": "Aplicará desconto apenas se este número de produtos (ou mais) for selecionado."
-            },
-            "default": "2"
-        },
-        {
-            "type": "header",
-            "content": {
-             "en": "Rows",
-             "pt-BR": "Linhas"
-            }
-        },
-        {
-            "type": "range",
-            "id": "row_mobile",
-            "label": {
-             "en": "Products per line / Mobile ",
-             "pt-BR": "Produtos por linha / Celular "
-            },
-            "min": 1,
-            "max": 3,
-            "step": 1,
-            "default": 2
-        },
-        {
-            "type": "range",
-            "id": "row_tablet",
-            "label": {
-             "en": "Products per line / Tablet ",
-             "pt-BR": "Produtos por linha / Tablet "
-            },
-            "min": 1,
-            "max": 4,
-            "step": 1,
-            "default": 3
-        },
-        {
-            "type": "range",
-            "id": "row_desktop",
-            "label": {
-             "en": "Products per line / Desktop ",
-             "pt-BR": "Produtos por linha / Desktop "
-            },
-            "min": 1,
-            "max": 8,
-            "step": 1,
-            "default": 4
-        },
-        {
-            "type": "header",
-            "content": {
-             "en": "Spacing",
-             "pt-BR": "Espaçamento"
-            },
-            "info": {
-             "en": "Based on Bootstrap Spacing Utility Classes [Learn More](https://getbootstrap.com/docs/4.5/utilities/spacing/)",
-             "pt-BR": "Com base nas classes do utilitário de espaçamento Bootstrap [Saiba mais](https://getbootstrap.com/docs/4.5/utilities/spacing/)"
-            }
-        },
-        {
-            "type": "range",
-            "id": "padding_top",
-            "label": {
-             "en": "Padding top",
-             "pt-BR": "Espaçamento superior"
-            },
-            "min": 0,
-            "max": 15,
-            "step": 1,
-            "default": 9
-        },
-        {
-            "type": "range",
-            "id": "padding_bottom",
-            "label": {
-             "en": "Padding bottom",
-             "pt-BR": "Espaçamento inferior"
-            },
-            "min": 0,
-            "max": 15,
-            "step": 1,
-            "default": 9
-        },
-        {
-            "type": "range",
-            "id": "margin_top",
-            "label": {
-             "en": "Margin top",
-             "pt-BR": "Margem superior"
-            },
-            "min": 0,
-            "max": 15,
-            "step": 1,
-            "default": 0
-        },
-        {
-            "type": "range",
-            "id": "margin_bottom",
-            "label": {
-             "en": "Margin bottom",
-             "pt-BR": "Margem inferior"
-            },
-            "min": 0,
-            "max": 15,
-            "step": 1,
-            "default": 9
+          "value": "text-right",
+          "label": "Right"
         }
-    ]
+      ],
+      "default": "text-center"
+    },
+    {
+      "type": "select",
+      "id": "title_size",
+      "label": "Title size",
+      "default": "h2",
+      "options": [
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        },
+        {
+          "value": "h4",
+          "label": "H4"
+        },
+        {
+          "value": "h5",
+          "label": "H5"
+        },
+        {
+          "value": "h6",
+          "label": "H6"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Product settings"
+    },
+    {
+      "type": "text",
+      "id": "img_width",
+      "label": "Image width (px)",
+      "default": "480"
+    },
+    {
+      "type": "text",
+      "id": "img_height",
+      "label": "Image height (px)",
+      "default": "480"
+    },
+    {
+      "type": "checkbox",
+      "id": "img_thumbnail",
+      "label": "Image border",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "product_title_heading_size",
+      "label": "Title size",
+      "default": "h6",
+      "options": [
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        },
+        {
+          "value": "h4",
+          "label": "H4"
+        },
+        {
+          "value": "h5",
+          "label": "H5"
+        },
+        {
+          "value": "h6",
+          "label": "H6"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "show_rating",
+      "label": "Show Rating",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_price",
+      "label": "Show price",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Discount settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_discounts",
+      "label": "Enable discounts (NOT AVAILABLE)",
+      "info": "To use the discount, create for each of your product bundles a discount code exactly like your collection identifier. For example: 'promo'.",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "discount_percentage",
+      "label": "Discount percentage",
+      "min": 1,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 1
+    },
+    {
+      "type": "text",
+      "id": "discount_min_products",
+      "label": "Min products",
+      "info": "Discount will only apply if this number of products (or more) is selected.",
+      "default": "2"
+    },
+    {
+      "type": "header",
+      "content": "Rows"
+    },
+    {
+      "type": "range",
+      "id": "row_mobile",
+      "label": "Products per line / Mobile ",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "row_tablet",
+      "label": "Products per line / Tablet ",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "row_desktop",
+      "label": "Products per line / Desktop ",
+      "min": 1,
+      "max": 8,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "header",
+      "content": "Spacing",
+      "info": "Based on Bootstrap Spacing Utility Classes [Learn More](https://getbootstrap.com/docs/4.5/utilities/spacing/)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 15,
+      "step": 1,
+      "default": 9
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 15,
+      "step": 1,
+      "default": 9
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "label": "Margin top",
+      "min": 0,
+      "max": 15,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "label": "Margin bottom",
+      "min": 0,
+      "max": 15,
+      "step": 1,
+      "default": 9
+    }
+  ]
 }
 {% endschema %}

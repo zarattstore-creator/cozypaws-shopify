@@ -61,211 +61,172 @@
 
 {% schema %}
 {
-    "name": {
-     "en": "Brands",
-     "pt-BR": "Marcas"
+  "name": "Brands",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Brands"
     },
-    "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Brands you already love"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Write something attractive for this section.</p>"
+    },
+    {
+      "type": "select",
+      "id": "title_size",
+      "label": "Title size",
+      "default": "h4",
+      "options": [
         {
-            "type": "header",
-            "content": {
-             "en": "Brands",
-             "pt-BR": "Marcas"
-            }
+          "value": "h1",
+          "label": "H1"
         },
         {
-            "type": "text",
-            "id": "title",
-            "label": {
-             "en": "Title",
-             "pt-BR": "Título"
-            },
-            "default": {
-             "en": "Brands you already love",
-             "pt-BR": "Marcas que você já ama"
-            }
+          "value": "h2",
+          "label": "H2"
         },
         {
-            "type": "richtext",
-            "id": "description",
-            "label": {
-             "en": "Description",
-             "pt-BR": "Descrição"
-            },
-            "default": {
-             "en": "<p>Write something attractive for this section.</p>",
-             "pt-BR": "<p>Escreva algo atraente para esta seção.</p>"
-            }
+          "value": "h3",
+          "label": "H3"
         },
         {
-            "type": "select",
-            "id": "title_size",
-            "label": {
-             "en": "Title size",
-             "pt-BR": "Tamanho do Título"
-            },
-            "default": "h4",
-            "options": [
-                {  "value": "h1", "label": "H1" },
-                {  "value": "h2", "label": "H2" },
-                {  "value": "h3", "label": "H3" },
-                {  "value": "h4", "label": "H4" },
-                {  "value": "h5", "label": "H5" },
-                {  "value": "h6", "label": "H6" }
-            ]
+          "value": "h4",
+          "label": "H4"
         },
         {
-            "type": "select",
-            "id": "title_alignment",
-            "label": {
-             "en": "Title alignment",
-             "pt-BR": "Alinhamento do título"
-            },
-            "options": [
-                { "value": "text-left", "label": {"en": "Left","pt-BR": "Esquerda"} },
-                { "value": "text-center", "label": {"en": "Center","pt-BR": "Centro"} },
-                { "value": "text-right", "label": {"en": "Right","pt-BR": "Direita"} }
-            ],
-            "default": "text-center"
+          "value": "h5",
+          "label": "H5"
         },
         {
-            "type": "header",
-            "content": {
-             "en": "General settings",
-             "pt-BR": "Configurações gerais"
-            }
-        },
-        {
-            "type": "checkbox",
-            "id": "bg_light",
-            "label": {
-             "en": "Light background",
-             "pt-BR": "Fundo claro"
-            },
-            "default": false
-        },
-        {
-            "type": "checkbox",
-            "id": "container",
-            "label": {
-             "en": "Container",
-             "pt-BR": "Container"
-            },
-            "default": true
-        },
-        {
-            "type": "range",
-            "id": "speed",
-            "label": {
-             "en": "Slider speed",
-             "pt-BR": "Velocidade do slider"
-            },
-            "min": 50,
-            "max": 500,
-            "step": 50,
-            "default": 50
-        },
-        {
-            "type": "text",
-            "id": "img_height",
-            "label": {
-               "en": "Image height (px)",
-               "pt-BR": "Altura da imagem (px)"
-             },
-            "default": "90"
-        },
-        {
-            "type": "header",
-            "content": {
-             "en": "Spacing",
-             "pt-BR": "Espaçamento"
-            },
-            "info": {
-             "en": "Based on Bootstrap Spacing Utility Classes [Learn More](https://getbootstrap.com/docs/4.5/utilities/spacing/)",
-             "pt-BR": "Com base nas classes do utilitário de espaçamento Bootstrap [Saiba mais](https://getbootstrap.com/docs/4.5/utilities/spacing/)"
-            }
-        },
-        {
-            "type": "range",
-            "id": "padding_top",
-            "label": {
-             "en": "Padding Top",
-             "pt-BR": "Espaçamento superior"
-            },
-            "min": 0,
-            "max": 15,
-            "step": 1,
-            "default": 0
-        },
-        {
-            "type": "range",
-            "id": "padding_bottom",
-            "label": {
-             "en": "Padding bottom",
-             "pt-BR": "Espaçamento inferior"
-            },
-            "min": 0,
-            "max": 15,
-            "step": 1,
-            "default": 0
-        },
-        {
-            "type": "range",
-            "id": "margin_top",
-            "label": {
-             "en": "Margin top",
-             "pt-BR": "Margem superior"
-            },
-            "min": 0,
-            "max": 15,
-            "step": 1,
-            "default": 0
-        },
-        {
-            "type": "range",
-            "id": "margin_bottom",
-            "label": {
-             "en": "Margin bottom",
-             "pt-BR": "Margem inferior"
-            },
-            "min": 0,
-            "max": 15,
-            "step": 1,
-            "default": 9
+          "value": "h6",
+          "label": "H6"
         }
-    ],
-    "blocks": [
+      ]
+    },
+    {
+      "type": "select",
+      "id": "title_alignment",
+      "label": "Title alignment",
+      "options": [
         {
-            "type": "image",
-            "name": {
-             "en": "Image",
-             "pt-BR": "Imagem"
-            },
-            "settings": [
-                {
-                    "type": "image_picker",
-                    "id": "image",
-                    "label": {
-                     "en": "Image",
-                     "pt-BR": "Imagem"
-                    }
-                },
-                {
-                    "type": "url",
-                    "id": "url",
-                    "label": "URL"
-                }
-            ]
-        }
-    ],
-    "presets": [
+          "value": "text-left",
+          "label": "Left"
+        },
         {
-            "name": {
-             "en": "Brands",
-             "pt-BR": "Marcas"
-            },
-            "category": "image"
+          "value": "text-center",
+          "label": "Center"
+        },
+        {
+          "value": "text-right",
+          "label": "Right"
         }
-    ]
+      ],
+      "default": "text-center"
+    },
+    {
+      "type": "header",
+      "content": "General settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "bg_light",
+      "label": "Light background",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "container",
+      "label": "Container",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "speed",
+      "label": "Slider speed",
+      "min": 50,
+      "max": 500,
+      "step": 50,
+      "default": 50
+    },
+    {
+      "type": "text",
+      "id": "img_height",
+      "label": "Image height (px)",
+      "default": "90"
+    },
+    {
+      "type": "header",
+      "content": "Spacing",
+      "info": "Based on Bootstrap Spacing Utility Classes [Learn More](https://getbootstrap.com/docs/4.5/utilities/spacing/)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "min": 0,
+      "max": 15,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 15,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "label": "Margin top",
+      "min": 0,
+      "max": 15,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "label": "Margin bottom",
+      "min": 0,
+      "max": 15,
+      "step": 1,
+      "default": 9
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Brands",
+      "category": "image"
+    }
+  ]
 }
 {% endschema %}

@@ -193,409 +193,313 @@
 
 {% schema %}
 {
-    "name": {
-     "en": "Featured product",
-     "pt-BR": "Produto em destaque"
+  "name": "Featured product",
+  "class": "overflow-hidden",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Featured product"
     },
-    "class": "overflow-hidden",
-    "settings": [
+    {
+      "type": "header",
+      "content": "General Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "bg_light",
+      "label": "Light background",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "badge",
+      "label": "Badge",
+      "default": "Featured product"
+    },
+    {
+      "type": "select",
+      "id": "badge_color",
+      "label": "Badge color",
+      "default": "badge-secondary",
+      "options": [
         {
-            "type": "product",
-            "id": "product",
-            "label": {
-             "en": "Featured product",
-             "pt-BR": "Produto em destaque"
-            }
+          "value": "badge-light",
+          "label": "Light"
         },
         {
-            "type": "header",
-            "content": {
-             "en": "General Settings",
-             "pt-BR": "Configurações Gerais"
-            }
+          "value": "badge-dark",
+          "label": "Dark"
         },
         {
-            "type": "checkbox",
-            "id": "bg_light",
-            "label": {
-             "en": "Light background",
-             "pt-BR": "Fundo claro"
-            },
-            "default": false
+          "value": "badge-primary",
+          "label": "Primary"
         },
         {
-            "type": "text",
-            "id": "badge",
-            "label": {
-             "en": "Badge",
-             "pt-BR": "Badge"
-            },
-            "default": {
-             "en": "Featured product",
-             "pt-BR": "Produto em destaque"
-            }
+          "value": "badge-secondary",
+          "label": "Secondary"
         },
         {
-            "type": "select",
-            "id": "badge_color",
-            "label": {
-             "en": "Badge color",
-             "pt-BR": "Cor do badge"
-            },
-            "default": "badge-secondary",
-            "options": [
-                { "value": "badge-light", "label": {"en": "Light","pt-BR": "Claro"} },
-                { "value": "badge-dark", "label": {"en": "Dark","pt-BR": "Escuro"} },
-                { "value": "badge-primary", "label": {"en": "Primary","pt-BR": "Primária"} },
-                { "value": "badge-secondary", "label": {"en": "Secondary","pt-BR": "Secundária"} },
-                { "value": "badge-success", "label": {"en": "Success","pt-BR": "Sucesso"} },
-                { "value": "badge-danger", "label": {"en": "Danger","pt-BR": "Perigo"} },
-                { "value": "badge-warning", "label": {"en": "Warning","pt-BR": "Cuidado"} },
-                { "value": "badge-info", "label": {"en": "Info","pt-BR": "Informações"} },
-                { "value": "badge-custom", "label": {"en": "Custom Gradient","pt-BR": "Gradiente Custom"} }
-            ]
+          "value": "badge-success",
+          "label": "Success"
         },
         {
-            "type": "select",
-            "id": "product_title_heading_size",
-            "label": {
-             "en": "Title size",
-             "pt-BR": "Tamanho do título"
-            },
-            "default": "h2",
-            "options": [
-                { "value": "h1", "label": "H1" },
-                { "value": "h2", "label": "H2" },
-                { "value": "h3", "label": "H3" },
-                { "value": "h4", "label": "H4" },
-                { "value": "h5", "label": "H5" },
-                { "value": "h6", "label": "H6" }
-            ]
+          "value": "badge-danger",
+          "label": "Danger"
         },
         {
-            "type": "checkbox",
-            "id": "show_vendor",
-            "label": {
-             "en": "Show vendor",
-             "pt-BR": "Mostrar vendedor"
-            },
-            "default": false
+          "value": "badge-warning",
+          "label": "Warning"
         },
         {
-            "type": "checkbox",
-            "id": "show_rating",
-            "label": {
-             "en": "Show rating",
-             "pt-BR": "Mostrar avaliação"
-            },
-            "default": true
+          "value": "badge-info",
+          "label": "Info"
         },
         {
-            "type": "checkbox",
-            "id": "show_price",
-            "label": {
-             "en": "Show price",
-             "pt-BR": "Mostrar preço"
-            },
-            "default": true
-        },
-        {
-            "type": "text",
-            "id": "description_truncate",
-            "label": {
-             "en": "Description truncate",
-             "pt-BR": "Descrição truncada"
-            },
-            "default": "240",
-            "info": {
-             "en": "The maximum number of characters for the product description. Leave blank to show all descriptions",
-             "pt-BR": "O número máximo de caracteres para a descrição do produto. Deixe em branco para mostrar todas as descrições"
-            }
-        },
-        {
-            "type": "select",
-            "id": "quick_view_btn_color",
-            "label": {
-             "en": "Quick view button color",
-             "pt-BR": "Cor do botão de visualização rápida"
-            },
-            "default": "btn-outline-primary",
-             "options":[
-                {
-                   "group":"Normal",
-                   "value":"btn-link",
-                   "label":{
-                     "en": "Link",
-                     "pt-BR": "Link"
-                   }
-                },
-                {
-                   "group":"Normal",
-                   "value":"btn-light",
-                   "label":{
-                     "en": "Light",
-                     "pt-BR": "Claro"
-                   }
-                },
-                {
-                   "group":"Normal",
-                   "value":"btn-dark",
-                   "label":{
-                     "en": "Dark",
-                     "pt-BR": "Escuro"
-                   }
-                },
-                {
-                   "group":"Normal",
-                   "value":"button-buy",
-                   "label":{
-                     "en": "Primary",
-                     "pt-BR": "Primário"
-                   }
-                },
-                {
-                   "group":"Normal",
-                   "value":"btn-secondary",
-                   "label":{
-                     "en": "Secondary",
-                     "pt-BR": "Secundário"
-                   }
-                },
-                {
-                   "group":"Normal",
-                   "value":"btn-success",
-                   "label":{
-                     "en": "Success",
-                     "pt-BR": "Sucesso"
-                   }
-                },
-                {
-                   "group":"Normal",
-                   "value":"btn-danger",
-                   "label":{
-                     "en": "Danger",
-                     "pt-BR": "Perigo"
-                   }
-                },
-                {
-                   "group":"Normal",
-                   "value":"btn-warning",
-                   "label":{
-                     "en": "Warning",
-                     "pt-BR": "Aviso"
-                   }
-                },
-                {
-                   "group":"Normal",
-                   "value":"btn-info",
-                   "label":{
-                     "en": "Info",
-                     "pt-BR": "Informações"
-                   }
-                },
-                {
-                   "group":"Outline",
-                   "value":"btn-outline-dark",
-                   "label":{
-                     "en": "Dark outline",
-                     "pt-BR": "Contorno do escuro"
-                   }
-                },
-                {
-                   "group":"Outline",
-                   "value":"btn-outline-primary",
-                   "label":{
-                     "en": "Primary outline",
-                     "pt-BR": "Contorno do primário"
-                   }
-                },
-                {
-                   "group":"Outline",
-                   "value":"btn-outline-secondary",
-                   "label":{
-                     "en": "Secondary outline",
-                     "pt-BR": "Contorno do secundário"
-                   }
-                },
-                {
-                   "group":"Outline",
-                   "value":"btn-outline-success",
-                   "label":{
-                     "en": "Success outline",
-                     "pt-BR": "Contorno do sucesso"
-                   }
-                },
-                {
-                   "group":"Outline",
-                   "value":"btn-outline-danger",
-                   "label":{
-                     "en": "Danger outline",
-                     "pt-BR": "Contorno do perigo"
-                   }
-                },
-                {
-                   "group":"Outline",
-                   "value":"btn-outline-warning",
-                   "label":{
-                     "en": "Warning outline",
-                     "pt-BR": "Contorno do aviso"
-                   }
-                },
-                {
-                   "group":"Outline",
-                   "value":"btn-outline-info",
-                   "label":{
-                     "en": "Info ouline",
-                     "pt-BR": "Contorno do informações"
-                   }
-                }
-             ]
-        },
-        {
-            "type": "select",
-            "id": "quick_view_btn_size",
-            "label": {
-               "en": "Quick view button size",
-               "pt-BR": "Tamanho do botão de visualização rápida"
-             },
-             "options":[
-                {
-                   "value":"btn-sm",
-                   "label":{
-                     "en": "Small",
-                     "pt-BR": "Pequeno"
-                   }
-                },
-                {
-                   "value":"",
-                   "label":{
-                     "en": "Normal",
-                     "pt-BR": "Normal"
-                   }
-                },
-                {
-                   "value":"btn-lg",
-                   "label":{
-                     "en": "Large",
-                     "pt-BR": "Grande"
-                   }
-                }
-             ]
-        },
-        {
-            "type": "checkbox",
-            "id": "show_social_sharing",
-            "label": {
-             "en": "Show social sharing",
-             "pt-BR": "Mostrar compartilhamento social"
-            },
-            "default": true
-        },
-        {
-            "type": "header",
-            "content": {
-             "en": "Image",
-             "pt-BR": "Imagem"
-            }
-        },
-        {
-            "type": "text",
-            "id": "img_width",
-            "label":{
-               "en": "Image width (px)",
-               "pt-BR": "Largura da imagem (px)"
-             },
-            "default": "640"
-        },
-        {
-            "type": "text",
-            "id": "img_height",
-            "label": {
-               "en": "Image height (px)",
-               "pt-BR": "Altura da imagem (px)"
-             },
-            "default": "640"
-        },
-        {
-            "type": "checkbox",
-            "id": "img_thumbnail",
-            "label": {
-               "en": "Image border",
-               "pt-BR": "Borda da imagem"
-             },
-            "default": true
-        },
-        {
-            "type": "header",
-            "content": {
-             "en": "Spacing",
-             "pt-BR": "Espaçamento"
-            },
-            "info": {
-             "en": "Based on Bootstrap Spacing Utility Classes [Learn More](https://getbootstrap.com/docs/4.5/utilities/spacing/)",
-             "pt-BR": "Com base nas classes do utilitário de espaçamento Bootstrap [Saiba mais](https://getbootstrap.com/docs/4.5/utilities/spacing/)"
-            }
-        },
-        {
-            "type": "range",
-            "id": "padding_top",
-            "label": {
-             "en": "Padding top",
-             "pt-BR": "Espaçamento superior"
-            },
-            "min": 0,
-            "max": 15,
-            "step": 1,
-            "default": 0
-        },
-        {
-            "type": "range",
-            "id": "padding_bottom",
-            "label": {
-             "en": "Padding bottom",
-             "pt-BR": "Espaçamento inferior"
-            },
-            "min": 0,
-            "max": 15,
-            "step": 1,
-            "default": 0
-        },
-        {
-            "type": "range",
-            "id": "margin_top",
-            "label": {
-             "en": "Margin top",
-             "pt-BR": "Margem superior"
-            },
-            "min": 0,
-            "max": 15,
-            "step": 1,
-            "default": 3
-        },
-        {
-            "type": "range",
-            "id": "margin_bottom",
-            "label": {
-             "en": "Margin bottom",
-             "pt-BR": "Margem inferior"
-            },
-            "min": 0,
-            "max": 15,
-            "step": 1,
-            "default": 6
+          "value": "badge-custom",
+          "label": "Custom Gradient"
         }
-    ],
-    "presets": [
+      ]
+    },
+    {
+      "type": "select",
+      "id": "product_title_heading_size",
+      "label": "Title size",
+      "default": "h2",
+      "options": [
         {
-            "name": {
-             "en": "Featured Product",
-             "pt-BR": "Produto em destaque"
-            },
-            "category": {
-             "en": "products",
-             "pt-BR": "produtos"
-            }
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        },
+        {
+          "value": "h4",
+          "label": "H4"
+        },
+        {
+          "value": "h5",
+          "label": "H5"
+        },
+        {
+          "value": "h6",
+          "label": "H6"
         }
-    ]
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "label": "Show vendor",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_rating",
+      "label": "Show rating",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_price",
+      "label": "Show price",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "description_truncate",
+      "label": "Description truncate",
+      "default": "240",
+      "info": "The maximum number of characters for the product description. Leave blank to show all descriptions"
+    },
+    {
+      "type": "select",
+      "id": "quick_view_btn_color",
+      "label": "Quick view button color",
+      "default": "btn-outline-primary",
+      "options": [
+        {
+          "group": "Normal",
+          "value": "btn-link",
+          "label": "Link"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-light",
+          "label": "Light"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-dark",
+          "label": "Dark"
+        },
+        {
+          "group": "Normal",
+          "value": "button-buy",
+          "label": "Primary"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-secondary",
+          "label": "Secondary"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-success",
+          "label": "Success"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-danger",
+          "label": "Danger"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-warning",
+          "label": "Warning"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-info",
+          "label": "Info"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-dark",
+          "label": "Dark outline"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-primary",
+          "label": "Primary outline"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-secondary",
+          "label": "Secondary outline"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-success",
+          "label": "Success outline"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-danger",
+          "label": "Danger outline"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-warning",
+          "label": "Warning outline"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-info",
+          "label": "Info ouline"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "quick_view_btn_size",
+      "label": "Quick view button size",
+      "options": [
+        {
+          "value": "btn-sm",
+          "label": "Small"
+        },
+        {
+          "value": "",
+          "label": "Normal"
+        },
+        {
+          "value": "btn-lg",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "show_social_sharing",
+      "label": "Show social sharing",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "text",
+      "id": "img_width",
+      "label": "Image width (px)",
+      "default": "640"
+    },
+    {
+      "type": "text",
+      "id": "img_height",
+      "label": "Image height (px)",
+      "default": "640"
+    },
+    {
+      "type": "checkbox",
+      "id": "img_thumbnail",
+      "label": "Image border",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Spacing",
+      "info": "Based on Bootstrap Spacing Utility Classes [Learn More](https://getbootstrap.com/docs/4.5/utilities/spacing/)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 15,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 15,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "label": "Margin top",
+      "min": 0,
+      "max": 15,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "label": "Margin bottom",
+      "min": 0,
+      "max": 15,
+      "step": 1,
+      "default": 6
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Product",
+      "category": "products"
+    }
+  ]
 }
 {% endschema %}

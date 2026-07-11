@@ -55,320 +55,334 @@
 
 {% schema %}
 {
-    "name": {
-     "en": "Image with text",
-     "pt-BR": "Imagem com texto"
+  "name": "Image with text",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Configura\u00e7\u00f5es gerais"
     },
-    "settings": [
+    {
+      "type": "select",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "bg-white text-body",
+      "options": [
         {
-            "type": "header",
-            "content": {
-             "en": "Configurações gerais",
-             "pt-BR": "Configurações Gerais"
-            }
+          "group": "Light",
+          "value": "bg-white text-body",
+          "label": "White"
         },
         {
-            "type": "select",
-            "id": "bg_color",
-            "label": {
-             "en": "Background color",
-             "pt-BR": "Cor do fundo"
-            },
-            "default": "bg-white text-body",
-            "options": [
-                { "group": "Light", "value": "bg-white text-body", "label": "White" },
-                { "group": "Light", "value": "bg-light text-body", "label": "Light" },
-                { "group": "Dark", "value": "bg-dark text-white", "label": "Dark" },
-                { "group": "Dark", "value": "bg-primary text-white", "label": "Primary" },
-                { "group": "Dark", "value": "bg-secondary text-white", "label": "Secondary" },
-                { "group": "Gradient", "value": "bg-dark-gradient text-white", "label": "Dark" },
-                { "group": "Gradient", "value": "bg-primary-gradient text-white", "label": "Primary" },
-                { "group": "Gradient", "value": "bg-secondary-gradient text-white", "label": "Secondary" },
-                { "group": "Gradient", "value": "bg-custom-gradient text-white", "label": "Custom" }
-            ]
+          "group": "Light",
+          "value": "bg-light text-body",
+          "label": "Light"
         },
         {
-            "type": "checkbox",
-            "id": "container",
-            "label": {
-             "en": "Wrap Container",
-             "pt-BR": "Enrolar Container"
-            },
-            "default": true
+          "group": "Dark",
+          "value": "bg-dark text-white",
+          "label": "Dark"
         },
         {
-            "type": "header",
-            "content": {
-             "en": "Image settings",
-             "pt-BR": "Configurações de imagem"
-            }
+          "group": "Dark",
+          "value": "bg-primary text-white",
+          "label": "Primary"
         },
         {
-            "type": "image_picker",
-            "id": "img",
-            "label": {
-             "en": "Image",
-             "pt-BR": "Imagem"
-            }
+          "group": "Dark",
+          "value": "bg-secondary text-white",
+          "label": "Secondary"
         },
         {
-            "type": "text",
-            "id": "img_width",
-            "label": {
-               "en": "Image width (px)",
-               "pt-BR": "Largura da imagem (px)"
-             },
-            "default": "720"
+          "group": "Gradient",
+          "value": "bg-dark-gradient text-white",
+          "label": "Dark"
         },
         {
-            "type": "text",
-            "id": "img_height",
-            "label": {
-               "en": "Image height (px)",
-               "pt-BR": "Altura da imagem (px)"
-            },
-            "default": "405"
+          "group": "Gradient",
+          "value": "bg-primary-gradient text-white",
+          "label": "Primary"
         },
         {
-            "type": "checkbox",
-            "id": "img_thumbnail",
-            "label": {
-               "en": "Image border",
-               "pt-BR": "Borda da imagem"
-             },
-            "default": false
+          "group": "Gradient",
+          "value": "bg-secondary-gradient text-white",
+          "label": "Secondary"
         },
         {
-            "type": "select",
-            "id": "img_alignment",
-            "label": {
-             "en": "Image alignment",
-             "pt-BR": "Alinhamento da imagem"
-            },
-            "info": {
-             "en": "Note: On mobile, the image will always be at the top and the text at the bottom",
-             "pt-BR": "Nota: No celular, a imagem estará sempre na parte superior e o texto na parte inferior"
-            },
-            "default": "flex-row",
-            "options": [
-                { "value": "flex-row", "label": {"en": "Left" ,"pt-BR": "Esquerda"} },
-                { "value": "flex-row-reverse", "label": {"en": "Right" ,"pt-BR": "Direita"} }
-            ]
-        },
-        {
-            "type": "header",
-            "content": {
-             "en": "Text Settings",
-             "pt-BR": "Configurações de texto"
-            }
-        },
-        {
-            "type": "text",
-            "id": "title",
-            "label": {
-             "en": "Title",
-             "pt-BR": "Título"
-            },
-            "default": {
-             "en": "Image with text",
-             "pt-BR": "Imagem com texto"
-            }
-        },
-        {
-            "type": "select",
-            "id": "title_size",
-            "label": {
-             "en": "Title Size",
-             "pt-BR": "Tamanho do Título"
-            },
-            "default": "h2",
-            "options": [
-                {  "value": "h1", "label": "H1" },
-                {  "value": "h2", "label": "H2" },
-                {  "value": "h3", "label": "H3" },
-                {  "value": "h4", "label": "H4" },
-                {  "value": "h5", "label": "H5" },
-                {  "value": "h6", "label": "H6" }
-            ]
-        },
-        {
-            "type": "richtext",
-            "id": "description",
-            "label": {
-             "en": "Description",
-             "pt-BR": "Descrição"
-            },
-            "default": {
-             "en": "<p>Combine large text with an image to focus on the product, collection, or blog post you've chosen. Add details about availability, style, or even provide a comment.</p>",
-             "pt-BR": "<p>Combine um texto grande com uma imagem para dar foco ao produto, coleção ou postagem do blog que você escolheu. Adicione detalhes sobre disponibilidade, estilo ou até mesmo forneça um comentário.</p>"
-            }
-        },
-        {
-            "type": "checkbox",
-            "id": "description_lead",
-            "label": {
-             "en": "Description lead",
-             "pt-BR": "Descrição principal"
-            },
-            "default": false
-        },
-        {
-            "type": "header",
-            "content": {
-             "en": "Button settings",
-             "pt-BR": "Configurações de botão"
-            }
-        },
-        {
-            "type": "url",
-            "id": "btn_url",
-            "label": {
-             "en": "Button URL",
-             "pt-BR": "URL do botão"
-            },
-            "info": {
-             "en": "Leave blank to disable the button",
-             "pt-BR": "Deixe em branco para desativar o botão"
-            }
-        },
-        {
-            "type": "text",
-            "id": "btn_text",
-            "label": {
-             "en": "Text Button",
-             "pt-BR": "Botão de texto"
-            },
-            "default": {
-             "en": "Learn More",
-             "pt-BR": "Saber mais"
-            }
-        },
-        {
-            "type": "select",
-            "id": "btn_color",
-            "label": "Cor do botão",
-            "default": "btn-outline-primary",
-            "options": [
-                { "group": "Normal", "value": "btn-light", "label": {"en": "Light","pt-BR": "Claro"} },
-                { "group": "Normal", "value": "btn-dark", "label": {"en": "Dark","pt-BR": "Escuro"} },
-                { "group": "Normal", "value": "btn-primary", "label": {"en": "Primary from theme","pt-BR": "Primária do tema"} },
-                { "group": "Normal", "value": "btn-secondary", "label": {"en": "Secondary from theme","pt-BR": "Secundária do tema"} },
-                { "group": "Normal", "value": "btn-success", "label": {"en": "Success","pt-BR": "Sucesso"} },
-                { "group": "Normal", "value": "btn-danger", "label": {"en": "Danger","pt-BR": "Perigo"} },
-                { "group": "Normal", "value": "btn-warning", "label": {"en": "Warning","pt-BR": "Cuidado"} },
-                { "group": "Normal", "value": "btn-info", "label": {"en": "Info","pt-BR": "Informações"} },
-                { "group": "Outline", "value": "btn-outline-dark", "label": {"en": "Dark outline","pt-BR": "Contorno escuro"}},
-                { "group": "Outline", "value": "btn-outline-primary", "label": {"en": "Primary from theme outline","pt-BR": "Contorno primaria do tema"} },
-                { "group": "Outline", "value": "btn-outline-secondary", "label": {"en": "Secondary from theme outline","pt-BR": "Contorno secundária do tema"} },
-                { "group": "Outline", "value": "btn-outline-success", "label": {"en": "Success outline","pt-BR": "Contorno Sucesso"} },
-                { "group": "Outline", "value": "btn-outline-danger", "label": {"en": "Danger outline","pt-BR": "Contorno Perigo"} },
-                { "group": "Outline", "value": "btn-outline-warning", "label": {"en": "Warning outline","pt-BR": "Contorno Cuidado"} },
-                { "group": "Outline", "value": "btn-outline-info", "label": {"en": "Info outline","pt-BR": "Contorno Informações"}}
-            ]
-        },
-        {
-            "type": "select",
-            "id": "btn_size",
-            "label": {
-               "en": "Button size",
-               "pt-BR": "Tamanho do botão"
-             },
-             "options":[
-                {
-                   "value":"btn-sm",
-                   "label":{
-                     "en": "Small",
-                     "pt-BR": "Pequeno"
-                   }
-                },
-                {
-                   "value":"",
-                   "label":{
-                     "en": "Normal",
-                     "pt-BR": "Normal"
-                   }
-                },
-                {
-                   "value":"btn-lg",
-                   "label":{
-                     "en": "Large",
-                     "pt-BR": "Grande"
-                   }
-                }
-             ]
-        },
-        {
-            "type": "header",
-            "content": {
-             "en": "Spacing",
-             "pt-BR": "Espaçamento"
-            },
-            "info": {
-             "en": "Based on Bootstrap Spacing Utility Classes [Learn More](https://getbootstrap.com/docs/4.5/utilities/spacing/)",
-             "pt-BR": "Com base nas classes do utilitário de espaçamento Bootstrap [Saiba mais](https://getbootstrap.com/docs/4.5/utilities/spacing/)"
-            }
-        },
-        {
-            "type": "range",
-            "id": "padding_top",
-            "label": {
-             "en": "Padding Top",
-             "pt-BR": "Espaçamento superior"
-            },
-            "min": 0,
-            "max": 15,
-            "step": 1,
-            "default": 0
-        },
-        {
-            "type": "range",
-            "id": "padding_bottom",
-            "label": {
-             "en": "Padding bottom",
-             "pt-BR": "Espaçamento inferior"
-            },
-            "min": 0,
-            "max": 15,
-            "step": 1,
-            "default": 0
-        },
-        {
-            "type": "range",
-            "id": "margin_top",
-            "label": {
-             "en": "Margin top",
-             "pt-BR": "Margem superior"
-            },
-            "min": 0,
-            "max": 15,
-            "step": 1,
-            "default": 0
-        },
-        {
-            "type": "range",
-            "id": "margin_bottom",
-            "label": {
-             "en": "Margin bottom",
-             "pt-BR": "Margem inferior"
-            },
-            "min": 0,
-            "max": 15,
-            "step": 1,
-            "default": 9
+          "group": "Gradient",
+          "value": "bg-custom-gradient text-white",
+          "label": "Custom"
         }
-
-    ],
-    "presets": [
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "container",
+      "label": "Wrap Container",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Image settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "img",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "img_width",
+      "label": "Image width (px)",
+      "default": "720"
+    },
+    {
+      "type": "text",
+      "id": "img_height",
+      "label": "Image height (px)",
+      "default": "405"
+    },
+    {
+      "type": "checkbox",
+      "id": "img_thumbnail",
+      "label": "Image border",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "img_alignment",
+      "label": "Image alignment",
+      "info": "Note: On mobile, the image will always be at the top and the text at the bottom",
+      "default": "flex-row",
+      "options": [
         {
-            "name": {
-             "en": "Image with text",
-             "pt-BR": "Imagem com texto"
-            },
-            "category": {
-             "en": "image",
-             "pt-BR": "imagem"
-            }
+          "value": "flex-row",
+          "label": "Left"
+        },
+        {
+          "value": "flex-row-reverse",
+          "label": "Right"
         }
-    ]
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Text Settings"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Image with text"
+    },
+    {
+      "type": "select",
+      "id": "title_size",
+      "label": "Title Size",
+      "default": "h2",
+      "options": [
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        },
+        {
+          "value": "h4",
+          "label": "H4"
+        },
+        {
+          "value": "h5",
+          "label": "H5"
+        },
+        {
+          "value": "h6",
+          "label": "H6"
+        }
+      ]
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Combine large text with an image to focus on the product, collection, or blog post you've chosen. Add details about availability, style, or even provide a comment.</p>"
+    },
+    {
+      "type": "checkbox",
+      "id": "description_lead",
+      "label": "Description lead",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Button settings"
+    },
+    {
+      "type": "url",
+      "id": "btn_url",
+      "label": "Button URL",
+      "info": "Leave blank to disable the button"
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Text Button",
+      "default": "Learn More"
+    },
+    {
+      "type": "select",
+      "id": "btn_color",
+      "label": "Cor do bot\u00e3o",
+      "default": "btn-outline-primary",
+      "options": [
+        {
+          "group": "Normal",
+          "value": "btn-light",
+          "label": "Light"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-dark",
+          "label": "Dark"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-primary",
+          "label": "Primary from theme"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-secondary",
+          "label": "Secondary from theme"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-success",
+          "label": "Success"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-danger",
+          "label": "Danger"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-warning",
+          "label": "Warning"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-info",
+          "label": "Info"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-dark",
+          "label": "Dark outline"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-primary",
+          "label": "Primary from theme outline"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-secondary",
+          "label": "Secondary from theme outline"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-success",
+          "label": "Success outline"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-danger",
+          "label": "Danger outline"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-warning",
+          "label": "Warning outline"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-info",
+          "label": "Info outline"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "btn_size",
+      "label": "Button size",
+      "options": [
+        {
+          "value": "btn-sm",
+          "label": "Small"
+        },
+        {
+          "value": "",
+          "label": "Normal"
+        },
+        {
+          "value": "btn-lg",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Spacing",
+      "info": "Based on Bootstrap Spacing Utility Classes [Learn More](https://getbootstrap.com/docs/4.5/utilities/spacing/)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "min": 0,
+      "max": 15,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 15,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "label": "Margin top",
+      "min": 0,
+      "max": 15,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "label": "Margin bottom",
+      "min": 0,
+      "max": 15,
+      "step": 1,
+      "default": 9
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image with text",
+      "category": "image"
+    }
+  ]
 }
 {% endschema %}

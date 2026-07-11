@@ -89,169 +89,106 @@
 
 {% schema %}
 {
-    "name": {
-     "en": "Collection list",
-     "pt-BR": "Lista de coleções"
+  "name": "Collection list",
+  "settings": [
+    {
+      "type": "header",
+      "content": "General Settings"
     },
-    "settings": [
-        {
-            "type": "header",
-            "content": {
-             "en": "General Settings",
-             "pt-BR": "Configurações gerais"
-            }
-        },
-        {
-            "type": "text",
-            "id": "title",
-            "label": {
-             "en": "Title",
-             "pt-BR": "Título"
-            },
-            "default": {
-             "en": "Our Collections",
-             "pt-BR": "Nossas coleções"
-            }
-        },
-        {
-            "type": "richtext",
-            "id": "description",
-            "label": {
-             "en": "Description",
-             "pt-BR": "Descrição"
-            },
-            "info": {
-             "en": "Leave blank to disable",
-             "pt-BR": "Deixe em branco para desativar"
-            },
-            "default": {
-             "en": "<p>Write a short description here for the collection list page.</p>",
-             "pt-BR": "<p>Escreva uma pequena descrição aqui para a página da lista de coleções.</p>"
-            }
-        },
-        {
-            "type": "range",
-            "id": "paginate",
-            "label": {
-             "en": "Paginate",
-             "pt-BR": "Paginar"
-            },
-            "info": {
-             "en": "Collections per page",
-             "pt-BR": "Coleções por página"
-            },
-            "min": 2,
-            "max": 50,
-            "default": 18
-        },
-        {
-            "type": "checkbox",
-            "id": "container",
-            "label": {
-             "en": "Wrap container",
-             "pt-BR": "Enrolar container"
-            },
-            "default": true
-        },
-        {
-            "type": "text",
-            "id": "hide_collections",
-            "label": {
-             "en": "Collections to Hide",
-             "pt-BR": "Coleções para esconder"
-            },
-            "info": {
-             "en": "A comma-separated list of collection handlers to hide.",
-             "pt-BR": "Uma lista de manipuladores de coleção separados por vírgulas para ocultar."
-            },
-            "default": "frontpage"
-        },
-        {
-            "type": "header",
-            "content": {
-             "en": "Collection Item Settings",
-             "pt-BR": "Configurações de itens de coleção"
-            }
-        },
-        {
-            "type": "text",
-            "id": "img_width",
-            "label": {
-               "en": "Image width (px)",
-               "pt-BR": "Largura da imagem (px)"
-             },
-            "default": "480"
-        },
-        {
-            "type": "text",
-            "id": "img_height",
-            "label": {
-               "en": "Image height (px)",
-               "pt-BR": "Altura da imagem (px)"
-             },
-            "default": "480"
-        },
-        {
-            "type": "checkbox",
-            "id": "img_thumbnail",
-            "label": {
-               "en": "Image border",
-               "pt-BR": "Borda da imagem"
-             },
-            "default": true
-        },
-        {
-            "type": "checkbox",
-            "id": "show_products_count",
-            "label": {
-             "en": "Show products count",
-             "pt-BR": "Mostrar contagem de produtos"
-            },
-            "default": true
-        },
-        {
-            "type": "header",
-            "content": {
-             "en": "Fit items per line",
-             "pt-BR": "Ajustar itens por linha"
-            }
-        },
-        {
-            "type": "range",
-            "id": "row_mobile",
-            "label": {
-             "en": "Collection by Line / Mobile",
-             "pt-BR": "Coleção por linha / Mobile"
-            },
-            "min": 1,
-            "max": 3,
-            "step": 1,
-            "default": 2
-        },
-        {
-            "type": "range",
-            "id": "row_tablet",
-            "label": {
-             "en": "Collection by Line / Tablet",
-             "pt-BR": "Coleção por linha / Tablet"
-            },
-            "min": 1,
-            "max": 4,
-            "step": 1,
-            "default": 3
-        },
-        {
-            "type": "range",
-            "id": "row_desktop",
-            "label": {
-             "en": "Collection by Line / Desktop",
-             "pt-BR": "Coleção por linha / Desktop"
-            },
-            "min": 1,
-            "max": 6,
-            "step": 1,
-            "default": 3
-        }
-    ]
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Our Collections"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "info": "Leave blank to disable",
+      "default": "<p>Write a short description here for the collection list page.</p>"
+    },
+    {
+      "type": "range",
+      "id": "paginate",
+      "label": "Paginate",
+      "info": "Collections per page",
+      "min": 2,
+      "max": 50,
+      "default": 18
+    },
+    {
+      "type": "checkbox",
+      "id": "container",
+      "label": "Wrap container",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "hide_collections",
+      "label": "Collections to Hide",
+      "info": "A comma-separated list of collection handlers to hide.",
+      "default": "frontpage"
+    },
+    {
+      "type": "header",
+      "content": "Collection Item Settings"
+    },
+    {
+      "type": "text",
+      "id": "img_width",
+      "label": "Image width (px)",
+      "default": "480"
+    },
+    {
+      "type": "text",
+      "id": "img_height",
+      "label": "Image height (px)",
+      "default": "480"
+    },
+    {
+      "type": "checkbox",
+      "id": "img_thumbnail",
+      "label": "Image border",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_products_count",
+      "label": "Show products count",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Fit items per line"
+    },
+    {
+      "type": "range",
+      "id": "row_mobile",
+      "label": "Collection by Line / Mobile",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "row_tablet",
+      "label": "Collection by Line / Tablet",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "row_desktop",
+      "label": "Collection by Line / Desktop",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 3
+    }
+  ]
 }
 {% endschema %}

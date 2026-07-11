@@ -347,608 +347,611 @@
 
  {% schema %}
 {
-    "name": "Footer",
-    "settings": [
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg",
+      "label": "Background",
+      "default": "#F7F7F7"
+    },
+    {
+      "type": "color",
+      "id": "cortit",
+      "label": "Text color",
+      "default": "#FBC02D"
+    },
+    {
+      "type": "color",
+      "id": "bglink",
+      "label": "Link color",
+      "default": "#000"
+    },
+    {
+      "type": "checkbox",
+      "id": "container",
+      "label": "Container",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_social_icons",
+      "label": "Show social icons",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "social_icon_animate",
+      "label": "Hover social icon animation",
+      "info": "[Learn more](https://animate.style/)",
+      "default": "animate__tada",
+      "options": [
         {
-            "type": "color",
-            "id": "bg",
-            "label": {
-             "en": "Background",
-             "pt-BR": "Fundo"
-            },
-            "default": "#F7F7F7"
-         },
-        {
-            "type": "color",
-            "id": "cortit",
-            "label": {
-             "en": "Text color",
-             "pt-BR": "Cor do texto"
-            },
-            "default": "#FBC02D"
-        },
-          {
-            "type": "color",
-            "id": "bglink",
-            "label": {
-             "en": "Link color",
-             "pt-BR": "Cor do link"
-            },
-            "default": "#000"
-         },
-        {
-            "type": "checkbox",
-            "id": "container",
-            "label": "Container",
-            "default": true
-        },
-        {
-            "type": "checkbox",
-            "id": "show_social_icons",
-            "label": {
-             "en": "Show social icons",
-             "pt-BR": "Mostrar ícones sociais"
-            },
-            "default": true
-        },
-        {
-            "type": "select",
-            "id": "social_icon_animate",
-            "label": {
-             "en": "Hover social icon animation",
-             "pt-BR": "Animação de ícone social hover"
-            },
-            "info": {
-             "en": "[Learn more](https://animate.style/)",
-             "pt-BR": "[Saber mais](https://animate.style/)"
-            },
-            "default": "animate__tada",
-            "options": [
-                { "value": "animate__bounce", "label": "Bounce" },
-                { "value": "animate__flash", "label": "Flash" },
-                { "value": "animate__pulse", "label": "Pulse" },
-                { "value": "animate__rubberBand", "label": "rubberBand" },
-                { "value": "animate__shakeX", "label": "ShakeX" },
-                { "value": "animate__shakeY", "label": "ShakeY" },
-                { "value": "animate__headShake", "label": "headShake" },
-                { "value": "animate__swing", "label": "Swing" },
-                { "value": "animate__tada", "label": "Tada" },
-                { "value": "animate__wobble", "label": "Wobble" },
-                { "value": "animate__jello", "label": "Jello" },
-                { "value": "animate__heartBeat", "label": "heartBeat" }
-            ]
+          "value": "animate__bounce",
+          "label": "Bounce"
         },
         {
-            "type": "select",
-            "id": "heading_size",
-            "label": {
-             "en": "Header size",
-             "pt-BR": "Tamanho do cabeçalho"
-            },
-            "default": "h5",
-            "options": [
-                { "value": "h1", "label": "H1" },
-                { "value": "h2", "label": "H2" },
-                { "value": "h3", "label": "H3" },
-                { "value": "h4", "label": "H4" },
-                { "value": "h5", "label": "H5" },
-                { "value": "h6", "label": "H6" }
-            ]
-        },
-
-        {
-            "type": "header",
-            "content": {
-             "en": "About Us",
-             "pt-BR": "Sobre nós"
-            }
+          "value": "animate__flash",
+          "label": "Flash"
         },
         {
-            "type": "checkbox",
-            "id": "show_about_us",
-            "label": {
-             "en": "Show about us",
-             "pt-BR": "Mostrar sobre nós"
-            },
-            "default": true
+          "value": "animate__pulse",
+          "label": "Pulse"
         },
         {
-            "type": "image_picker",
-            "id": "about_logo",
-            "label": {
-             "en": "Logo",
-             "pt-BR": "Logotipo"
-            }
+          "value": "animate__rubberBand",
+          "label": "rubberBand"
         },
         {
-            "type": "text",
-            "id": "about_logo_height",
-            "label": {
-             "en": "Logo height (px)",
-             "pt-BR": "Altura do logotipo (px)"
-            },
-            "default": "120"
+          "value": "animate__shakeX",
+          "label": "ShakeX"
         },
         {
-            "type": "richtext",
-            "id": "about_description",
-            "label": {
-             "en": "Description",
-             "pt-BR": "Descrição"
-            }
+          "value": "animate__shakeY",
+          "label": "ShakeY"
         },
         {
-            "type": "text",
-            "id": "about_email",
-            "label": {
-             "en": "Email",
-             "pt-BR": "Email"
-            },
-            "info": {
-             "en": "Leave blank to disable",
-             "pt-BR": "Deixe em branco para desativar"
-            },
-            "default": {
-             "en": "email@store.com",
-             "pt-BR": "email@dominio.com"
-            }
+          "value": "animate__headShake",
+          "label": "headShake"
         },
         {
-            "type": "text",
-            "id": "about_phone",
-            "label": {
-             "en": "Telephone",
-             "pt-BR": "Telefone"
-            },
-            "info": {
-             "en": "Leave blank to disable",
-             "pt-BR": "Deixe em branco para desativar"
-            },
-            "default": "63 0000 - 0000"
+          "value": "animate__swing",
+          "label": "Swing"
         },
         {
-            "type": "header",
-            "content": {
-             "en": "Secondary background",
-             "pt-BR": "Fundo secundário"
-            }
+          "value": "animate__tada",
+          "label": "Tada"
         },
         {
-            "type": "color",
-            "id": "bg2",
-            "label": {
-             "en": "Background",
-             "pt-BR": "Fundo"
-            },
-            "default": "#F7F7F7"
-         },
-        {
-            "type": "color",
-            "id": "cortitle2",
-            "label": {
-             "en": "Title color",
-             "pt-BR": "Cor do título"
-            },
-            "default": "#202020"
+          "value": "animate__wobble",
+          "label": "Wobble"
         },
         {
-            "type": "header",
-            "content": {
-             "en": "Payment methods",
-             "pt-BR": "Formas de pagamento"
-            }
+          "value": "animate__jello",
+          "label": "Jello"
         },
         {
-            "type": "text",
-            "id": "titlepg",
-            "label": {
-             "en": "Title",
-             "pt-BR": "Título"
-            },
-            "default": {
-             "en": "Payment methods",
-             "pt-BR": "Formas de pagamento"
-            }
-        },
-        {
-            "type": "text",
-            "id": "cardspg",
-            "label": {
-             "en": "List of cards, separated by commas",
-             "pt-BR": "Lista de cartões, separados por vírgula"
-            },
-            "default": {
-             "en": "visa,master,american_express,paypal",
-             "pt-BR": "visa,master,american_express,paypal"
-            },
-            "info": {
-             "en": "Most commom cards: afterpay, american_express, apple_pay, bitcoin, boleto, dankort, diners_club, discover, dwolla, elo, facebook_pay, forbrugsforeningen, google_pay, ideal, jcb, klarna, klarna-pay-later, maestro, master, paypal, pix, shopify_pay, sofort, unionpay, visa",
-             "pt-BR": "Cartões mais comuns: afterpay, american_express, apple_pay, bitcoin, boleto, dankort, diners_club, discover, dwolla, elo, facebook_pay, forbrugsforeningen, google_pay, ideal, jcb, klarna, klarna-pay-later, maestro, master, paypal, pix, shopify_pay, sofort, unionpay, visa"
-            }
-        },
-        {
-            "type": "image_picker",
-            "id": "imgpg",
-            "label": {
-             "en": "Image",
-             "pt-BR": "Imagem"
-            }
-        },
-        {
-            "type": "header",
-            "content": {
-             "en": "Safety seals",
-             "pt-BR": "Selos de segurança"
-            }
-        },
-        {
-            "type": "text",
-            "id": "titleseg",
-            "label": {
-             "en": "Title",
-             "pt-BR": "Título"
-            },
-            "default": {
-             "en": "Safety and quality",
-             "pt-BR": "Segurança e qualidade"
-            }
-        },
-        {
-            "type": "image_picker",
-            "id": "imgseg",
-            "label": {
-             "en": "Image",
-             "pt-BR": "Imagem"
-            }
-        },
-        {
-            "type": "text",
-            "id": "titlesocialm",
-            "label": {
-             "en": "Title",
-             "pt-BR": "Título"
-            },
-            "default": {
-             "en": "Social media",
-             "pt-BR": "Redes sociais"
-            }
-        },
-        {
-            "type": "header",
-            "content": {
-             "en": "Info",
-             "pt-BR": "Informações"
-            }
-        },
-        {
-            "type": "text",
-            "id": "store_name",
-            "label": {
-             "en": "Store name",
-             "pt-BR": "Nome da loja"
-            }
-        },
-        {
-            "type": "checkbox",
-            "id": "enable_cnpj",
-            "label": {
-             "en": "Activate ENI field",
-             "pt-BR": "Ativar campo do CNPJ"
-            },
-            "default": false
-        },
-        {
-            "type": "text",
-            "id": "cnpj_endereco",
-            "label": {
-             "en": "ENI and address",
-             "pt-BR": "CNPJ e endereço"
-            },
-            "default": {
-             "en": "ENI: XXXXXXX | Address",
-             "pt-BR": "CNPJ: 00.000.000/0001-0 AV Jk - centro, 100 - Palmas/TO 0000-000"
-            }
-        },
-        {
-            "type": "checkbox",
-            "id": "show_powered_by",
-            "label": {
-             "en": "Show 'Powered by Shopify'",
-             "pt-BR": "Mostrar 'Powered by Shopify'"
-            },
-            "default": false
-        },
-        {
-            "type": "header",
-            "content": {
-             "en": "Lines",
-             "pt-BR": "Linhas"
-            }
-        },
-        {
-            "type": "range",
-            "id": "row_tablet",
-            "label": {
-             "en": "Items per line / Tablet",
-             "pt-BR": "Itens por linha / Tablet"
-            },
-            "min": 1,
-            "max": 4,
-            "step": 1,
-            "default": 4
-        },
-        {
-            "type": "range",
-            "id": "row_desktop",
-            "label": {
-             "en": "Items per line / Desktop",
-             "pt-BR": "Itens por linha / Desktop"
-            },
-            "min": 1,
-            "max": 6,
-            "step": 1,
-            "default": 4
-        },
-        {
-            "type": "header",
-            "content": {
-             "en": "Spacing",
-             "pt-BR": "Espaçamento"
-            },
-            "info": {
-             "en": "Based on Bootstrap Spacing Utility Classes [Learn More](https://getbootstrap.com/docs/4.5/utilities/spacing/)",
-             "pt-BR": "Com base nas classes do utilitário de espaçamento Bootstrap [Saiba mais](https://getbootstrap.com/docs/4.5/utilities/spacing/)"
-            }
-        },
-        {
-            "type": "range",
-            "id": "padding_top",
-            "label": {
-             "en": "Padding top",
-             "pt-BR": "Espaçamento superior"
-            },
-            "min": 0,
-            "max": 15,
-            "step": 1,
-            "default": 6
-        },
-        {
-            "type": "range",
-            "id": "padding_bottom",
-            "label": {
-             "en": "Padding bottom",
-             "pt-BR": "Espaçamento inferior"
-            },
-            "min": 0,
-            "max": 15,
-            "step": 1,
-            "default": 6
-        },
-        {
-            "type": "range",
-            "id": "margin_top",
-            "label": {
-             "en": "Margin top",
-             "pt-BR": "Margem superior"
-            },
-            "min": 0,
-            "max": 15,
-            "step": 1,
-            "default": 0
-        },
-        {
-            "type": "checkbox",
-            "id": "show_orbe",
-            "label": {
-             "en": "Show orbe logo",
-             "pt-BR": "Mostrar logotipo orbe"
-            },
-            "default": true
+          "value": "animate__heartBeat",
+          "label": "heartBeat"
         }
-    ],
-    "blocks": [
+      ]
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Header size",
+      "default": "h5",
+      "options": [
         {
-            "type": "richtext",
-            "name": {
-             "en": "Extra text",
-             "pt-BR": "Texto extra"
-            },
-            "settings": [
-                {
-                    "type": "text",
-                    "id": "title",
-                    "label": {
-                     "en": "Title",
-                     "pt-BR": "Título"
-                    }
-                },
-                {
-                    "type": "richtext",
-                    "id": "description",
-                    "label": {
-                     "en": "Description",
-                     "pt-BR": "Descrição"
-                    }
-                }
-            ]
+          "value": "h1",
+          "label": "H1"
         },
         {
-            "type": "link_list",
-            "name": "Menus",
-            "settings": [
-                {
-                    "type": "link_list",
-                    "id": "menu",
-                    "label": "Menu"
-                },
-                {
-                    "type": "text",
-                    "id": "title",
-                    "label": {
-                     "en": "Title",
-                     "pt-BR": "Título"
-                    }
-                }
-            ]
+          "value": "h2",
+          "label": "H2"
         },
         {
-            "type": "newsletter",
-            "name": {
-             "en": "Newsletter",
-             "pt-BR": "Boletim de notícias"
-            },
-            "settings": [
-                {
-                    "type": "text",
-                    "id": "title",
-                    "label": {
-                     "en": "Title",
-                     "pt-BR": "Título"
-                    }
-                },
-                {
-                    "type": "richtext",
-                    "id": "description",
-                    "label": {
-                     "en": "Description",
-                     "pt-BR": "Descrição"
-                    }
-                },
-                {
-                    "type": "select",
-                    "id": "cor_box",
-                    "label": {
-                     "en": "Bar type",
-                     "pt-BR": "Tipo da barra"
-                    },
-                    "default": "form-transparent",
-                    "options": [
-                        {  "value": "form-transparent", "label": "Transparente" },
-                        {  "value": "form-opac", "label": "Opaco" },
-                        {  "value": "form-branco", "label": "Branco" }
-
-                    ]
-                },
-                {
-                    "type": "select",
-                    "id": "btn_color",
-                    "label": {
-                     "en": "Button color",
-                     "pt-BR": "Cor do botão"
-                    },
-                    "default": "btn-primary",
-                    "options": [
-                        { "group": "Normal", "value": "btn-light", "label": {"en": "Light","pt-BR": "Claro"} },
-                        { "group": "Normal", "value": "btn-dark", "label": {"en": "Dark","pt-BR": "Escuro"} },
-                        { "group": "Normal", "value": "btn-primary", "label": {"en": "Primary from theme","pt-BR": "Primária do tema"} },
-                        { "group": "Normal", "value": "btn-secondary", "label": {"en": "Secondary from theme","pt-BR": "Secundária do tema"} },
-                        { "group": "Normal", "value": "btn-success", "label": {"en": "Success","pt-BR": "Sucesso"} },
-                        { "group": "Normal", "value": "btn-danger", "label": {"en": "Danger","pt-BR": "Perigo"} },
-                        { "group": "Normal", "value": "btn-warning", "label": {"en": "Warning","pt-BR": "Cuidado"} },
-                        { "group": "Normal", "value": "btn-info", "label": {"en": "Info","pt-BR": "Informações"} },
-                        { "group": "Outline", "value": "btn-outline-dark", "label": {"en": "Dark outline","pt-BR": "Contorno escuro"}},
-                        { "group": "Outline", "value": "btn-outline-primary", "label": {"en": "Primary from theme outline","pt-BR": "Contorno primaria do tema"} },
-                        { "group": "Outline", "value": "btn-outline-secondary", "label": {"en": "Secondary from theme outline","pt-BR": "Contorno secundária do tema"} },
-                        { "group": "Outline", "value": "btn-outline-success", "label": {"en": "Success outline","pt-BR": "Contorno Sucesso"} },
-                        { "group": "Outline", "value": "btn-outline-danger", "label": {"en": "Danger outline","pt-BR": "Contorno Perigo"} },
-                        { "group": "Outline", "value": "btn-outline-warning", "label": {"en": "Warning outline","pt-BR": "Contorno Cuidado"} },
-                        { "group": "Outline", "value": "btn-outline-info", "label": {"en": "Info outline","pt-BR": "Contorno Informações"}}
-                    ]
-                },
-                {
-                    "type": "select",
-                    "id": "btn_size",
-                    "label": {
-                     "en": "Button size",
-                     "pt-BR": "Tamanho do botão"
-                    },
-                    "default": "btn-lg",
-                    "options": [
-                        { "value": "btn-sm", "label": {"en": "Small","pt-BR": "Pequeno"} },
-                        { "value": "", "label": {"en": "Normal","pt-BR": "Normal"} },
-                        { "value": "btn-lg", "label": {"en": "Large","pt-BR": "Grande"} }
-                    ]
-                }
-            ]
+          "value": "h3",
+          "label": "H3"
         },
         {
-            "type": "headline",
-            "name": {
-                     "en": "Button",
-                     "pt-BR": "Botão"
-                    },
-            "settings": [
-                {
-                    "type": "text",
-                    "id": "btitle",
-                    "default": {
-                     "en": "Support via WhatsApp",
-                     "pt-BR": "Suporte via WhatsApp"
-                    },
-                    "label": {
-                     "en": "Button title",
-                     "pt-BR": "Título do botão"
-                    }
-                },
-                {
-                    "type": "html",
-                    "id": "icone",
-                    "default": "<svg width=\"20\" height=\"20\" viewbox=\"0 0 16 16\" class=\"bi bi-whatsapp\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\"><path fill-rule=\"evenodd\" d=\"M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z\"></path></svg>",
-                    "label": {
-                     "en": "Button Title",
-                     "pt-BR": "Título do botão"
-                    }
-                },
-
-                {
-                    "type": "select",
-                    "id": "btn_color",
-                    "label": {
-                     "en": "Button color",
-                     "pt-BR": "Cor do botão"
-                    },
-                    "default": "btn-primary",
-                    "options": [
-                        { "group": "Normal", "value": "btn-light", "label": {"en": "Light","pt-BR": "Claro"} },
-                        { "group": "Normal", "value": "btn-dark", "label": {"en": "Dark","pt-BR": "Escuro"} },
-                        { "group": "Normal", "value": "btn-primary", "label": {"en": "Primary from theme","pt-BR": "Primária do tema"} },
-                        { "group": "Normal", "value": "btn-secondary", "label": {"en": "Secondary from theme","pt-BR": "Secundária do tema"} },
-                        { "group": "Normal", "value": "btn-success", "label": {"en": "Success","pt-BR": "Sucesso"} },
-                        { "group": "Normal", "value": "btn-danger", "label": {"en": "Danger","pt-BR": "Perigo"} },
-                        { "group": "Normal", "value": "btn-warning", "label": {"en": "Warning","pt-BR": "Cuidado"} },
-                        { "group": "Normal", "value": "btn-info", "label": {"en": "Info","pt-BR": "Informações"} },
-                        { "group": "Outline", "value": "btn-outline-dark", "label": {"en": "Dark outline","pt-BR": "Contorno escuro"}},
-                        { "group": "Outline", "value": "btn-outline-primary", "label": {"en": "Primary from theme outline","pt-BR": "Contorno primaria do tema"} },
-                        { "group": "Outline", "value": "btn-outline-secondary", "label": {"en": "Secondary from theme outline","pt-BR": "Contorno secundária do tema"} },
-                        { "group": "Outline", "value": "btn-outline-success", "label": {"en": "Success outline","pt-BR": "Contorno Sucesso"} },
-                        { "group": "Outline", "value": "btn-outline-danger", "label": {"en": "Danger outline","pt-BR": "Contorno Perigo"} },
-                        { "group": "Outline", "value": "btn-outline-warning", "label": {"en": "Warning outline","pt-BR": "Contorno Cuidado"} },
-                        { "group": "Outline", "value": "btn-outline-info", "label": {"en": "Info outline","pt-BR": "Contorno Informações"}}
-                    ]
-                },
-                {
-                    "type": "select",
-                    "id": "btn_size",
-                    "label": {
-                     "en": "Button size",
-                     "pt-BR": "Tamanho do botão"
-                    },
-                    "options": [
-                        { "value": "btn-sm", "label": {"en": "Small","pt-BR": "Pequeno"} },
-                        { "value": "", "label": {"en": "Normal","pt-BR": "Normal"} },
-                        { "value": "btn-lg", "label": {"en": "Large","pt-BR": "Grande"} }
-                    ]
-                },
-                {
-                "type": "url",
-                "id": "button_url",
-                "label": {
-                 "en": "URL",
-                 "pt-BR": "URL"
-                }
-            }
-            ]
+          "value": "h4",
+          "label": "H4"
+        },
+        {
+          "value": "h5",
+          "label": "H5"
+        },
+        {
+          "value": "h6",
+          "label": "H6"
         }
-    ]
+      ]
+    },
+    {
+      "type": "header",
+      "content": "About Us"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_about_us",
+      "label": "Show about us",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "about_logo",
+      "label": "Logo"
+    },
+    {
+      "type": "text",
+      "id": "about_logo_height",
+      "label": "Logo height (px)",
+      "default": "120"
+    },
+    {
+      "type": "richtext",
+      "id": "about_description",
+      "label": "Description"
+    },
+    {
+      "type": "text",
+      "id": "about_email",
+      "label": "Email",
+      "info": "Leave blank to disable",
+      "default": "email@store.com"
+    },
+    {
+      "type": "text",
+      "id": "about_phone",
+      "label": "Telephone",
+      "info": "Leave blank to disable",
+      "default": "63 0000 - 0000"
+    },
+    {
+      "type": "header",
+      "content": "Secondary background"
+    },
+    {
+      "type": "color",
+      "id": "bg2",
+      "label": "Background",
+      "default": "#F7F7F7"
+    },
+    {
+      "type": "color",
+      "id": "cortitle2",
+      "label": "Title color",
+      "default": "#202020"
+    },
+    {
+      "type": "header",
+      "content": "Payment methods"
+    },
+    {
+      "type": "text",
+      "id": "titlepg",
+      "label": "Title",
+      "default": "Payment methods"
+    },
+    {
+      "type": "text",
+      "id": "cardspg",
+      "label": "List of cards, separated by commas",
+      "default": "visa,master,american_express,paypal",
+      "info": "Most commom cards: afterpay, american_express, apple_pay, bitcoin, boleto, dankort, diners_club, discover, dwolla, elo, facebook_pay, forbrugsforeningen, google_pay, ideal, jcb, klarna, klarna-pay-later, maestro, master, paypal, pix, shopify_pay, sofort, unionpay, visa"
+    },
+    {
+      "type": "image_picker",
+      "id": "imgpg",
+      "label": "Image"
+    },
+    {
+      "type": "header",
+      "content": "Safety seals"
+    },
+    {
+      "type": "text",
+      "id": "titleseg",
+      "label": "Title",
+      "default": "Safety and quality"
+    },
+    {
+      "type": "image_picker",
+      "id": "imgseg",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "titlesocialm",
+      "label": "Title",
+      "default": "Social media"
+    },
+    {
+      "type": "header",
+      "content": "Info"
+    },
+    {
+      "type": "text",
+      "id": "store_name",
+      "label": "Store name"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_cnpj",
+      "label": "Activate ENI field",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "cnpj_endereco",
+      "label": "ENI and address",
+      "default": "ENI: XXXXXXX | Address"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_powered_by",
+      "label": "Show 'Powered by Shopify'",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Lines"
+    },
+    {
+      "type": "range",
+      "id": "row_tablet",
+      "label": "Items per line / Tablet",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "row_desktop",
+      "label": "Items per line / Desktop",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "header",
+      "content": "Spacing",
+      "info": "Based on Bootstrap Spacing Utility Classes [Learn More](https://getbootstrap.com/docs/4.5/utilities/spacing/)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 15,
+      "step": 1,
+      "default": 6
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 15,
+      "step": 1,
+      "default": 6
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "label": "Margin top",
+      "min": 0,
+      "max": 15,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "checkbox",
+      "id": "show_orbe",
+      "label": "Show orbe logo",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "richtext",
+      "name": "Extra text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    },
+    {
+      "type": "link_list",
+      "name": "Menus",
+      "settings": [
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "Menu"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        }
+      ]
+    },
+    {
+      "type": "newsletter",
+      "name": "Newsletter",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "select",
+          "id": "cor_box",
+          "label": "Bar type",
+          "default": "form-transparent",
+          "options": [
+            {
+              "value": "form-transparent",
+              "label": "Transparente"
+            },
+            {
+              "value": "form-opac",
+              "label": "Opaco"
+            },
+            {
+              "value": "form-branco",
+              "label": "Branco"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "btn_color",
+          "label": "Button color",
+          "default": "btn-primary",
+          "options": [
+            {
+              "group": "Normal",
+              "value": "btn-light",
+              "label": "Light"
+            },
+            {
+              "group": "Normal",
+              "value": "btn-dark",
+              "label": "Dark"
+            },
+            {
+              "group": "Normal",
+              "value": "btn-primary",
+              "label": "Primary from theme"
+            },
+            {
+              "group": "Normal",
+              "value": "btn-secondary",
+              "label": "Secondary from theme"
+            },
+            {
+              "group": "Normal",
+              "value": "btn-success",
+              "label": "Success"
+            },
+            {
+              "group": "Normal",
+              "value": "btn-danger",
+              "label": "Danger"
+            },
+            {
+              "group": "Normal",
+              "value": "btn-warning",
+              "label": "Warning"
+            },
+            {
+              "group": "Normal",
+              "value": "btn-info",
+              "label": "Info"
+            },
+            {
+              "group": "Outline",
+              "value": "btn-outline-dark",
+              "label": "Dark outline"
+            },
+            {
+              "group": "Outline",
+              "value": "btn-outline-primary",
+              "label": "Primary from theme outline"
+            },
+            {
+              "group": "Outline",
+              "value": "btn-outline-secondary",
+              "label": "Secondary from theme outline"
+            },
+            {
+              "group": "Outline",
+              "value": "btn-outline-success",
+              "label": "Success outline"
+            },
+            {
+              "group": "Outline",
+              "value": "btn-outline-danger",
+              "label": "Danger outline"
+            },
+            {
+              "group": "Outline",
+              "value": "btn-outline-warning",
+              "label": "Warning outline"
+            },
+            {
+              "group": "Outline",
+              "value": "btn-outline-info",
+              "label": "Info outline"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "btn_size",
+          "label": "Button size",
+          "default": "btn-lg",
+          "options": [
+            {
+              "value": "btn-sm",
+              "label": "Small"
+            },
+            {
+              "value": "",
+              "label": "Normal"
+            },
+            {
+              "value": "btn-lg",
+              "label": "Large"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "headline",
+      "name": "Button",
+      "settings": [
+        {
+          "type": "text",
+          "id": "btitle",
+          "default": "Support via WhatsApp",
+          "label": "Button title"
+        },
+        {
+          "type": "html",
+          "id": "icone",
+          "default": "<svg width=\"20\" height=\"20\" viewbox=\"0 0 16 16\" class=\"bi bi-whatsapp\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\"><path fill-rule=\"evenodd\" d=\"M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z\"></path></svg>",
+          "label": "Button Title"
+        },
+        {
+          "type": "select",
+          "id": "btn_color",
+          "label": "Button color",
+          "default": "btn-primary",
+          "options": [
+            {
+              "group": "Normal",
+              "value": "btn-light",
+              "label": "Light"
+            },
+            {
+              "group": "Normal",
+              "value": "btn-dark",
+              "label": "Dark"
+            },
+            {
+              "group": "Normal",
+              "value": "btn-primary",
+              "label": "Primary from theme"
+            },
+            {
+              "group": "Normal",
+              "value": "btn-secondary",
+              "label": "Secondary from theme"
+            },
+            {
+              "group": "Normal",
+              "value": "btn-success",
+              "label": "Success"
+            },
+            {
+              "group": "Normal",
+              "value": "btn-danger",
+              "label": "Danger"
+            },
+            {
+              "group": "Normal",
+              "value": "btn-warning",
+              "label": "Warning"
+            },
+            {
+              "group": "Normal",
+              "value": "btn-info",
+              "label": "Info"
+            },
+            {
+              "group": "Outline",
+              "value": "btn-outline-dark",
+              "label": "Dark outline"
+            },
+            {
+              "group": "Outline",
+              "value": "btn-outline-primary",
+              "label": "Primary from theme outline"
+            },
+            {
+              "group": "Outline",
+              "value": "btn-outline-secondary",
+              "label": "Secondary from theme outline"
+            },
+            {
+              "group": "Outline",
+              "value": "btn-outline-success",
+              "label": "Success outline"
+            },
+            {
+              "group": "Outline",
+              "value": "btn-outline-danger",
+              "label": "Danger outline"
+            },
+            {
+              "group": "Outline",
+              "value": "btn-outline-warning",
+              "label": "Warning outline"
+            },
+            {
+              "group": "Outline",
+              "value": "btn-outline-info",
+              "label": "Info outline"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "btn_size",
+          "label": "Button size",
+          "options": [
+            {
+              "value": "btn-sm",
+              "label": "Small"
+            },
+            {
+              "value": "",
+              "label": "Normal"
+            },
+            {
+              "value": "btn-lg",
+              "label": "Large"
+            }
+          ]
+        },
+        {
+          "type": "url",
+          "id": "button_url",
+          "label": "URL"
+        }
+      ]
+    }
+  ]
 }
 {% endschema %}

@@ -87,90 +87,54 @@
 
 {% schema %}
 {
-  "name": {
-   "en": "Timer",
-   "pt-BR": "Timer de escassez"
-  },
+  "name": "Timer",
   "settings": [
     {
       "type": "header",
-      "content": {
-       "en": "General settings",
-       "pt-BR": "Configurações gerais"
-      }
+      "content": "General settings"
     },
     {
       "type": "checkbox",
       "id": "enable_section",
-      "label": {
-       "en": "Enable section",
-       "pt-BR": "Habilitar seção"
-      },
+      "label": "Enable section",
       "default": true
     },
     {
       "type": "text",
       "id": "time_limit",
-      "label": {
-       "en": "Final date",
-       "pt-BR": "Data final"
-      },
-      "info": {
-       "en": "Enter the date in English month/day/year format. Ex: 11/26/2021",
-       "pt-BR": "Insira a data no formato em inglês mês/dia/ano. Ex: 11/26/2021"
-      }
+      "label": "Final date",
+      "info": "Enter the date in English month/day/year format. Ex: 11/26/2021"
     },
     {
       "type": "text",
       "id": "size_text",
-      "label": {
-       "en": "Text size",
-       "pt-BR": "Tamanho do texto"
-      },
+      "label": "Text size",
       "default": "14px",
-      "info": {
-       "en": "Enter the size in px.",
-       "pt-BR": "Insira o tamanho em px."
-      }
+      "info": "Enter the size in px."
     },
     {
       "type": "text",
       "id": "size_timer",
-      "label": {
-       "en": "Timer Size",
-       "pt-BR": "Tamanho do timer"
-      },
+      "label": "Timer Size",
       "default": "18px",
-      "info": {
-       "en": "Enter the size in px.",
-       "pt-BR": "Insira o tamanho em px."
-      }
+      "info": "Enter the size in px."
     }
   ],
   "blocks": [
     {
       "type": "text",
-      "name": {
-             "en": "Timer",
-             "pt-BR": "Timer"
-            },
+      "name": "Timer",
       "limit": 1
     },
     {
       "type": "richtext",
-      "name": {
-             "en": "Text",
-             "pt-BR": "Texto"
-            },
+      "name": "Text",
       "limit": 2,
       "settings": [
         {
           "type": "richtext",
           "id": "text_timer",
-          "default": {
-             "en": "<p>Black Friday 2022 is coming.<br><strong>NOVEMBER 26</strong><br>The most desired day of the year is just around the corner.</p>",
-             "pt-BR": "<p>A Black Friday 2022 está chegando.<br><strong>26 DE NOVEMBRO</strong><br>Falta pouco para o dia mais desejado do ano.</p>"
-            },
+          "default": "<p>Black Friday 2022 is coming.<br><strong>NOVEMBER 26</strong><br>The most desired day of the year is just around the corner.</p>",
           "label": "Texto"
         }
       ]
@@ -186,6 +150,5 @@
       }
     ]
   }
-
 }
 {% endschema %}

@@ -116,164 +116,131 @@
 
 {% schema %}
 {
-    "name": {
-     "en": "Search",
-     "pt-BR": "Pesquisar"
+  "name": "Search",
+  "settings": [
+    {
+      "type": "header",
+      "content": "General Settings"
     },
-    "settings": [
+    {
+      "type": "checkbox",
+      "id": "container",
+      "label": "Wrap container",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "infinite_scroll",
+      "label": "Infinite Scroll",
+      "info": "Hide default pagination and will load products on scroll",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "limit",
+      "label": "Products per page",
+      "min": 1,
+      "max": 50,
+      "step": 1,
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Product Settings"
+    },
+    {
+      "type": "text",
+      "id": "img_width",
+      "label": "Image width (px)",
+      "default": "480"
+    },
+    {
+      "type": "text",
+      "id": "img_height",
+      "label": "Image height (px)",
+      "default": "480"
+    },
+    {
+      "type": "checkbox",
+      "id": "img_thumbnail",
+      "label": "Image border",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "product_title_heading_size",
+      "label": "Title size",
+      "default": "h6",
+      "options": [
         {
-            "type": "header",
-            "content": {
-             "en": "General Settings",
-             "pt-BR": "Configurações gerais"
-            }
+          "value": "h1",
+          "label": "H1"
         },
         {
-            "type": "checkbox",
-            "id": "container",
-            "label": {
-             "en": "Wrap container",
-             "pt-BR": "Enrolar container"
-            },
-            "default": true
+          "value": "h2",
+          "label": "H2"
         },
         {
-            "type": "checkbox",
-            "id": "infinite_scroll",
-            "label": {
-             "en": "Infinite Scroll",
-             "pt-BR": "Rolagem infinita"
-            },
-            "info": {
-             "en": "Hide default pagination and will load products on scroll",
-             "pt-BR": "Oculte a paginação padrão e carregará os produtos na rolagem"
-            },
-            "default": true
+          "value": "h3",
+          "label": "H3"
         },
         {
-            "type": "range",
-            "id": "limit",
-            "label": {
-             "en": "Products per page",
-             "pt-BR": "Produtos por página"
-            },
-            "min": 1,
-            "max": 50,
-            "step": 1,
-            "default": 16
+          "value": "h4",
+          "label": "H4"
         },
         {
-            "type": "header",
-            "content": {
-             "en": "Product Settings",
-             "pt-BR": "Configurações do produto"
-            }
+          "value": "h5",
+          "label": "H5"
         },
         {
-            "type": "text",
-            "id": "img_width",
-            "label": {
-             "en": "Image width (px)",
-             "pt-BR": "Largura da imagem (px)"
-            },
-            "default": "480"
-        },
-        {
-            "type": "text",
-            "id": "img_height",
-            "label": {
-             "en": "Image height (px)",
-             "pt-BR": "Altura da imagem (px)"
-            },
-            "default": "480"
-        },
-        {
-            "type": "checkbox",
-            "id": "img_thumbnail",
-            "label": {
-               "en": "Image border",
-               "pt-BR": "Borda da imagem"
-             },
-            "default": true
-        },
-        {
-            "type": "select",
-            "id": "product_title_heading_size",
-            "label": {
-             "en": "Title size",
-             "pt-BR": "Tamanho do título"
-            },
-            "default": "h6",
-            "options": [
-                { "value": "h1", "label": "H1" },
-                { "value": "h2", "label": "H2" },
-                { "value": "h3", "label": "H3" },
-                { "value": "h4", "label": "H4" },
-                { "value": "h5", "label": "H5" },
-                { "value": "h6", "label": "H6" }
-            ]
-        },
-        {
-            "type": "checkbox",
-            "id": "show_rating",
-            "label": {
-             "en": "Show review",
-             "pt-BR": "Mostrar avaliação"
-            },
-            "default": true
-        },
-        {
-            "type": "checkbox",
-            "id": "show_price",
-            "label": {
-             "en": "Show price",
-             "pt-BR": "Mostrar preço"
-            },
-            "default": true
-        },
-        {
-            "type": "header",
-            "content": {
-             "en": "Rows",
-             "pt-BR": "Linhas"
-            }
-        },
-        {
-            "type": "range",
-            "id": "row_mobile",
-            "label": {
-             "en": "Products per Line / Mobile ",
-             "pt-BR": "Produtos por linha / Celular "
-            },
-            "min": 1,
-            "max": 3,
-            "step": 1,
-            "default": 2
-        },
-        {
-            "type": "range",
-            "id": "row_tablet",
-            "label": {
-             "en": "Products per Line / Tablet ",
-             "pt-BR": "Produtos por linha / Tablet "
-            },
-            "min": 1,
-            "max": 4,
-            "step": 1,
-            "default": 3
-        },
-        {
-            "type": "range",
-            "id": "row_desktop",
-            "label": {
-             "en": "Products per Line / Desktop ",
-             "pt-BR": "Produtos por linha / Desktop "
-            },
-            "min": 1,
-            "max": 8,
-            "step": 1,
-            "default": 4
+          "value": "h6",
+          "label": "H6"
         }
-    ]
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "show_rating",
+      "label": "Show review",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_price",
+      "label": "Show price",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Rows"
+    },
+    {
+      "type": "range",
+      "id": "row_mobile",
+      "label": "Products per Line / Mobile ",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "row_tablet",
+      "label": "Products per Line / Tablet ",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "row_desktop",
+      "label": "Products per Line / Desktop ",
+      "min": 1,
+      "max": 8,
+      "step": 1,
+      "default": 4
+    }
+  ]
 }
 {% endschema %}

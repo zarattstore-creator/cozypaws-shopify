@@ -5,41 +5,26 @@
   {% include 'judgeme_widgets', widget_type: 'judgeme_featured_carousel', concierge_install: false %}
 </div>
 {% schema %}
-  {
-    "name": {
-     "en": "Ratings carousel",
-     "pt-BR": "Carrossel de avaliações"
-    },
-    "settings": [
-      {
-        "type": "range",
-        "id": "maxwidth",
-        "min": 480,
-        "max": 1920,
-        "step": 40,
-        "unit": "px",
-        "label": {
-             "en": "Maximum width",
-             "pt-BR": "Largura máxima"
-            },
-        "default": 1080,
-        "info": {
-             "en": "For other settings, go to app settings",
-             "pt-BR": "Para outras configurações, vá para configurações de aplicativos"
-            }
-      }
-    ],
-    "presets": [
-      {
-        "name": {
-             "en": "Featured reviews carousel",
-             "pt-BR": "Carrossel de avaliações em destaque"
-            },
-          "category": {
-             "en": "image",
-             "pt-BR": "imagem"
-            }
-      }
-    ]
-  }
+{
+  "name": "Ratings carousel",
+  "settings": [
+    {
+      "type": "range",
+      "id": "maxwidth",
+      "min": 480,
+      "max": 1920,
+      "step": 40,
+      "unit": "px",
+      "label": "Maximum width",
+      "default": 1080,
+      "info": "For other settings, go to app settings"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured reviews carousel",
+      "category": "image"
+    }
+  ]
+}
 {% endschema %}

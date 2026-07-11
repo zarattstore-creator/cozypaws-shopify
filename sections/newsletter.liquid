@@ -67,176 +67,230 @@
 
 {% schema %}
 {
-    "name": {
-             "en": "Newsletter",
-             "pt-BR": "Newsletter"
-            },
-    "settings": [
+  "name": "Newsletter",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Subscribe to the Newsletter"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Be the first to be notified of our latest offers.</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "note",
+      "label": "Note",
+      "info": "It will be displayed below the newsletter form",
+      "default": "<p>Note: We usually ship once a week</p>"
+    },
+    {
+      "type": "select",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "bg-primary-gradient text-white",
+      "options": [
         {
-            "type": "text",
-            "id": "title",
-            "label": {
-             "en": "Title",
-             "pt-BR": "Título"
-            },
-            "default": {
-             "en": "Subscribe to the Newsletter",
-             "pt-BR": "Inscreva-se na Newsletter"
-            }
+          "group": "Light",
+          "value": "bg-white text-body",
+          "label": "White"
         },
         {
-            "type": "richtext",
-            "id": "description",
-            "label": {
-             "en": "Description",
-             "pt-BR": "Descrição"
-            },
-            "default": {
-             "en": "<p>Be the first to be notified of our latest offers.</p>",
-             "pt-BR": "<p>Seja o primeiro a ser notificado sobre nossas últimas ofertas.</p>"
-            }
+          "group": "Light",
+          "value": "bg-light text-body",
+          "label": "Light"
         },
         {
-            "type": "richtext",
-            "id": "note",
-            "label": "Note",
-            "info": {
-             "en": "It will be displayed below the newsletter form",
-             "pt-BR": "Será exibido abaixo do formulário do boletim informativo"
-            },
-            "default": {
-             "en": "<p>Note: We usually ship once a week</p>",
-             "pt-BR": "<p>Observação: geralmente enviamos uma vez por semana</p>"
-            }
+          "group": "Dark",
+          "value": "bg-dark text-white",
+          "label": "Dark"
         },
         {
-            "type": "select",
-            "id": "bg_color",
-            "label": {
-             "en": "Background color",
-             "pt-BR": "Cor do background"
-            },
-            "default": "bg-primary-gradient text-white",
-            "options": [
-                { "group": "Light", "value": "bg-white text-body", "label": "White" },
-                { "group": "Light", "value": "bg-light text-body", "label": "Light" },
-                { "group": "Dark", "value": "bg-dark text-white", "label": "Dark" },
-                { "group": "Dark", "value": "bg-primary text-white", "label": "Primary" },
-                { "group": "Dark", "value": "bg-secondary text-white", "label": "Secondary" },
-                { "group": "Gradient", "value": "bg-dark-gradient text-white", "label": "Dark" },
-                { "group": "Gradient", "value": "bg-primary-gradient text-white", "label": "Primary" },
-                { "group": "Gradient", "value": "bg-secondary-gradient text-white", "label": "Secondary" }
-            ]
+          "group": "Dark",
+          "value": "bg-primary text-white",
+          "label": "Primary"
         },
         {
-            "type": "select",
-            "id": "btn_color",
-            "label": {
-             "en": "Button color",
-             "pt-BR": "Cor do botão"
-            },
-            "default": "btn-primary",
-            "options": [
-                { "group": "Normal", "value": "btn-link", "label": {"en": "Link","pt-BR": "Link"} },
-                { "group": "Normal", "value": "btn-light", "label": {"en": "Light","pt-BR": "Claro"} },
-                { "group": "Normal", "value": "btn-dark", "label": {"en": "Dark","pt-BR": "Escuro"} },
-                { "group": "Normal", "value": "btn-primary", "label": {"en": "Primary from theme","pt-BR": "Primária do tema"} },
-                { "group": "Normal", "value": "btn-secondary", "label": {"en": "Secondary from theme","pt-BR": "Secundária do tema"} },
-                { "group": "Normal", "value": "btn-success", "label": {"en": "Success","pt-BR": "Sucesso"} },
-                { "group": "Normal", "value": "btn-danger", "label": {"en": "Danger","pt-BR": "Perigo"} },
-                { "group": "Normal", "value": "btn-warning", "label": {"en": "Warning","pt-BR": "Cuidado"} },
-                { "group": "Normal", "value": "btn-info", "label": {"en": "Info","pt-BR": "Informações"} },
-                { "group": "Outline", "value": "btn-outline-dark", "label": {"en": "Dark outline","pt-BR": "Contorno escuro"}},
-                { "group": "Outline", "value": "btn-outline-primary", "label": {"en": "Primary from theme outline","pt-BR": "Contorno primaria do tema"} },
-                { "group": "Outline", "value": "btn-outline-secondary", "label": {"en": "Secondary from theme outline","pt-BR": "Contorno secundária do tema"} },
-                { "group": "Outline", "value": "btn-outline-success", "label": {"en": "Success outline","pt-BR": "Contorno Sucesso"} },
-                { "group": "Outline", "value": "btn-outline-danger", "label": {"en": "Danger outline","pt-BR": "Contorno Perigo"} },
-                { "group": "Outline", "value": "btn-outline-warning", "label": {"en": "Warning outline","pt-BR": "Contorno Cuidado"} },
-                { "group": "Outline", "value": "btn-outline-info", "label": {"en": "Info outline","pt-BR": "Contorno Informações"}}
-            ]
+          "group": "Dark",
+          "value": "bg-secondary text-white",
+          "label": "Secondary"
         },
         {
-            "type": "select",
-            "id": "btn_size",
-            "label": {
-             "en": "Button size",
-             "pt-BR": "Tamanho do botão"
-            },
-            "default": "btn-lg",
-            "options": [
-                { "value": "btn-sm", "label": {"en": "Small","pt-BR": "Pequeno"} },
-                { "value": "", "label": {"en": "Normal","pt-BR": "Normal"} },
-                { "value": "btn-lg", "label": {"en": "Large","pt-BR": "Grande"} }
-            ]
+          "group": "Gradient",
+          "value": "bg-dark-gradient text-white",
+          "label": "Dark"
         },
         {
-            "type": "header",
-            "content": {
-             "en": "Spacing",
-             "pt-BR": "Espaçamento"
-            },
-            "info": {
-             "en": "Based on Bootstrap Spacing Utility Classes [Learn More](https://getbootstrap.com/docs/4.5/utilities/spacing/)",
-             "pt-BR": "Com base nas classes do utilitário de espaçamento Bootstrap [Saiba mais](https://getbootstrap.com/docs/4.5/utilities/spacing/)"
-            }
+          "group": "Gradient",
+          "value": "bg-primary-gradient text-white",
+          "label": "Primary"
         },
         {
-            "type": "range",
-            "id": "padding_top",
-            "label": {
-             "en": "Padding top",
-             "pt-BR": "Espaçamento superior"
-            },
-            "min": 0,
-            "max": 12,
-            "step": 1,
-            "default": 8
-        },
-        {
-            "type": "range",
-            "id": "padding_bottom",
-            "label": {
-             "en": "Padding bottom",
-             "pt-BR": "Espaçamento inferior"
-            },
-            "min": 0,
-            "max": 12,
-            "step": 1,
-            "default": 8
-        },
-        {
-            "type": "range",
-            "id": "margin_top",
-            "label": {
-             "en": "Margin top",
-             "pt-BR": "Margem superior"
-            },
-            "min": 0,
-            "max": 12,
-            "step": 1,
-            "default": 0
-        },
-        {
-            "type": "range",
-            "id": "margin_bottom",
-            "label": {
-             "en": "Show orbe logo",
-             "pt-BR": "Mostrar logotipo orbe"
-            },
-            "min": 0,
-            "max": 12,
-            "step": 1,
-            "default": 9
+          "group": "Gradient",
+          "value": "bg-secondary-gradient text-white",
+          "label": "Secondary"
         }
-    ],
-    "presets": [
+      ]
+    },
+    {
+      "type": "select",
+      "id": "btn_color",
+      "label": "Button color",
+      "default": "btn-primary",
+      "options": [
         {
-            "name": {
-             "en": "Newsletter",
-             "pt-BR": "Newsletter"
-            },
-            "category": "home"
+          "group": "Normal",
+          "value": "btn-link",
+          "label": "Link"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-light",
+          "label": "Light"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-dark",
+          "label": "Dark"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-primary",
+          "label": "Primary from theme"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-secondary",
+          "label": "Secondary from theme"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-success",
+          "label": "Success"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-danger",
+          "label": "Danger"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-warning",
+          "label": "Warning"
+        },
+        {
+          "group": "Normal",
+          "value": "btn-info",
+          "label": "Info"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-dark",
+          "label": "Dark outline"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-primary",
+          "label": "Primary from theme outline"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-secondary",
+          "label": "Secondary from theme outline"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-success",
+          "label": "Success outline"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-danger",
+          "label": "Danger outline"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-warning",
+          "label": "Warning outline"
+        },
+        {
+          "group": "Outline",
+          "value": "btn-outline-info",
+          "label": "Info outline"
         }
-    ]
+      ]
+    },
+    {
+      "type": "select",
+      "id": "btn_size",
+      "label": "Button size",
+      "default": "btn-lg",
+      "options": [
+        {
+          "value": "btn-sm",
+          "label": "Small"
+        },
+        {
+          "value": "",
+          "label": "Normal"
+        },
+        {
+          "value": "btn-lg",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Spacing",
+      "info": "Based on Bootstrap Spacing Utility Classes [Learn More](https://getbootstrap.com/docs/4.5/utilities/spacing/)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 12,
+      "step": 1,
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 12,
+      "step": 1,
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "label": "Margin top",
+      "min": 0,
+      "max": 12,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "label": "Show orbe logo",
+      "min": 0,
+      "max": 12,
+      "step": 1,
+      "default": 9
+    }
+  ],
+  "presets": [
+    {
+      "name": "Newsletter",
+      "category": "home"
+    }
+  ]
 }
 {% endschema %}
