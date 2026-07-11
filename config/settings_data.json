@@ -237,7 +237,7 @@
         ],
         "disabled": true,
         "settings": {
-          "title": "",
+          "title": "Featured Products",
           "description": "",
           "bg_light": false,
           "title_alignment": "text-center",
@@ -318,16 +318,16 @@
           "infobar-3"
         ],
         "settings": {
-          "bg_cor": "#fdfdfd",
-          "infolink": "#484848",
+          "bg_cor": "#FFFFFF",
+          "infolink": "#24322F",
           "container": true,
           "title_size": "h6",
           "animate_class": "",
-          "row_mobile": 1,
+          "row_mobile": 2,
           "row_tablet": 2,
           "row_desktop": 4,
-          "padding_top": 1,
-          "padding_bottom": 3
+          "padding_top": 6,
+          "padding_bottom": 6
         }
       },
       "1610113514b9d4b3d6": {
@@ -343,7 +343,7 @@
         "type": "newsletter",
         "settings": {
           "title": "Join the CozyPaws Family",
-          "description": "<p>Be the first to be notified about our offers.</p>",
+          "description": "<p>Get product updates, pet care tips, and special offers delivered to your inbox.</p>",
           "note": "",
           "bg_color": "bg-white text-body",
           "btn_color": "btn-dark",
@@ -926,7 +926,7 @@
           "description": "",
           "container": true,
           "title_alignment": "text-center",
-          "title": true,
+          "title": "true",
           "cortitlec": "#202020",
           "corhover": "#202020",
           "cor_bg": "#ffffff",
@@ -975,7 +975,7 @@
           "f60e0d9a-4dd8-4697-8b22-ca6b8f20ab35"
         ],
         "settings": {
-          "title": "Featured Collections",
+          "title": "Best Sellers",
           "description": "<p>   </p>",
           "bg_light": false,
           "title_alignment": "text-center",
@@ -1109,14 +1109,11 @@
     },
     "content_for_index": [
       "160933884071eee85d",
+      "infobar",
       "1629938086ae988321",
       "1609370220a8149c9d",
       "1658933565428334b7",
-      "1610113514b9d4b3d6",
-      "165893360588f77e7d",
-      "1658933644e78e1206",
-      "1610178560d1807d19",
-      "1658933653392593f1"
+      "1610178560d1807d19"
     ]
   },
   "presets": {
